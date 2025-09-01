@@ -1,12 +1,12 @@
 .container {
 	padding: 5rem 0 4rem;
 	background: #fff;
-	color: var(--ifm-color-gray-800);
+	color: var( --ifm-color-gray-800 );
 }
 
 .container > div {
 	margin: auto;
-	max-width: var(--ifm-container-width);
+	max-width: var( --ifm-container-width );
 }
 
 .title {
@@ -23,5 +23,5 @@
 }
 
 .col > img {
-	filter: grayscale(1);
+	filter: grayscale( 1 );
 }

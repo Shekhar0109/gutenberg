@@ -30,35 +30,35 @@ const MyCustomTextareaControl = ({ children, ...baseProps }) => (
 
 ### `__nextHasNoMarginBottom`
 
- - Type: `boolean`
- - Required: No
- - Default: `false`
+-   Type: `boolean`
+-   Required: No
+-   Default: `false`
 
 Start opting into the new margin-free styles that will become the default in a future version.
 
 ### `as`
 
- - Type: `"symbol" | "object" | "label" | "a" | "abbr" | "address" | "area" | "article" | "aside" | "audio" | "b" | "base" | "bdi" | "bdo" | "big" | "blockquote" | "body" | "br" | "button" | ... 516 more ... | ("view" & FunctionComponent<...>)`
- - Required: No
+-   Type: `"symbol" | "object" | "label" | "a" | "abbr" | "address" | "area" | "article" | "aside" | "audio" | "b" | "base" | "bdi" | "bdo" | "big" | "blockquote" | "body" | "br" | "button" | ... 516 more ... | ("view" & FunctionComponent<...>)`
+-   Required: No
 
 The HTML element or React component to render the component as.
 
 ### `className`
 
- - Type: `string`
- - Required: No
+-   Type: `string`
+-   Required: No
 
 ### `children`
 
- - Type: `ReactNode`
- - Required: Yes
+-   Type: `ReactNode`
+-   Required: Yes
 
 The content to be displayed within the `BaseControl`.
 
 ### `help`
 
- - Type: `ReactNode`
- - Required: No
+-   Type: `ReactNode`
+-   Required: No
 
 Additional description for the control.
 
@@ -66,16 +66,16 @@ Only use for meaningful description or instructions for the control. An element 
 
 ### `hideLabelFromVision`
 
- - Type: `boolean`
- - Required: No
- - Default: `false`
+-   Type: `boolean`
+-   Required: No
+-   Default: `false`
 
 If true, the label will only be visible to screen readers.
 
 ### `id`
 
- - Type: `string`
- - Required: No
+-   Type: `string`
+-   Required: No
 
 The HTML `id` of the control element (passed in as a child to `BaseControl`) to which labels and help text are being generated.
 This is necessary to accessibly associate the label with that element.
@@ -85,8 +85,8 @@ Otherwise, if you choose to pass an explicit `id` to this prop, you are responsi
 
 ### `label`
 
- - Type: `ReactNode`
- - Required: No
+-   Type: `ReactNode`
+-   Required: No
 
 If this property is added, a label will be generated using label property as the content.
 
@@ -118,14 +118,14 @@ const MyBaseControl = () => (
 
 ##### `as`
 
- - Type: `"symbol" | "object" | "label" | "a" | "abbr" | "address" | "area" | "article" | "aside" | "audio" | ...`
- - Required: No
+-   Type: `"symbol" | "object" | "label" | "a" | "abbr" | "address" | "area" | "article" | "aside" | "audio" | ...`
+-   Required: No
 
 The HTML element or React component to render the component as.
 
 ##### `children`
 
- - Type: `ReactNode`
- - Required: Yes
+-   Type: `ReactNode`
+-   Required: Yes
 
 The content to be displayed within the `BaseControl.VisualLabel`.

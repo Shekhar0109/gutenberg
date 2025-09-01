@@ -10,15 +10,15 @@
 
 ### `children`
 
- - Type: `string`
- - Required: Yes
+-   Type: `string`
+-   Required: Yes
 
 Text to display inside the badge.
 
 ### `intent`
 
- - Type: `"default" | "info" | "success" | "warning" | "error"`
- - Required: No
- - Default: `default`
+-   Type: `"default" | "info" | "success" | "warning" | "error"`
+-   Required: No
+-   Default: `default`
 
 Badge variant.

@@ -11,7 +11,7 @@
 }
 
 // Place block list appender in the same place content will appear.
-[data-type="core/group"].is-selected {
+[data-type='core/group'].is-selected {
 	.block-list-appender {
 		margin-left: 0;
 		margin-right: 0;
@@ -24,7 +24,8 @@
 }
 
 // Affect the appender of the Row and Stack variants.
-.wp-block-group.is-layout-flex.block-editor-block-list__block > .block-list-appender:only-child {
+.wp-block-group.is-layout-flex.block-editor-block-list__block
+	> .block-list-appender:only-child {
 	gap: inherit;
 
 	&,
@@ -37,11 +38,12 @@
 	}
 
 	&::after {
-		content: "";
+		content: '';
 		display: flex;
 		flex: 1 0 $button-size-next-default-40px;
 		pointer-events: none;
-		min-height: $button-size-next-default-40px - $border-width - $border-width;
+		min-height: $button-size-next-default-40px - $border-width -
+			$border-width;
 		border: $border-width dashed currentColor;
 	}
 
@@ -52,4 +54,3 @@
 		pointer-events: all;
 	}
 }
-

@@ -1,4 +1,4 @@
-.wp-block[data-align="center"] {
+.wp-block[data-align='center'] {
 	.wp-block-search {
 		.wp-block-search__inside-wrapper {
 			margin: auto;
@@ -7,7 +7,7 @@
 }
 
 .wp-block-search {
-	:where(.wp-block-search__button) {
+	:where( .wp-block-search__button ) {
 		height: auto;
 		border-radius: initial;
 		display: flex;

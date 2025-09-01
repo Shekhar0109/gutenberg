@@ -11,17 +11,27 @@ ol.wp-block-latest-comments {
 
 // Following styles leverage :where so that typography block support styles and
 // global styles apply when necessary.
-:where(.wp-block-latest-comments:not([style*="line-height"] .wp-block-latest-comments__comment)) {
+:where(
+		.wp-block-latest-comments:not(
+				[style*='line-height'] .wp-block-latest-comments__comment
+			)
+	) {
 	line-height: 1.1;
 }
 
-:where(.wp-block-latest-comments:not([style*="line-height"] .wp-block-latest-comments__comment-excerpt p)) {
+:where(
+		.wp-block-latest-comments:not(
+				[style*='line-height']
+					.wp-block-latest-comments__comment-excerpt
+					p
+			)
+	) {
 	line-height: 1.8;
 }
 
 .has-dates,
 .has-excerpts {
-	:where(.wp-block-latest-comments:not([style*="line-height"])) {
+	:where( .wp-block-latest-comments:not( [style*='line-height'] ) ) {
 		line-height: 1.5;
 	}
 }
@@ -69,8 +79,8 @@ ol.wp-block-latest-comments {
 }
 
 // Enforce font size when user has made selection at the individual block level.
-.wp-block-latest-comments[style*="font-size"],
-.wp-block-latest-comments[class*="-font-size"] {
+.wp-block-latest-comments[style*='font-size'],
+.wp-block-latest-comments[class*='-font-size'] {
 	a {
 		font-size: inherit;
 	}

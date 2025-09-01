@@ -100,6 +100,7 @@ const Toolbar = ( { isMobile } ) => (
 ```
 
 Additional information (props) can also be passed from a `Slot` to a `Fill` by a combination of:
+
 1. Adding a `fillProps` prop to the `Slot`.
 2. Passing a function as `children` to the `Fill`. This function will receive the `fillProps` as an argument.
 

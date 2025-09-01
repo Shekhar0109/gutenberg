@@ -2,13 +2,13 @@
  * Typography
  */
 
-@use "sass:color";
-@use "sass:math";
-@use "./variables";
-@use "./colors";
-@use "./breakpoints";
-@use "./functions";
-@use "./long-content-fade";
+@use 'sass:color';
+@use 'sass:math';
+@use './variables';
+@use './colors';
+@use './breakpoints';
+@use './functions';
+@use './long-content-fade';
 
 @mixin _text-heading() {
 	font-family: variables.$font-family-headings;
@@ -137,7 +137,9 @@
  */
 
 @mixin block-toolbar-button-style__focus() {
-	box-shadow: inset 0 0 0 variables.$border-width colors.$white, 0 0 0 var(--wp-admin-border-width-focus) var(--wp-admin-theme-color);
+	box-shadow:
+		inset 0 0 0 variables.$border-width colors.$white,
+		0 0 0 var( --wp-admin-border-width-focus ) var( --wp-admin-theme-color );
 
 	// Windows High Contrast mode will show this outline, but not the box-shadow.
 	outline: 2px solid transparent;
@@ -149,13 +151,12 @@
 	border-radius: variables.$radius-small;
 	border: variables.$border-width solid colors.$gray-600;
 
-	@media not (prefers-reduced-motion) {
+	@media not ( prefers-reduced-motion ) {
 		transition: box-shadow 0.1s linear;
 	}
 }
 
-
-@mixin input-style__focus($accent-color: var(--wp-admin-theme-color)) {
+@mixin input-style__focus( $accent-color: var( --wp-admin-theme-color ) ) {
 	border-color: $accent-color;
 	// Expand the default border focus style by .5px to be a total of 1.5px.
 	box-shadow: 0 0 0 0.5px $accent-color;
@@ -164,28 +165,30 @@
 }
 
 @mixin button-style__focus() {
-	box-shadow: 0 0 0 var(--wp-admin-border-width-focus) var(--wp-admin-theme-color);
+	box-shadow: 0 0 0 var( --wp-admin-border-width-focus )
+		var( --wp-admin-theme-color );
 
 	// Windows High Contrast mode will show this outline, but not the box-shadow.
 	outline: 2px solid transparent;
 }
 
-
-@mixin button-style-outset__focus($focus-color) {
-	box-shadow: 0 0 0 var(--wp-admin-border-width-focus) colors.$white, 0 0 0 calc(2 * var(--wp-admin-border-width-focus)) $focus-color;
+@mixin button-style-outset__focus( $focus-color ) {
+	box-shadow:
+		0 0 0 var( --wp-admin-border-width-focus ) colors.$white,
+		0 0 0 calc( 2 * var( --wp-admin-border-width-focus ) ) $focus-color;
 
 	// Windows High Contrast mode will show this outline, but not the box-shadow.
 	outline: 2px solid transparent;
 	outline-offset: 2px;
 }
 
-
 /**
  * Applies editor left position to the selector passed as argument
  */
 
-@mixin editor-left($selector) {
-	#{$selector} { /* Set left position when auto-fold is not on the body element. */
+@mixin editor-left( $selector ) {
+	#{$selector} {
+		/* Set left position when auto-fold is not on the body element. */
 		left: 0;
 
 		@media (min-width: #{ (breakpoints.$break-medium + 1) }) {
@@ -193,7 +196,8 @@
 		}
 	}
 
-	.auto-fold #{$selector} { /* Auto fold is when on smaller breakpoints, nav menu auto collapses. */
+	.auto-fold #{$selector} {
+		/* Auto fold is when on smaller breakpoints, nav menu auto collapses. */
 		@media (min-width: #{ (breakpoints.$break-medium + 1) }) {
 			left: variables.$admin-sidebar-width-collapsed;
 		}
@@ -241,20 +245,19 @@
  * Allows users to opt-out of animations via OS-level preferences.
  */
 
-@mixin reduce-motion($property: "") {
-
-	@if $property == "transition" {
-		@media (prefers-reduced-motion: reduce) {
+@mixin reduce-motion( $property: '' ) {
+	@if $property == 'transition' {
+		@media ( prefers-reduced-motion: reduce ) {
 			transition-duration: 0s;
 			transition-delay: 0s;
 		}
-	} @else if $property == "animation" {
-		@media (prefers-reduced-motion: reduce) {
+	} @else if $property == 'animation' {
+		@media ( prefers-reduced-motion: reduce ) {
 			animation-duration: 1ms;
 			animation-delay: 0s;
 		}
 	} @else {
-		@media (prefers-reduced-motion: reduce) {
+		@media ( prefers-reduced-motion: reduce ) {
 			transition-duration: 0s;
 			transition-delay: 0s;
 			animation-duration: 1ms;
@@ -263,7 +266,7 @@
 	}
 }
 
-@mixin input-control($accent-color: var(--wp-admin-theme-color)) {
+@mixin input-control( $accent-color: var( --wp-admin-theme-color ) ) {
 	font-family: variables.$default-font;
 	padding: 6px 8px;
 	/* Fonts smaller than 16px causes mobile safari to zoom. */
@@ -279,7 +282,7 @@
 	}
 
 	&:focus {
-		@include input-style__focus($accent-color);
+		@include input-style__focus( $accent-color );
 	}
 
 	// Use opacity to work in various editor styles.
@@ -304,15 +307,22 @@
 	@include input-control;
 
 	&:focus {
-		box-shadow: 0 0 0 (variables.$border-width * 2) colors.$white, 0 0 0 (variables.$border-width * 2 + variables.$border-width-focus-fallback) var(--wp-admin-theme-color);
+		box-shadow:
+			0 0 0 ( variables.$border-width * 2 ) colors.$white,
+			0 0 0
+				(
+					variables.$border-width * 2 +
+						variables.$border-width-focus-fallback
+				)
+				var( --wp-admin-theme-color );
 
 		// Only visible in Windows High Contrast mode.
 		outline: 2px solid transparent;
 	}
 
 	&:checked {
-		background: var(--wp-admin-theme-color);
-		border-color: var(--wp-admin-theme-color);
+		background: var( --wp-admin-theme-color );
+		border-color: var( --wp-admin-theme-color );
 
 		// Hide default checkbox styles in IE.
 		&::-ms-check {
@@ -321,7 +331,7 @@
 	}
 
 	&:checked::before,
-	&[aria-checked="mixed"]::before {
+	&[aria-checked='mixed']::before {
 		margin: -3px -5px;
 		color: colors.$white;
 
@@ -330,14 +340,14 @@
 		}
 	}
 
-	&[aria-checked="mixed"] {
-		background: var(--wp-admin-theme-color);
-		border-color: var(--wp-admin-theme-color);
+	&[aria-checked='mixed'] {
+		background: var( --wp-admin-theme-color );
+		border-color: var( --wp-admin-theme-color );
 
 		&::before {
 			// Inherited from `forms.css`.
 			// See: https://github.com/WordPress/wordpress-develop/tree/5.1.1/src/wp-admin/css/forms.css#L122-L132
-			content: "\f460";
+			content: '\f460';
 			float: left;
 			display: inline-block;
 			vertical-align: middle;
@@ -355,7 +365,7 @@
 		}
 	}
 
-	&[aria-disabled="true"],
+	&[aria-disabled='true'],
 	&:disabled {
 		background: colors.$gray-100;
 		border-color: colors.$gray-300;
@@ -377,7 +387,7 @@
 	max-width: variables.$radio-input-size-sm;
 	position: relative;
 
-	@media not (prefers-reduced-motion) {
+	@media not ( prefers-reduced-motion ) {
 		transition: box-shadow 0.1s linear;
 	}
 
@@ -390,12 +400,12 @@
 
 	&:checked::before {
 		box-sizing: inherit;
-		width: math.div(variables.$radio-input-size-sm, 2);
-		height: math.div(variables.$radio-input-size-sm, 2);
+		width: math.div( variables.$radio-input-size-sm, 2 );
+		height: math.div( variables.$radio-input-size-sm, 2 );
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		transform: translate( -50%, -50% );
 		margin: 0;
 		background-color: colors.$white;
 
@@ -403,20 +413,27 @@
 		border: 4px solid colors.$white;
 
 		@include break-small() {
-			width: math.div(variables.$radio-input-size, 2);
-			height: math.div(variables.$radio-input-size, 2);
+			width: math.div( variables.$radio-input-size, 2 );
+			height: math.div( variables.$radio-input-size, 2 );
 		}
 	}
 
 	&:focus {
-		box-shadow: 0 0 0 (variables.$border-width * 2) colors.$white, 0 0 0 (variables.$border-width * 2 + variables.$border-width-focus-fallback) var(--wp-admin-theme-color);
+		box-shadow:
+			0 0 0 ( variables.$border-width * 2 ) colors.$white,
+			0 0 0
+				(
+					variables.$border-width * 2 +
+						variables.$border-width-focus-fallback
+				)
+				var( --wp-admin-theme-color );
 
 		// Only visible in Windows High Contrast mode.
 		outline: 2px solid transparent;
 	}
 
 	&:checked {
-		background: var(--wp-admin-theme-color);
+		background: var( --wp-admin-theme-color );
 		border: none;
 	}
 }
@@ -438,8 +455,9 @@
 
 @mixin link-reset {
 	&:focus {
-		color: var(--wp-admin-theme-color--rgb);
-		box-shadow: 0 0 0 var(--wp-admin-border-width-focus) var(--wp-admin-theme-color, #007cba);
+		color: var( --wp-admin-theme-color--rgb );
+		box-shadow: 0 0 0 var( --wp-admin-border-width-focus )
+			var( --wp-admin-theme-color, #007cba );
 		border-radius: variables.$radius-small;
 	}
 }
@@ -461,8 +479,10 @@
 	}
 
 	&:focus {
-		border-color: var(--wp-admin-theme-color) !important;
-		box-shadow: 0 0 0 (variables.$border-width-focus-fallback - variables.$border-width) var(--wp-admin-theme-color) !important;
+		border-color: var( --wp-admin-theme-color ) !important;
+		box-shadow: 0 0 0
+			( variables.$border-width-focus-fallback - variables.$border-width )
+			var( --wp-admin-theme-color ) !important;
 
 		// Windows High Contrast mode will show this outline, but not the box-shadow.
 		outline: 2px solid transparent !important;
@@ -486,7 +506,7 @@
 
 	/* We hide legacy notices in Gutenberg Based Pages, because they were not designed in a way that scaled well.
 	   Plugins can use Gutenberg notices if they need to pass on information to the user when they are editing. */
-	#wpbody-content > div:not(#{ $content-container }):not(#screen-meta) {
+	#wpbody-content > div:not( #{ $content-container } ):not( #screen-meta ) {
 		display: none;
 	}
 
@@ -510,56 +530,66 @@
 	}
 }
 
-@mixin admin-scheme($color-primary) {
+@mixin admin-scheme( $color-primary ) {
 	// Define RGB equivalents for use in rgba function.
 	// Hexadecimal css vars do not work in the rgba function.
 	--wp-admin-theme-color: #{$color-primary};
-	--wp-admin-theme-color--rgb: #{functions.hex-to-rgb($color-primary)};
+	--wp-admin-theme-color--rgb: #{functions.hex-to-rgb( $color-primary )};
 	// Darker shades.
-	--wp-admin-theme-color-darker-10: #{color.adjust($color-primary, $lightness: -5%)};
-	--wp-admin-theme-color-darker-10--rgb: #{functions.hex-to-rgb(color.adjust($color-primary, $lightness: -5%))};
-	--wp-admin-theme-color-darker-20: #{color.adjust($color-primary, $lightness: -10%)};
-	--wp-admin-theme-color-darker-20--rgb: #{functions.hex-to-rgb(color.adjust($color-primary, $lightness: -10%))};
+	--wp-admin-theme-color-darker-10: #{color.adjust(
+			$color-primary,
+			$lightness: -5%
+		)};
+	--wp-admin-theme-color-darker-10--rgb: #{functions.hex-to-rgb(
+			color.adjust( $color-primary, $lightness: -5% )
+		)};
+	--wp-admin-theme-color-darker-20: #{color.adjust(
+			$color-primary,
+			$lightness: -10%
+		)};
+	--wp-admin-theme-color-darker-20--rgb: #{functions.hex-to-rgb(
+			color.adjust( $color-primary, $lightness: -10% )
+		)};
 
 	// Focus style width.
 	// Avoid rounding issues by showing a whole 2px for 1x screens, and 1.5px on high resolution screens.
 	--wp-admin-border-width-focus: 2px;
-	@media ( -webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	@media ( -webkit-min-device-pixel-ratio: 2 ), ( min-resolution: 192dpi ) {
 		--wp-admin-border-width-focus: 1.5px;
 	}
 }
 
 @mixin wordpress-admin-schemes() {
 	body.admin-color-light {
-		@include admin-scheme(#0085ba);
+		@include admin-scheme( #0085ba );
 	}
 
 	body.admin-color-modern {
-		@include admin-scheme(#3858e9);
+		@include admin-scheme( #3858e9 );
 	}
 
 	body.admin-color-blue {
-		@include admin-scheme(#096484);
+		@include admin-scheme( #096484 );
 	}
 
 	body.admin-color-coffee {
-		@include admin-scheme(#46403c);
+		@include admin-scheme( #46403c );
 	}
 
 	body.admin-color-ectoplasm {
-		@include admin-scheme(#523f6d);
+		@include admin-scheme( #523f6d );
 	}
 
 	body.admin-color-midnight {
-		@include admin-scheme(#e14d43);
+		@include admin-scheme( #e14d43 );
 	}
 
 	body.admin-color-ocean {
-		@include admin-scheme(#627c83);
+		@include admin-scheme( #627c83 );
 	}
 
 	body.admin-color-sunrise {
-		@include admin-scheme(#dd823b);
+		@include admin-scheme( #dd823b );
 	}
 }
 
@@ -591,37 +621,65 @@
 
 	/* stylelint-disable @stylistic/function-comma-space-after -- We can not use spacing because of WP multi site kses rule. */
 	.has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background {
-		background: linear-gradient(135deg,rgba(0,208,132,1) 0%,rgba(6,147,227,1) 100%);
+		background: linear-gradient(
+			135deg,
+			rgba( 0, 208, 132, 1 ) 0%,
+			rgba( 6, 147, 227, 1 ) 100%
+		);
 	}
 
 	.has-purple-crush-gradient-background {
-		background: linear-gradient(135deg,rgb(52,226,228) 0%,rgb(71,33,251) 50%,rgb(171,29,254) 100%);
+		background: linear-gradient(
+			135deg,
+			rgb( 52, 226, 228 ) 0%,
+			rgb( 71, 33, 251 ) 50%,
+			rgb( 171, 29, 254 ) 100%
+		);
 	}
 
 	.has-hazy-dawn-gradient-background {
-		background: linear-gradient(135deg,rgb(250,172,168) 0%,rgb(218,208,236) 100%);
+		background: linear-gradient(
+			135deg,
+			rgb( 250, 172, 168 ) 0%,
+			rgb( 218, 208, 236 ) 100%
+		);
 	}
 
 	.has-subdued-olive-gradient-background {
-		background: linear-gradient(135deg,rgb(250,250,225) 0%,rgb(103,166,113) 100%);
+		background: linear-gradient(
+			135deg,
+			rgb( 250, 250, 225 ) 0%,
+			rgb( 103, 166, 113 ) 100%
+		);
 	}
 
 	.has-atomic-cream-gradient-background {
-		background: linear-gradient(135deg,rgb(253,215,154) 0%,rgb(0,74,89) 100%);
+		background: linear-gradient(
+			135deg,
+			rgb( 253, 215, 154 ) 0%,
+			rgb( 0, 74, 89 ) 100%
+		);
 	}
 
 	.has-nightshade-gradient-background {
-		background: linear-gradient(135deg,rgb(51,9,104) 0%,rgb(49,205,207) 100%);
+		background: linear-gradient(
+			135deg,
+			rgb( 51, 9, 104 ) 0%,
+			rgb( 49, 205, 207 ) 100%
+		);
 	}
 
 	.has-midnight-gradient-background {
-		background: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);
+		background: linear-gradient(
+			135deg,
+			rgb( 2, 3, 129 ) 0%,
+			rgb( 40, 116, 252 ) 100%
+		);
 	}
 	/* stylelint-enable @stylistic/function-comma-space-after */
 }
 
-@mixin custom-scrollbars-on-hover($handle-color, $handle-color-hover) {
-
+@mixin custom-scrollbars-on-hover( $handle-color, $handle-color-hover ) {
 	// WebKit
 	&::-webkit-scrollbar {
 		width: 12px;
@@ -657,27 +715,33 @@
 	will-change: transform;
 
 	// Always show scrollbar on Mobile devices.
-	@media (hover: none) {
+	@media ( hover: none ) {
 		& {
 			scrollbar-color: $handle-color-hover transparent;
 		}
 	}
 }
 
-@mixin selected-block-outline($widthRatio: 1) {
-	outline-color: var(--wp-admin-theme-color);
+@mixin selected-block-outline( $widthRatio: 1 ) {
+	outline-color: var( --wp-admin-theme-color );
 	outline-style: solid;
-	outline-width: calc(#{$widthRatio} * (var(--wp-admin-border-width-focus) / var(--wp-block-editor-iframe-zoom-out-scale, 1)));
-	outline-offset: calc(#{$widthRatio} * ((-1 * var(--wp-admin-border-width-focus) ) / var(--wp-block-editor-iframe-zoom-out-scale, 1)));
+	outline-width: calc(
+		#{$widthRatio} * ( var( --wp-admin-border-width-focus ) /
+					var( --wp-block-editor-iframe-zoom-out-scale, 1 ) )
+	);
+	outline-offset: calc(
+		#{$widthRatio} * ( ( -1 * var( --wp-admin-border-width-focus ) ) /
+					var( --wp-block-editor-iframe-zoom-out-scale, 1 ) )
+	);
 }
 
-@mixin selected-block-focus($widthRatio: 1) {
-	content: "";
+@mixin selected-block-focus( $widthRatio: 1 ) {
+	content: '';
 	position: absolute;
 	pointer-events: none;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	@include selected-block-outline($widthRatio);
+	@include selected-block-outline( $widthRatio );
 }

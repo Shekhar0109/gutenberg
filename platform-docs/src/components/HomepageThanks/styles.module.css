@@ -1,11 +1,11 @@
 .thanks {
 	padding: 8rem 0;
-	background: rgb(236, 246, 250);
+	background: rgb( 236, 246, 250 );
 	color: #000;
 }
 
-[data-theme="dark"] .thanks a {
-	color: var(--ifm-color-secondary);
+[data-theme='dark'] .thanks a {
+	color: var( --ifm-color-secondary );
 }
 
 .container {

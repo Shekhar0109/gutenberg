@@ -24,7 +24,7 @@
 	background: none;
 	border: none;
 	color: inherit;
-	padding: var(--wp--preset--spacing--20, 1em) 0;
+	padding: var( --wp--preset--spacing--20, 1em ) 0;
 	cursor: pointer;
 	outline: none;
 	display: flex;
@@ -45,7 +45,7 @@
 }
 
 .accordion-panel__wrapper {
-	padding-bottom: var(--wp--preset--spacing--20, 1em);
+	padding-bottom: var( --wp--preset--spacing--20, 1em );
 }
 
 /* No icon block style */
@@ -59,12 +59,16 @@
 }
 
 /* RTL language support */
-[dir="rtl"] .wp-block-accordion-header:not(.icon-position-left) .accordion-content__toggle {
+[dir='rtl']
+	.wp-block-accordion-header:not( .icon-position-left )
+	.accordion-content__toggle {
 	/* stylelint-disable-next-line declaration-property-value-allowed-list -- Automatically adjust icon position for RTL languages. */
 	flex-direction: row-reverse;
 }
 
-[dir="rtl"] .wp-block-accordion-header.icon-position-left .accordion-content__toggle {
+[dir='rtl']
+	.wp-block-accordion-header.icon-position-left
+	.accordion-content__toggle {
 	flex-direction: row;
 }
 
@@ -74,7 +78,7 @@
 }
 
 /* Add transitions only for users who do not prefer reduced motion */
-@media (prefers-reduced-motion: no-preference) {
+@media ( prefers-reduced-motion: no-preference ) {
 	.wp-block-accordion-content .accordion-content__toggle-icon {
 		transition: transform 0.2s ease-in-out;
 	}
@@ -86,6 +90,6 @@
 
 .is-open {
 	.accordion-content__toggle-icon.has-icon-plus {
-		transform: rotate(45deg);
+		transform: rotate( 45deg );
 	}
 }

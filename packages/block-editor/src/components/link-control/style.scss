@@ -31,7 +31,7 @@ $block-editor-link-control-number-of-actions: 1;
 			// ... and display labels.
 			// Uses ::before as ::after is already used for active tab styling.
 			&::before {
-				content: attr(aria-label);
+				content: attr( aria-label );
 			}
 		}
 
@@ -71,7 +71,6 @@ $block-editor-link-control-number-of-actions: 1;
 	.components-base-control__label {
 		color: $gray-900;
 	}
-
 }
 
 .block-editor-link-control__search-error {
@@ -87,7 +86,7 @@ $block-editor-link-control-number-of-actions: 1;
 
 	&::before,
 	&::after {
-		content: "";
+		content: '';
 		position: absolute;
 		left: -1px;
 		right: $grid-unit-20; // avoid overlaying scrollbars
@@ -121,7 +120,6 @@ $block-editor-link-control-number-of-actions: 1;
 }
 
 .block-editor-link-control__search-item {
-
 	&.components-button.components-menu-item__button {
 		height: auto;
 		text-align: left;
@@ -203,7 +201,8 @@ $block-editor-link-control-number-of-actions: 1;
 		gap: $grid-unit-05;
 	}
 
-	.block-editor-link-control__search-item-header .block-editor-link-control__search-item-icon {
+	.block-editor-link-control__search-item-header
+		.block-editor-link-control__search-item-icon {
 		background-color: $gray-100;
 		width: $grid-unit-40;
 		height: $grid-unit-40;
@@ -231,7 +230,6 @@ $block-editor-link-control-number-of-actions: 1;
 	.block-editor-link-control__search-item-title {
 		line-height: 1.1;
 
-
 		&:focus {
 			box-shadow: none;
 		}
@@ -258,7 +256,12 @@ $block-editor-link-control-number-of-actions: 1;
 			padding: 0;
 			margin: -1px;
 			overflow: hidden;
-			clip: rect(0, 0, 0, 0); // specifically requested to be removed visually as well.
+			clip: rect(
+				0,
+				0,
+				0,
+				0
+			); // specifically requested to be removed visually as well.
 			border: 0;
 		}
 	}
@@ -272,7 +275,6 @@ $block-editor-link-control-number-of-actions: 1;
 }
 
 .block-editor-link-control__search-item.is-fetching {
-
 	.block-editor-link-control__search-item-icon {
 		svg,
 		img {
@@ -280,7 +282,7 @@ $block-editor-link-control-number-of-actions: 1;
 		}
 
 		&::before {
-			content: "";
+			content: '';
 			display: block;
 			background-color: $gray-100;
 			position: absolute;
@@ -315,7 +317,7 @@ $block-editor-link-control-number-of-actions: 1;
 	// Create fake border. We cannot use border because the button has a border
 	// radius applied to it
 	&::before {
-		content: "";
+		content: '';
 		position: absolute;
 		top: -#{$block-selected-child-margin * 2};
 		left: 0;
@@ -383,23 +385,22 @@ $block-editor-link-control-number-of-actions: 1;
 		padding-left: 0;
 		gap: 0;
 
-		&[aria-expanded="true"] {
+		&[aria-expanded='true'] {
 			color: $gray-900;
 		}
 
 		// Point downwards when open (same as list view expander)
-		&[aria-expanded="true"] svg {
+		&[aria-expanded='true'] svg {
 			visibility: visible;
 			@media not ( prefers-reduced-motion ) {
 				transition: transform 0.1s ease;
 			}
-			transform: rotate(90deg);
-
+			transform: rotate( 90deg );
 		}
 		// Point rightwards when closed (same as list view expander)
-		&[aria-expanded="false"] svg {
+		&[aria-expanded='false'] svg {
 			visibility: visible;
-			transform: rotate(0deg);
+			transform: rotate( 0deg );
 			@media not ( prefers-reduced-motion ) {
 				transition: transform 0.1s ease;
 			}
@@ -407,19 +408,26 @@ $block-editor-link-control-number-of-actions: 1;
 	}
 }
 
-.block-editor-link-control .block-editor-link-control__search-input .components-spinner {
+.block-editor-link-control
+	.block-editor-link-control__search-input
+	.components-spinner {
 	display: block;
 
-	&.components-spinner { // Specificity override.
+	&.components-spinner {
+		// Specificity override.
 		position: absolute;
 		left: auto;
 		bottom: auto;
-		top: calc(50% - #{$spinner-size} / 2);
+		top: calc( 50% - #{$spinner-size} / 2 );
 		right: $grid-unit-50;
 	}
 }
 
-.block-editor-link-control .block-editor-link-control__search-input-wrapper.has-actions .components-spinner {
-	top: calc(50% + #{$spinner-size} / 4); // Add top spacing because this input has a visual label.
+.block-editor-link-control
+	.block-editor-link-control__search-input-wrapper.has-actions
+	.components-spinner {
+	top: calc(
+		50% + #{$spinner-size} / 4
+	); // Add top spacing because this input has a visual label.
 	right: $grid-unit-15;
 }

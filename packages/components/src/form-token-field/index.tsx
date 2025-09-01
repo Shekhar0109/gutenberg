@@ -7,7 +7,7 @@ import type { KeyboardEvent, MouseEvent, TouchEvent, FocusEvent } from 'react';
 /**
  * WordPress dependencies
  */
-import { useEffect, useRef, useState } from '@wordpress/element';
+import { useEffect, useRef, useState, useCallback } from '@wordpress/element';
 import { __, _n, sprintf } from '@wordpress/i18n';
 import { useDebounce, useInstanceId, usePrevious } from '@wordpress/compose';
 import { speak } from '@wordpress/a11y';
@@ -105,6 +105,9 @@ export function FormTokenField( props: FormTokenFieldProps ) {
 	const [ selectedSuggestionScroll, setSelectedSuggestionScroll ] =
 		useState( false );
 
+	const [ isValidating, setIsValidating ] = useState( false );
+	const [ asyncError, setAsyncError ] = useState< string | null >( null );
+
 	const prevSuggestions = usePrevious< string[] >( suggestions );
 	const prevValue = usePrevious< ( string | TokenItem )[] >( value );
 
@@ -112,6 +115,71 @@ export function FormTokenField( props: FormTokenFieldProps ) {
 	const tokensAndInput = useRef< HTMLInputElement >( null );
 
 	const debouncedSpeak = useDebounce( speak, 500 );
+
+	const updateSuggestions = useCallback(
+		( resetSelectedSuggestion = true ) => {
+			const inputHasMinimumChars = incompleteTokenValue.trim().length > 1;
+			const matchingSuggestions = getMatchingSuggestions(
+				incompleteTokenValue,
+				suggestions,
+				value,
+				maxSuggestions,
+				saveTransform
+			);
+			const hasMatchingSuggestions = matchingSuggestions.length > 0;
+
+			const shouldExpandIfFocuses =
+				hasFocus() && __experimentalExpandOnFocus;
+			setIsExpanded(
+				shouldExpandIfFocuses ||
+					( inputHasMinimumChars && hasMatchingSuggestions )
+			);
+
+			if ( resetSelectedSuggestion ) {
+				if (
+					__experimentalAutoSelectFirstMatch &&
+					inputHasMinimumChars &&
+					hasMatchingSuggestions
+				) {
+					setSelectedSuggestionIndex( 0 );
+					setSelectedSuggestionScroll( true );
+				} else {
+					setSelectedSuggestionIndex( -1 );
+					setSelectedSuggestionScroll( false );
+				}
+			}
+
+			if ( inputHasMinimumChars ) {
+				const message = hasMatchingSuggestions
+					? sprintf(
+							/* translators: %d: number of results. */
+							_n(
+								'%d result found, use up and down arrow keys to navigate.',
+								'%d results found, use up and down arrow keys to navigate.',
+								matchingSuggestions.length
+							),
+							matchingSuggestions.length
+					  )
+					: __( 'No results.' );
+
+				debouncedSpeak( message, 'assertive' );
+			}
+		},
+		[
+			// These are the dependencies that the function needs to be aware of.
+			incompleteTokenValue,
+			suggestions,
+			value,
+			maxSuggestions,
+			saveTransform,
+			__experimentalAutoSelectFirstMatch,
+			debouncedSpeak,
+			// Add these two new dependencies:
+			__experimentalExpandOnFocus,
+			
+			// Don't worry about hasFocus() or setIsExpanded since they are part of the component's state or props.
+		]
+	);
 
 	useEffect( () => {
 		// Make sure to focus the input when the isActive state is true.
@@ -135,11 +203,11 @@ export function FormTokenField( props: FormTokenFieldProps ) {
 
 	useEffect( () => {
 		updateSuggestions();
-	}, [ incompleteTokenValue ] );
+	}, [ incompleteTokenValue, updateSuggestions ] );
 
 	useEffect( () => {
 		updateSuggestions();
-	}, [ __experimentalAutoSelectFirstMatch ] );
+	}, [ __experimentalAutoSelectFirstMatch, updateSuggestions ] );
 
 	if ( disabled && isActive ) {
 		setIsActive( false );
@@ -168,41 +236,39 @@ export function FormTokenField( props: FormTokenFieldProps ) {
 			setIsActive( false );
 		}
 
+		// Clear async errors on focus.
+		setAsyncError( null );
+
 		if ( 'function' === typeof onFocus ) {
 			onFocus( event );
 		}
 	}
 
 	function onBlur( event: FocusEvent ) {
-		if (
-			inputHasValidValue() &&
-			__experimentalValidateInput( incompleteTokenValue )
-		) {
-			setIsActive( false );
-			if ( tokenizeOnBlur && inputHasValidValue() ) {
-				addNewToken( incompleteTokenValue );
-			}
-		} else {
-			// Reset to initial state
-			setIncompleteTokenValue( '' );
-			setInputOffsetFromEnd( 0 );
-			setIsActive( false );
-
-			if ( __experimentalExpandOnFocus ) {
-				// If `__experimentalExpandOnFocus` is true, don't close the suggestions list when
-				// the user clicks on it (`tokensAndInput` will be the element that caused the blur).
-				const hasFocusWithin =
-					event.relatedTarget === tokensAndInput.current;
-				setIsExpanded( hasFocusWithin );
-			} else {
-				// Else collapse the suggestion list. This will result in the suggestion list closing
-				// after a suggestion has been submitted since that causes a blur.
-				setIsExpanded( false );
-			}
-
-			setSelectedSuggestionIndex( -1 );
-			setSelectedSuggestionScroll( false );
+		if ( tokenizeOnBlur && inputHasValidValue() ) {
+			addNewToken( incompleteTokenValue );
 		}
+
+		// Reset to initial state
+		setIncompleteTokenValue( '' );
+		setInputOffsetFromEnd( 0 );
+		setIsActive( false );
+		setAsyncError( null ); // <-- This line is important to add
+
+		if ( __experimentalExpandOnFocus ) {
+			// If `__experimentalExpandOnFocus` is true, don't close the suggestions list when
+			// the user clicks on it (`tokensAndInput` will be the element that caused the blur).
+			const hasFocusWithin =
+				event.relatedTarget === tokensAndInput.current;
+			setIsExpanded( hasFocusWithin );
+		} else {
+			// Else collapse the suggestion list. This will result in the suggestion list closing
+			// after a suggestion has been submitted since that causes a blur.
+			setIsExpanded( false );
+		}
+
+		setSelectedSuggestionIndex( -1 );
+		setSelectedSuggestionScroll( false );
 	}
 
 	function onKeyDown( event: KeyboardEvent ) {
@@ -468,21 +534,55 @@ export function FormTokenField( props: FormTokenFieldProps ) {
 		}
 	}
 
-	function addNewToken( token: string ) {
-		if ( ! __experimentalValidateInput( token ) ) {
-			speak( messages.__experimentalInvalid, 'assertive' );
+	async function addNewToken( token: string ) {
+		const transformedToken = saveTransform( token );
+
+		if ( ! transformedToken ) {
 			return;
 		}
-		addNewTokens( [ token ] );
-		speak( messages.added, 'assertive' );
 
-		setIncompleteTokenValue( '' );
-		setSelectedSuggestionIndex( -1 );
-		setSelectedSuggestionScroll( false );
-		setIsExpanded( ! __experimentalExpandOnFocus );
+		const isTokenInList = value.some( ( item ) => {
+			return getTokenValue( transformedToken ) === getTokenValue( item );
+		} );
 
-		if ( isActive && ! tokenizeOnBlur ) {
-			focus();
+		if ( isTokenInList ) {
+			speak( messages.added, 'assertive' );
+			setIncompleteTokenValue( '' );
+			return;
+		}
+
+		try {
+			setIsValidating( true );
+			setAsyncError( null );
+			const validationResult =
+				await __experimentalValidateInput( transformedToken );
+			setIsValidating( false );
+
+			if ( ! validationResult ) {
+				setAsyncError( messages.__experimentalInvalid );
+				speak( messages.__experimentalInvalid, 'assertive' );
+				return;
+			}
+
+			addNewTokens( [ token ] );
+			speak( messages.added, 'assertive' );
+			setIncompleteTokenValue( '' );
+			setSelectedSuggestionIndex( -1 );
+			setSelectedSuggestionScroll( false );
+			setIsExpanded( ! __experimentalExpandOnFocus );
+
+			if ( isActive && ! tokenizeOnBlur ) {
+				focus();
+			}
+		} catch ( error: unknown ) {
+			setIsValidating( false );
+			if ( error instanceof Error ) {
+				setAsyncError( error.message );
+				speak( error.message, 'assertive' );
+			} else {
+				setAsyncError( __( 'Validation failed.' ) );
+				speak( __( 'Validation failed.' ), 'assertive' );
+			}
 		}
 	}
 
@@ -502,49 +602,58 @@ export function FormTokenField( props: FormTokenFieldProps ) {
 		return token;
 	}
 
-	function getMatchingSuggestions(
-		searchValue = incompleteTokenValue,
-		_suggestions = suggestions,
-		_value = value,
-		_maxSuggestions = maxSuggestions,
-		_saveTransform = saveTransform
-	) {
-		let match = _saveTransform( searchValue );
-		const startsWithMatch: string[] = [];
-		const containsMatch: string[] = [];
-		const normalizedValue = _value.map( ( item ) => {
-			if ( typeof item === 'string' ) {
-				return item;
-			}
-			return item.value;
-		} );
-
-		if ( match.length === 0 ) {
-			_suggestions = _suggestions.filter(
-				( suggestion ) => ! normalizedValue.includes( suggestion )
-			);
-		} else {
-			match = match.normalize( 'NFKC' ).toLocaleLowerCase();
-
-			_suggestions.forEach( ( suggestion ) => {
-				const index = suggestion
-					.normalize( 'NFKC' )
-					.toLocaleLowerCase()
-					.indexOf( match );
-				if ( normalizedValue.indexOf( suggestion ) === -1 ) {
-					if ( index === 0 ) {
-						startsWithMatch.push( suggestion );
-					} else if ( index > 0 ) {
-						containsMatch.push( suggestion );
-					}
+	const getMatchingSuggestions = useCallback(
+		(
+			searchValue = incompleteTokenValue,
+			_suggestions = suggestions,
+			_value = value,
+			_maxSuggestions = maxSuggestions,
+			_saveTransform = saveTransform
+		) => {
+			let match = _saveTransform( searchValue );
+			const startsWithMatch: string[] = [];
+			const containsMatch: string[] = [];
+			const normalizedValue = _value.map( ( item ) => {
+				if ( typeof item === 'string' ) {
+					return item;
 				}
+				return item.value;
 			} );
 
-			_suggestions = startsWithMatch.concat( containsMatch );
-		}
+			if ( match.length === 0 ) {
+				_suggestions = _suggestions.filter(
+					( suggestion ) => ! normalizedValue.includes( suggestion )
+				);
+			} else {
+				match = match.normalize( 'NFKC' ).toLocaleLowerCase();
 
-		return _suggestions.slice( 0, _maxSuggestions );
-	}
+				_suggestions.forEach( ( suggestion ) => {
+					const index = suggestion
+						.normalize( 'NFKC' )
+						.toLocaleLowerCase()
+						.indexOf( match );
+					if ( normalizedValue.indexOf( suggestion ) === -1 ) {
+						if ( index === 0 ) {
+							startsWithMatch.push( suggestion );
+						} else if ( index > 0 ) {
+							containsMatch.push( suggestion );
+						}
+					}
+				} );
+
+				_suggestions = startsWithMatch.concat( containsMatch );
+			}
+
+			return _suggestions.slice( 0, _maxSuggestions );
+		},
+		[
+			incompleteTokenValue,
+			suggestions,
+			value,
+			maxSuggestions,
+			saveTransform,
+		]
+	);
 
 	function getSelectedSuggestion() {
 		if ( selectedSuggestionIndex !== -1 ) {
@@ -571,49 +680,7 @@ export function FormTokenField( props: FormTokenFieldProps ) {
 	function inputHasValidValue() {
 		return saveTransform( incompleteTokenValue ).length > 0;
 	}
-
-	function updateSuggestions( resetSelectedSuggestion = true ) {
-		const inputHasMinimumChars = incompleteTokenValue.trim().length > 1;
-		const matchingSuggestions =
-			getMatchingSuggestions( incompleteTokenValue );
-		const hasMatchingSuggestions = matchingSuggestions.length > 0;
-
-		const shouldExpandIfFocuses = hasFocus() && __experimentalExpandOnFocus;
-		setIsExpanded(
-			shouldExpandIfFocuses ||
-				( inputHasMinimumChars && hasMatchingSuggestions )
-		);
-
-		if ( resetSelectedSuggestion ) {
-			if (
-				__experimentalAutoSelectFirstMatch &&
-				inputHasMinimumChars &&
-				hasMatchingSuggestions
-			) {
-				setSelectedSuggestionIndex( 0 );
-				setSelectedSuggestionScroll( true );
-			} else {
-				setSelectedSuggestionIndex( -1 );
-				setSelectedSuggestionScroll( false );
-			}
-		}
-
-		if ( inputHasMinimumChars ) {
-			const message = hasMatchingSuggestions
-				? sprintf(
-						/* translators: %d: number of results. */
-						_n(
-							'%d result found, use up and down arrow keys to navigate.',
-							'%d results found, use up and down arrow keys to navigate.',
-							matchingSuggestions.length
-						),
-						matchingSuggestions.length
-				  )
-				: __( 'No results.' );
-
-			debouncedSpeak( message, 'assertive' );
-		}
-	}
+	
 
 	function renderTokensAndInput() {
 		const components = value.map( renderToken );
@@ -698,6 +765,7 @@ export function FormTokenField( props: FormTokenFieldProps ) {
 		{
 			'is-active': isActive,
 			'is-disabled': disabled,
+			'is-validating': isValidating,
 		}
 	);
 
@@ -761,7 +829,7 @@ export function FormTokenField( props: FormTokenFieldProps ) {
 				) }
 			</div>
 			{ ! __nextHasNoMarginBottom && <Spacer marginBottom={ 2 } /> }
-			{ __experimentalShowHowTo && (
+			{ __experimentalShowHowTo && ! asyncError && (
 				<StyledHelp
 					id={ `components-form-token-suggestions-howto-${ instanceId }` }
 					className="components-form-token-field__help"
@@ -772,6 +840,15 @@ export function FormTokenField( props: FormTokenFieldProps ) {
 								'Separate with commas, spaces, or the Enter key.'
 						  )
 						: __( 'Separate with commas or the Enter key.' ) }
+				</StyledHelp>
+			) }
+			{ asyncError && (
+				<StyledHelp
+					id={ `components-form-token-field__error-${ instanceId }` }
+					className="components-form-token-field__error"
+					__nextHasNoMarginBottom={ __nextHasNoMarginBottom }
+				>
+					{ asyncError }
 				</StyledHelp>
 			) }
 		</div>

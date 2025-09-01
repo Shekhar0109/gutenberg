@@ -24,7 +24,7 @@
 		&:focus,
 		&.is-primary {
 			position: relative;
-			z-index: z-index(".components-button {:focus or .is-primary}");
+			z-index: z-index( '.components-button {:focus or .is-primary}' );
 		}
 
 		// The active button should look pressed.

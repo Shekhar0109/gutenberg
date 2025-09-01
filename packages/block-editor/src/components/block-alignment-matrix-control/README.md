@@ -25,22 +25,22 @@ As an example, here's the matrix alignment tool in action.
 ```jsx
 // This is a paraphrased example from the cover block
 import {
-    BlockControls,
-    __experimentalBlockAlignmentMatrixControl as BlockAlignmentMatrixControl
-} from "@wordpress/block-editor";
+	BlockControls,
+	__experimentalBlockAlignmentMatrixControl as BlockAlignmentMatrixControl,
+} from '@wordpress/block-editor';
 
 const controls = (
-  <>
-    <BlockControls>
-      <BlockAlignmentMatrixControl
-        label={ __( 'Change content position' ) }
-        value={ contentPosition }
-        onChange={ ( nextPosition ) =>
-          setAttributes( { contentPosition: nextPosition } )
-        }
-      />
-    </BlockControls>
-  </>
+	<>
+		<BlockControls>
+			<BlockAlignmentMatrixControl
+				label={ __( 'Change content position' ) }
+				value={ contentPosition }
+				onChange={ ( nextPosition ) =>
+					setAttributes( { contentPosition: nextPosition } )
+				}
+			/>
+		</BlockControls>
+	</>
 );
 ```
 

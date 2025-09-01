@@ -37,7 +37,7 @@
 }
 
 // Even when the block switcher does not have any transformations, it still serves as a block indicator.
-.components-button.block-editor-block-switcher__no-switcher-icon[aria-disabled="true"] {
+.components-button.block-editor-block-switcher__no-switcher-icon[aria-disabled='true'] {
 	color: $gray-900;
 
 	// Since it's not clickable, though, don't show a hover state.
@@ -46,7 +46,8 @@
 	}
 }
 
-.components-popover.block-editor-block-switcher__popover .components-popover__content {
+.components-popover.block-editor-block-switcher__popover
+	.components-popover__content {
 	min-width: 300px;
 }
 
@@ -74,7 +75,7 @@
 
 	.block-editor-block-switcher__preview {
 		// Subtract vertical margin from max-height.
-		max-height: calc(500px - #{$grid-unit-40});
+		max-height: calc( 500px - #{$grid-unit-40} );
 		margin: $grid-unit-20 0;
 		// Use padding to prevent the pattern previews focus style from being cut-off.
 		padding: 0 $grid-unit-20;
@@ -137,14 +138,19 @@
 
 			&:hover,
 			&:focus {
-				box-shadow: inset 0 0 0 1px $white, 0 0 0 var(--wp-admin-border-width-focus) var(--wp-admin-theme-color);
+				box-shadow:
+					inset 0 0 0 1px $white,
+					0 0 0 var( --wp-admin-border-width-focus )
+						var( --wp-admin-theme-color );
 
 				// Windows High Contrast mode will show this outline, but not the box-shadow.
 				outline: 2px solid transparent;
 			}
 
 			&:hover {
-				box-shadow: inset 0 0 0 1px $white, 0 0 0 var(--wp-admin-border-width-focus) $gray-900;
+				box-shadow:
+					inset 0 0 0 1px $white,
+					0 0 0 var( --wp-admin-border-width-focus ) $gray-900;
 			}
 
 			.block-editor-block-switcher__preview-patterns-container-list__item-title {

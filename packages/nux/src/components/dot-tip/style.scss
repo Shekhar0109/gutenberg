@@ -1,27 +1,27 @@
-
 $dot-size: 8px; // Size of the indicator dot
-$dot-scale: 3;  // How much the pulse animation should scale up by in size
+$dot-scale: 3; // How much the pulse animation should scale up by in size
 
 .nux-dot-tip {
 	&::before,
 	&::after {
 		border-radius: 100%;
-		content: " ";
+		content: ' ';
 		pointer-events: none;
 		position: absolute;
 	}
 
 	&::before {
-		background: rgba(#00739c, 0.9);
+		background: rgba( #00739c, 0.9 );
 		opacity: 0.9;
 		height: $dot-size * $dot-scale;
-		left: -($dot-size * $dot-scale) * 0.5;
-		top: -($dot-size * $dot-scale) * 0.5;
-		transform: scale(math.div(1, $dot-scale));
+		left: -( $dot-size * $dot-scale ) * 0.5;
+		top: -( $dot-size * $dot-scale ) * 0.5;
+		transform: scale( math.div( 1, $dot-scale ) );
 		width: $dot-size * $dot-scale;
 
-		@media not (prefers-reduced-motion) {
-			animation: nux-pulse 1.6s infinite cubic-bezier(0.17, 0.67, 0.92, 0.62);
+		@media not ( prefers-reduced-motion ) {
+			animation: nux-pulse 1.6s infinite
+				cubic-bezier( 0.17, 0.67, 0.92, 0.62 );
 		}
 	}
 
@@ -35,8 +35,8 @@ $dot-scale: 3;  // How much the pulse animation should scale up by in size
 
 	@keyframes nux-pulse {
 		100% {
-			background: rgba(#00739c, 0);
-			transform: scale(1);
+			background: rgba( #00739c, 0 );
+			transform: scale( 1 );
 		}
 	}
 
@@ -56,42 +56,42 @@ $dot-scale: 3;  // How much the pulse animation should scale up by in size
 	}
 
 	// Position the dot right next to the edge of the button
-	&[data-y-axis="top"] {
+	&[data-y-axis='top'] {
 		margin-top: -$dot-size * 0.5;
 	}
-	&[data-y-axis="bottom"] {
+	&[data-y-axis='bottom'] {
 		margin-top: $dot-size * 0.5;
 	}
-	&[data-y-axis="middle"][data-y-axis="left"] {
+	&[data-y-axis='middle'][data-y-axis='left'] {
 		margin-left: -$dot-size * 0.5;
 	}
-	&[data-y-axis="middle"][data-y-axis="right"] {
+	&[data-y-axis='middle'][data-y-axis='right'] {
 		margin-left: $dot-size * 0.5;
 	}
 
 	// Position the tip content away from the dot
-	&[data-y-axis="top"] .components-popover__content {
+	&[data-y-axis='top'] .components-popover__content {
 		margin-bottom: 20px;
 	}
-	&[data-y-axis="bottom"] .components-popover__content {
+	&[data-y-axis='bottom'] .components-popover__content {
 		margin-top: 20px;
 	}
-	&[data-y-axis="middle"][data-y-axis="left"] .components-popover__content {
+	&[data-y-axis='middle'][data-y-axis='left'] .components-popover__content {
 		margin-right: 20px;
 	}
-	&[data-y-axis="middle"][data-y-axis="right"] .components-popover__content {
+	&[data-y-axis='middle'][data-y-axis='right'] .components-popover__content {
 		margin-left: 20px;
 	}
 
 	// Extra specificity so that we can override the styles in .component-popover
-	&[data-y-axis="left"],
-	&[data-y-axis="center"],
-	&[data-y-axis="right"] {
+	&[data-y-axis='left'],
+	&[data-y-axis='center'],
+	&[data-y-axis='right'] {
 		// Position tips above popovers
-		z-index: z-index(".nux-dot-tip");
+		z-index: z-index( '.nux-dot-tip' );
 
 		// On mobile, always position the tip below the dot and fill the width of the viewport
-		@media (max-width: $break-small) {
+		@media ( max-width: $break-small ) {
 			.components-popover__content {
 				align-self: end;
 				left: 5px;
@@ -104,22 +104,30 @@ $dot-scale: 3;  // How much the pulse animation should scale up by in size
 		}
 	}
 
-	&.components-popover:not([data-y-axis="middle"])[data-y-axis="right"] .components-popover__content {
+	&.components-popover:not( [data-y-axis='middle'] )[data-y-axis='right']
+		.components-popover__content {
 		/*!rtl:ignore*/
 		margin-left: 0;
 	}
 
-	&.components-popover:not([data-y-axis="middle"])[data-y-axis="left"] .components-popover__content {
+	&.components-popover:not( [data-y-axis='middle'] )[data-y-axis='left']
+		.components-popover__content {
 		/*!rtl:ignore*/
 		margin-right: 0;
 	}
 
-	&.components-popover.interface-more-menu-dropdown__content:not([data-y-axis="middle"])[data-y-axis="right"] .components-popover__content {
+	&.components-popover.interface-more-menu-dropdown__content:not(
+			[data-y-axis='middle']
+		)[data-y-axis='right']
+		.components-popover__content {
 		/*!rtl:ignore*/
 		margin-left: -12px;
 	}
 
-	&.components-popover.interface-more-menu-dropdown__content:not([data-y-axis="middle"])[data-y-axis="left"] .components-popover__content {
+	&.components-popover.interface-more-menu-dropdown__content:not(
+			[data-y-axis='middle']
+		)[data-y-axis='left']
+		.components-popover__content {
 		/*!rtl:ignore*/
 		margin-right: -12px;
 	}

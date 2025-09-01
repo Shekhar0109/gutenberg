@@ -1,20 +1,20 @@
-@import "../../interface/src/style.scss";
+@import '../../interface/src/style.scss';
 
-@import "./blocks/widget-area/editor.scss";
-@import "./components/error-boundary/style.scss";
-@import "./components/header/style.scss";
-@import "./components/keyboard-shortcut-help-modal/style.scss";
-@import "./components/sidebar/style.scss";
-@import "./components/notices/style.scss";
-@import "./components/layout/style.scss";
-@import "./components/more-menu/style.scss";
-@import "./components/welcome-guide/style.scss";
-@import "./components/widget-areas-block-editor-content/style.scss";
-@import "./components/secondary-sidebar/style.scss";
+@import './blocks/widget-area/editor.scss';
+@import './components/error-boundary/style.scss';
+@import './components/header/style.scss';
+@import './components/keyboard-shortcut-help-modal/style.scss';
+@import './components/sidebar/style.scss';
+@import './components/notices/style.scss';
+@import './components/layout/style.scss';
+@import './components/more-menu/style.scss';
+@import './components/welcome-guide/style.scss';
+@import './components/widget-areas-block-editor-content/style.scss';
+@import './components/secondary-sidebar/style.scss';
 
 body.js.appearance_page_gutenberg-widgets,
 body.js.widgets-php {
-	@include wp-admin-reset( ".blocks-widgets-container" );
+	@include wp-admin-reset( '.blocks-widgets-container' );
 }
 
 .blocks-widgets-container {
@@ -27,12 +27,12 @@ body.js.widgets-php {
 		right: 0;
 		bottom: 0;
 		left: 0;
-		min-height: calc(100vh - #{ $admin-bar-height-big });
+		min-height: calc( 100vh - #{$admin-bar-height-big} );
 	}
 
 	// The WP header height changes at this breakpoint.
 	@include break-medium {
-		min-height: calc(100vh - #{ $admin-bar-height });
+		min-height: calc( 100vh - #{$admin-bar-height} );
 	}
 
 	.interface-interface-skeleton__content {
@@ -45,7 +45,8 @@ body.js.widgets-php {
 	margin: auto;
 }
 
-.edit-widgets-sidebar .components-button.interface-complementary-area__pin-unpin-item {
+.edit-widgets-sidebar
+	.components-button.interface-complementary-area__pin-unpin-item {
 	display: none;
 }
 

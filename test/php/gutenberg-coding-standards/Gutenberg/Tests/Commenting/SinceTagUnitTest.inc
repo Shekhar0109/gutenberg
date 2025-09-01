@@ -614,16 +614,9 @@ if ( ! function_exists( 'apply_filters_deprecated' ) ) {
 }
 
 $foo = new do_action();
-$foo->do_action();
-$foo = new do_action_ref_array();
-$foo->do_action_ref_array();
-$foo = new do_action_deprecated();
-$foo->do_action_deprecated();
-$foo = new apply_filters();
-$foo->apply_filters();
-$foo = new apply_filters_ref_array();
-$foo->apply_filters_ref_array();
-$foo = new apply_filters_deprecated();
-$foo->apply_filters_deprecated();
-$foo = new non_hook_action();
-$foo->non_hook_action();
+$foo->do_action(); $foo = new do_action_ref_array();
+$foo->do_action_ref_array(); $foo = new do_action_deprecated();
+$foo->do_action_deprecated(); $foo = new apply_filters(); $foo->apply_filters();
+$foo = new apply_filters_ref_array(); $foo->apply_filters_ref_array(); $foo =
+new apply_filters_deprecated(); $foo->apply_filters_deprecated(); $foo = new
+non_hook_action(); $foo->non_hook_action();

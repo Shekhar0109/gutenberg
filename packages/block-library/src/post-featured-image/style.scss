@@ -5,7 +5,7 @@
 		display: block;
 		height: 100%;
 	}
-	:where(img) {
+	:where( img ) {
 		max-width: 100%;
 		width: 100%;
 		height: auto;
@@ -40,7 +40,7 @@
 		}
 	}
 
-	&:where(.alignleft, .alignright) {
+	&:where( .alignleft, .alignright ) {
 		width: 100%;
 	}
 }

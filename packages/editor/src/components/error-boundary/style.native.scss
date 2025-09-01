@@ -10,7 +10,6 @@
 	justify-content: center;
 }
 
-
 .error-boundary__container {
 	width: 100%;
 	max-width: 600px;
@@ -27,12 +26,12 @@
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 8px;
-	background-color: rgba(60, 60, 67, 0.3);
+	background-color: rgba( 60, 60, 67, 0.3 );
 	border-radius: 20px;
 }
 
 .error-boundary__icon-container--dark {
-	background-color: rgba(235, 235, 245, 0.3);
+	background-color: rgba( 235, 235, 245, 0.3 );
 }
 
 .error-boundary__icon {
@@ -58,13 +57,13 @@
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 21px;
-	color: rgba(60, 60, 67, 0.6);
+	color: rgba( 60, 60, 67, 0.6 );
 	text-align: center;
 	margin-bottom: 16px;
 }
 
 .error-boundary__message--dark {
-	color: rgba(235, 235, 245, 0.6);
+	color: rgba( 235, 235, 245, 0.6 );
 }
 
 .error-boundary__actions-container {
@@ -91,7 +90,7 @@
 }
 
 .copy-button__container--secondary-dark {
-	border-color: rgba(255, 255, 255, 0.3);
+	border-color: rgba( 255, 255, 255, 0.3 );
 	background-color: $black;
 }
 

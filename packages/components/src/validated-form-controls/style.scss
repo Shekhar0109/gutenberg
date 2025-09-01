@@ -1,13 +1,13 @@
 .components-validated-control {
 	// For components based on InputBase
-	&:has(:is(input, select):user-invalid)
-	.components-input-control__backdrop {
+	&:has( :is( input, select ):user-invalid )
+		.components-input-control__backdrop {
 		--wp-components-color-accent: $alert-red;
 		border-color: $alert-red;
 	}
 
 	// For TextControl, TextareaControl
-	:is(textarea, input[type="text"]):user-invalid {
+	:is( textarea, input[type='text'] ):user-invalid {
 		--wp-admin-theme-color: $alert-red;
 		--wp-components-color-accent: $alert-red;
 		border-color: $alert-red;
@@ -15,8 +15,8 @@
 
 	// For ComboboxControl
 	.components-combobox-control__suggestions-container:has(
-	input:user-invalid
-):not(:has([aria-expanded="true"])) {
+			input:user-invalid
+		):not( :has( [aria-expanded='true'] ) ) {
 		border-color: $alert-red;
 	}
 }
@@ -25,13 +25,13 @@
 	position: relative;
 
 	// For CustomSelectControl
-	&:has(select:user-invalid) .components-input-control__backdrop {
+	&:has( select:user-invalid ) .components-input-control__backdrop {
 		--wp-components-color-accent: $alert-red;
 		border-color: $alert-red;
 	}
 
 	// For ToggleGroupControl
-	&:has(input[type="radio"]:invalid) {
+	&:has( input[type='radio']:invalid ) {
 		--wp-components-color-accent: $alert-red;
 	}
 }
@@ -54,16 +54,15 @@
 	font-size: 0.75rem;
 	line-height: 16px; // matches the icon size
 	color: $components-color-gray-700;
-	animation:
-		components-validated-control__indicator-jump 0.2s
-		cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	animation: components-validated-control__indicator-jump 0.2s
+		cubic-bezier( 0.68, -0.55, 0.27, 1.55 );
 
 	&.is-invalid {
 		color: $alert-red;
 	}
 
 	&.is-valid {
-		color: color-mix(in srgb, $black 30%, $alert-green);
+		color: color-mix( in srgb, $black 30%, $alert-green );
 	}
 }
 
@@ -79,11 +78,11 @@
 
 @keyframes components-validated-control__indicator-jump {
 	0% {
-		transform: translateY(-4px);
+		transform: translateY( -4px );
 		opacity: 0;
 	}
 	100% {
-		transform: translateY(0);
+		transform: translateY( 0 );
 		opacity: 1;
 	}
 }

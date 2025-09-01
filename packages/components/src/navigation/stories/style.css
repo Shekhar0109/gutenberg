@@ -15,7 +15,7 @@
 	margin-right: 8px;
 }
 
-:root[dir="rtl"] .navigation-story__wordpress-icon svg {
+:root[dir='rtl'] .navigation-story__wordpress-icon svg {
 	fill: #949494;
 	margin-right: 0;
 	margin-left: 8px;

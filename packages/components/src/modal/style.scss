@@ -5,8 +5,8 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: rgba($black, 0.35);
-	z-index: z-index(".components-modal__screen-overlay");
+	background-color: rgba( $black, 0.35 );
+	z-index: z-index( '.components-modal__screen-overlay' );
 	display: flex;
 	// This animates the appearance of the backdrop.
 	@include animation__fade-in();
@@ -15,7 +15,7 @@
 		// Note: it's important that the fade-out animation doesn't end after the
 		// modal frame's disappear animation, because the component will be removed
 		// from the DOM when that animation ends.
-		@include animation__fade-out($delay: 80ms);
+		@include animation__fade-out( $delay: 80ms );
 	}
 }
 
@@ -34,15 +34,15 @@
 	// Animate the modal frame/contents appearing on the page.
 	animation-name: components-modal__appear-animation;
 	animation-fill-mode: forwards;
-	animation-timing-function: cubic-bezier(0.29, 0, 0, 1);
+	animation-timing-function: cubic-bezier( 0.29, 0, 0, 1 );
 
-	@media not (prefers-reduced-motion) {
-		animation-duration: var(--modal-frame-animation-duration);
+	@media not ( prefers-reduced-motion ) {
+		animation-duration: var( --modal-frame-animation-duration );
 	}
 
 	.components-modal__screen-overlay.is-animating-out & {
 		animation-name: components-modal__disappear-animation;
-		animation-timing-function: cubic-bezier(1, 0, 0.2, 1);
+		animation-timing-function: cubic-bezier( 1, 0, 0.2, 1 );
 	}
 
 	// Show a centered modal on bigger screens.
@@ -51,18 +51,18 @@
 		margin: auto;
 		width: auto;
 		min-width: $modal-min-width;
-		max-width: calc(100% - #{$grid-unit-20 * 2});
-		max-height: calc(100% - #{$header-height * 2});
+		max-width: calc( 100% - #{$grid-unit-20 * 2} );
+		max-height: calc( 100% - #{$header-height * 2} );
 
 		&.is-full-screen {
 			@include break-small() {
-				width: calc(100% - #{ $grid-unit-20 * 2 });
-				height: calc(100% - #{ $grid-unit-20 * 2 });
+				width: calc( 100% - #{$grid-unit-20 * 2} );
+				height: calc( 100% - #{$grid-unit-20 * 2} );
 				max-height: none;
 			}
 			@include break-medium() {
-				width: calc(100% - #{ $grid-unit-50 * 2 });
-				height: calc(100% - #{ $grid-unit-50 * 2 });
+				width: calc( 100% - #{$grid-unit-50 * 2} );
+				height: calc( 100% - #{$grid-unit-50 * 2} );
 				max-width: none;
 			}
 		}
@@ -85,7 +85,6 @@
 		&.has-size-large {
 			max-width: $modal-width-large;
 		}
-
 	}
 
 	@include break-large() {
@@ -96,11 +95,11 @@
 @keyframes components-modal__appear-animation {
 	from {
 		opacity: 0;
-		transform: scale(0.9);
+		transform: scale( 0.9 );
 	}
 	to {
 		opacity: 1;
-		transform: scale(1);
+		transform: scale( 1 );
 	}
 }
 
@@ -109,11 +108,11 @@
 @keyframes components-modal__disappear-animation {
 	from {
 		opacity: 1;
-		transform: scale(1);
+		transform: scale( 1 );
 	}
 	to {
 		opacity: 0;
-		transform: scale(0.9);
+		transform: scale( 0.9 );
 	}
 }
 
@@ -130,7 +129,7 @@
 	align-items: center;
 	height: $header-height + $grid-unit-10; // 72px
 	width: 100%;
-	z-index: z-index(".components-modal__header");
+	z-index: z-index( '.components-modal__header' );
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -145,7 +144,7 @@
 		margin: 0;
 	}
 
-	.components-modal__content.has-scrolled-content:not(.hide-header) & {
+	.components-modal__content.has-scrolled-content:not( .hide-header ) & {
 		border-bottom-color: $gray-300;
 	}
 
@@ -186,7 +185,8 @@
 	}
 
 	&.is-scrollable:focus-visible {
-		box-shadow: inset 0 0 0 var(--wp-admin-border-width-focus) $components-color-accent;
+		box-shadow: inset 0 0 0 var( --wp-admin-border-width-focus )
+			$components-color-accent;
 
 		// Windows High Contrast mode will show this outline, but not the box-shadow.
 		outline: 2px solid transparent;

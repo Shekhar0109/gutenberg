@@ -20,10 +20,7 @@ const MyDateTimePicker = () => {
 	return (
 		<Dropdown
 			renderToggle={ ( { isOpen, onToggle } ) => (
-				<Button
-					onClick={ onToggle }
-					aria-expanded={ isOpen }
-				>
+				<Button onClick={ onToggle } aria-expanded={ isOpen }>
 					Select post date
 				</Button>
 			) }
@@ -49,13 +46,13 @@ const MyDateTimePicker = () => {
 
 The title displayed in the header of the popover that contains the `DateTimePicker`.
 
-- Type: `String`
-- Required: No
-- Default: `Publish`
+-   Type: `String`
+-   Required: No
+-   Default: `Publish`
 
 ### onClose
 
 Called when the user presses the close button.
 
-- Type: `Function`
-- Required: No
+-   Type: `Function`
+-   Required: No

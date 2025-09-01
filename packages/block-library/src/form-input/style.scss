@@ -15,7 +15,7 @@
 		}
 	}
 
-	&:has(input[type="checkbox"]) {
+	&:has( input[type='checkbox'] ) {
 		flex-direction: row;
 		width: fit-content;
 
@@ -24,7 +24,7 @@
 		}
 	}
 
-	&:has(.wp-block-form-input__label-content + input[type="checkbox"]) {
+	&:has( .wp-block-form-input__label-content + input[type='checkbox'] ) {
 		/* stylelint-disable-next-line declaration-property-value-allowed-list -- This style is required for old markup. */
 		flex-direction: row-reverse;
 	}
@@ -39,19 +39,19 @@
 	font-size: 1em;
 	margin-bottom: 0.5em;
 
-	&[type="text"],
-	&[type="password"],
-	&[type="date"],
-	&[type="datetime"],
-	&[type="datetime-local"],
-	&[type="email"],
-	&[type="month"],
-	&[type="number"],
-	&[type="search"],
-	&[type="tel"],
-	&[type="time"],
-	&[type="url"],
-	&[type="week"] {
+	&[type='text'],
+	&[type='password'],
+	&[type='date'],
+	&[type='datetime'],
+	&[type='datetime-local'],
+	&[type='email'],
+	&[type='month'],
+	&[type='number'],
+	&[type='search'],
+	&[type='tel'],
+	&[type='time'],
+	&[type='url'],
+	&[type='week'] {
 		min-height: 2em;
 		line-height: 2;
 		border: 1px solid;

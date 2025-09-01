@@ -9,12 +9,12 @@
 	display: inline;
 }
 
-:root :where(.wp-block-latest-posts) {
+:root :where( .wp-block-latest-posts ) {
 	padding-left: 2.5em;
 }
 :root {
-	:where(.wp-block-latest-posts.is-grid),
-	:where(.wp-block-latest-posts__list) {
+	:where( .wp-block-latest-posts.is-grid ),
+	:where( .wp-block-latest-posts__list ) {
 		padding-left: 0;
 	}
 }

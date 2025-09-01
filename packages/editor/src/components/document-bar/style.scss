@@ -10,7 +10,7 @@
 	min-width: 0;
 	background: $gray-100;
 	border-radius: $grid-unit-05;
-	width: min(100%, 450px);
+	width: min( 100%, 450px );
 
 	&:hover {
 		background-color: $gray-200;
@@ -19,7 +19,7 @@
 	.components-button {
 		border-radius: $grid-unit-05;
 
-		@media not (prefers-reduced-motion) {
+		@media not ( prefers-reduced-motion ) {
 			transition: all 0.1s ease-out;
 		}
 
@@ -39,7 +39,7 @@
 
 .editor-document-bar__command {
 	flex-grow: 1;
-	color: var(--wp-block-synced-color);
+	color: var( --wp-block-synced-color );
 	overflow: hidden;
 }
 

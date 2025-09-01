@@ -34,7 +34,7 @@
 		min-height: $button-size-compact;
 	}
 
-	&.components-button.is-link[aria-disabled="true"] {
+	&.components-button.is-link[aria-disabled='true'] {
 		text-decoration: none;
 	}
 
@@ -57,5 +57,7 @@
 }
 
 .components-popover.components-dropdown__content.dataforms-layouts-panel__field-dropdown {
-	z-index: z-index(".components-popover.components-dropdown__content.dataforms-layouts-panel__field-dropdown");
+	z-index: z-index(
+		'.components-popover.components-dropdown__content.dataforms-layouts-panel__field-dropdown'
+	);
 }

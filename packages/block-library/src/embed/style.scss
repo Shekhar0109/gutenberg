@@ -1,6 +1,6 @@
 // Apply max-width to floated items that have no intrinsic width
-.wp-block[data-align="left"] > [data-type="core/embed"],
-.wp-block[data-align="right"] > [data-type="core/embed"],
+.wp-block[data-align='left'] > [data-type='core/embed'],
+.wp-block[data-align='right'] > [data-type='core/embed'],
 .wp-block-embed.alignleft,
 .wp-block-embed.alignright {
 	// Instagram widgets have a min-width of 326px, so go a bit beyond that.
@@ -25,7 +25,7 @@
 	// Supply caption styles to embeds, even if the theme hasn't opted in.
 	// Reason being: the new markup, figcaptions, are not likely to be styled in the majority of existing themes,
 	// so we supply the styles so as to not appear broken or unstyled in those.
-	:where(figcaption) {
+	:where( figcaption ) {
 		@include caption-style();
 	}
 
@@ -42,7 +42,7 @@
 // Add responsiveness to embeds with aspect ratios.
 .wp-embed-responsive .wp-has-aspect-ratio {
 	.wp-block-embed__wrapper::before {
-		content: "";
+		content: '';
 		display: block;
 		padding-top: 50%; // Default to 2:1 aspect ratio.
 	}

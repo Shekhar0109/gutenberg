@@ -9,10 +9,10 @@
 	background-color: $dark-ultra-dim;
 }
 
-@mixin circle($width) {
+@mixin circle( $width ) {
 	width: $width;
 	height: $width;
-	border-radius: $width*0.5;
+	border-radius: $width * 0.5;
 }
 
 .iconContainer {
@@ -20,7 +20,7 @@
 	margin: 12px 16px;
 	align-items: center;
 	justify-content: center;
-	@include circle(37px);
+	@include circle( 37px );
 }
 
 .iconContainerDark {

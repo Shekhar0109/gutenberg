@@ -1,26 +1,22 @@
 .foo {
-
 	> .bar {
 		margin: 0;
 	}
 }
 
 a {
-
 	&.foo {
 		margin: 0;
 	}
 }
 
 div {
-
 	.foo > & {
 		margin: 0;
 	}
 }
 
 p {
-
 	&,
 	.foo,
 	.baz {
@@ -29,7 +25,6 @@ p {
 }
 
 span {
-
 	&,
 	.foo::after {
 		color: #000;

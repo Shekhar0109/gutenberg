@@ -1,5 +1,5 @@
 .block-editor-block-lock-modal {
-	z-index: z-index(".block-editor-block-lock-modal");
+	z-index: z-index( '.block-editor-block-lock-modal' );
 }
 
 .block-editor-block-lock-modal__options {
@@ -70,7 +70,8 @@
 }
 
 .show-icon-labels {
-	.block-editor-block-toolbar__block-controls .block-editor-block-lock-toolbar {
+	.block-editor-block-toolbar__block-controls
+		.block-editor-block-lock-toolbar {
 		border-left: 1px solid $gray-900;
 		margin-left: $grid-unit-15 * 0.5 !important;
 		margin-right: -$grid-unit-15 * 0.5;

@@ -3,6 +3,6 @@ pre.wp-block-verse {
 	white-space: pre-wrap;
 }
 
-:where(pre.wp-block-verse) {
+:where( pre.wp-block-verse ) {
 	font-family: inherit;
 }

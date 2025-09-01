@@ -1,5 +1,4 @@
 .wp-block-image {
-
 	> a,
 	> figure > a {
 		display: inline-block;
@@ -11,7 +10,7 @@
 		vertical-align: bottom;
 		box-sizing: border-box;
 
-		@media not (prefers-reduced-motion) {
+		@media not ( prefers-reduced-motion ) {
 			&.hide {
 				visibility: hidden;
 			}
@@ -26,7 +25,7 @@
 	// image blocks that applied border radius to the outer `figure` element.
 	//
 	// See: https://github.com/WordPress/gutenberg/issues/47422
-	&[style*="border-radius"] {
+	&[style*='border-radius'] {
 		> a,
 		img {
 			border-radius: inherit;
@@ -99,7 +98,7 @@
 	// Supply caption styles to images, even if the theme hasn't opted in.
 	// Reason being: the new markup, <figcaptions>, are not likely to be styled in the majority of existing themes,
 	// so we supply the styles so as to not appear broken or unstyled in those themes.
-	:where(figcaption) {
+	:where( figcaption ) {
 		@include caption-style();
 	}
 
@@ -113,9 +112,9 @@
 		border-radius: 9999px;
 
 		// If a browser supports it, we will switch to using a circular SVG mask.
-		@supports (mask-image: none) or (-webkit-mask-image: none) {
+		@supports ( mask-image: none ) or ( -webkit-mask-image: none ) {
 			/* stylelint-disable-next-line function-url-quotes -- We need quotes for the data URL to use the SVG inline. */
-			mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');
+			mask-image: url( 'data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>' );
 			mask-mode: alpha;
 			mask-repeat: no-repeat;
 			mask-size: contain;
@@ -126,7 +125,11 @@
 }
 
 // Variations
-:root :where(.wp-block-image.is-style-rounded img, .wp-block-image .is-style-rounded img) {
+:root
+	:where(
+		.wp-block-image.is-style-rounded img,
+		.wp-block-image .is-style-rounded img
+	) {
 	// We use an absolute pixel to prevent the oval shape that a value of 50% would give
 	// to rectangular images. A pill-shape is better than otherwise.
 	border-radius: 9999px;
@@ -152,8 +155,8 @@
 	button {
 		opacity: 0;
 		border: none;
-		background-color: rgb(90 90 90 / 25%);
-		backdrop-filter: blur($grid-unit-20) saturate(180%);
+		background-color: rgb( 90 90 90 / 25% );
+		backdrop-filter: blur( $grid-unit-20 ) saturate( 180% );
 		cursor: zoom-in;
 		display: flex;
 		justify-content: center;
@@ -167,12 +170,12 @@
 		text-align: center;
 		padding: 0;
 		border-radius: 4px;
-		@media not (prefers-reduced-motion) {
+		@media not ( prefers-reduced-motion ) {
 			transition: opacity 0.2s ease;
 		}
 
 		&:focus-visible {
-			outline: 3px auto rgb(90 90 90 / 25%);
+			outline: 3px auto rgb( 90 90 90 / 25% );
 			outline: 3px auto -webkit-focus-ring-color;
 			outline-offset: 3px;
 		}
@@ -188,8 +191,8 @@
 
 		&:hover,
 		&:focus,
-		&:not(:hover):not(:active):not(.has-background) {
-			background-color: rgb(90 90 90 / 25%);
+		&:not( :hover ):not( :active ):not( .has-background ) {
+			background-color: rgb( 90 90 90 / 25% );
 			border: none;
 		}
 	}
@@ -209,8 +212,12 @@
 
 	.close-button {
 		position: absolute;
-		top: calc(env(safe-area-inset-top) + 16px); // equivalent to $grid-unit-20
-		right: calc(env(safe-area-inset-right) + 16px); // equivalent to $grid-unit-20
+		top: calc(
+			env( safe-area-inset-top ) + 16px
+		); // equivalent to $grid-unit-20
+		right: calc(
+			env( safe-area-inset-right ) + 16px
+		); // equivalent to $grid-unit-20
 		padding: 0;
 		cursor: pointer;
 		z-index: 5000000;
@@ -222,7 +229,7 @@
 
 		&:hover,
 		&:focus,
-		&:not(:hover):not(:active):not(.has-background) {
+		&:not( :hover ):not( :active ):not( .has-background ) {
 			background: none;
 			border: none;
 		}
@@ -234,9 +241,9 @@
 		top: 50%;
 		left: 50%;
 		transform-origin: top left;
-		transform: translate(-50%, -50%);
-		width: var(--wp--lightbox-container-width);
-		height: var(--wp--lightbox-container-height);
+		transform: translate( -50%, -50% );
+		width: var( --wp--lightbox-container-width );
+		height: var( --wp--lightbox-container-height );
 		z-index: 9999999999;
 	}
 
@@ -253,10 +260,10 @@
 		margin: 0;
 
 		img {
-			min-width: var(--wp--lightbox-image-width);
-			min-height: var(--wp--lightbox-image-height);
-			width: var(--wp--lightbox-image-width);
-			height: var(--wp--lightbox-image-height);
+			min-width: var( --wp--lightbox-image-width );
+			min-height: var( --wp--lightbox-image-height );
+			width: var( --wp--lightbox-image-width );
+			height: var( --wp--lightbox-image-height );
 		}
 
 		figcaption {
@@ -274,7 +281,7 @@
 		height: 100%;
 		position: absolute;
 		z-index: 2000000;
-		background-color: rgb(255, 255, 255);
+		background-color: rgb( 255, 255, 255 );
 		opacity: 0.9;
 	}
 
@@ -282,29 +289,29 @@
 	// or faster than the scrim to give a sense of depth.
 	&.active {
 		visibility: visible;
-		@media not (prefers-reduced-motion) {
+		@media not ( prefers-reduced-motion ) {
 			animation: both turn-on-visibility 0.25s;
 		}
 		img {
-			@media not (prefers-reduced-motion) {
+			@media not ( prefers-reduced-motion ) {
 				animation: both turn-on-visibility 0.35s;
 			}
 		}
 	}
 	&.show-closing-animation {
-		&:not(.active) {
-			@media not (prefers-reduced-motion) {
+		&:not( .active ) {
+			@media not ( prefers-reduced-motion ) {
 				animation: both turn-off-visibility 0.35s;
 			}
 			img {
-				@media not (prefers-reduced-motion) {
+				@media not ( prefers-reduced-motion ) {
 					animation: both turn-off-visibility 0.25s;
 				}
 			}
 		}
 	}
 
-	@media not (prefers-reduced-motion) {
+	@media not ( prefers-reduced-motion ) {
 		&.zoom {
 			&.active {
 				opacity: 1;
@@ -322,7 +329,7 @@
 				}
 			}
 			&.show-closing-animation {
-				&:not(.active) {
+				&:not( .active ) {
 					animation: none;
 					.lightbox-image-container {
 						animation: lightbox-zoom-out 0.4s;
@@ -378,23 +385,37 @@
 
 @keyframes lightbox-zoom-in {
 	0% {
-		transform: translate(calc((-100vw + var(--wp--lightbox-scrollbar-width)) / 2 + var(--wp--lightbox-initial-left-position)), calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));
+		transform: translate(
+				calc(
+					( -100vw + var( --wp--lightbox-scrollbar-width ) ) / 2 +
+						var( --wp--lightbox-initial-left-position )
+				),
+				calc( -50vh + var( --wp--lightbox-initial-top-position ) )
+			)
+			scale( var( --wp--lightbox-scale ) );
 	}
 	100% {
-		transform: translate(-50%, -50%) scale(1, 1);
+		transform: translate( -50%, -50% ) scale( 1, 1 );
 	}
 }
 
 @keyframes lightbox-zoom-out {
 	0% {
 		visibility: visible;
-		transform: translate(-50%, -50%) scale(1, 1);
+		transform: translate( -50%, -50% ) scale( 1, 1 );
 	}
 	99% {
 		visibility: visible;
 	}
 	100% {
 		visibility: hidden;
-		transform: translate(calc((-100vw + var(--wp--lightbox-scrollbar-width)) / 2 + var(--wp--lightbox-initial-left-position)), calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));
+		transform: translate(
+				calc(
+					( -100vw + var( --wp--lightbox-scrollbar-width ) ) / 2 +
+						var( --wp--lightbox-initial-left-position )
+				),
+				calc( -50vh + var( --wp--lightbox-initial-top-position ) )
+			)
+			scale( var( --wp--lightbox-scale ) );
 	}
 }

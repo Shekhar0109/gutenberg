@@ -6,7 +6,7 @@
 	.components-popover__content {
 		padding: $grid-unit-10;
 
-		&:has(.components-menu-group) {
+		&:has( .components-menu-group ) {
 			padding: 0;
 
 			.components-dropdown-menu__menu > .components-menu-item__button,
@@ -17,7 +17,7 @@
 		}
 	}
 
-	[role="menuitem"] {
+	[role='menuitem'] {
 		white-space: nowrap;
 	}
 

@@ -14,10 +14,10 @@ $block-spacing: 4px;
 	border-top-width: $border-width;
 	border-bottom-width: $border-width;
 	position: absolute;
-	left: -($block-spacing + $border-width);
-	right: -($block-spacing + $border-width);
-	top: -($block-spacing + $border-width);
-	bottom: -($block-spacing + $border-width);
+	left: -( $block-spacing + $border-width );
+	right: -( $block-spacing + $border-width );
+	top: -( $block-spacing + $border-width );
+	bottom: -( $block-spacing + $border-width );
 }
 
 .linearGradient {
@@ -42,7 +42,7 @@ $block-spacing: 4px;
 }
 
 .placeholderTextColor {
-	color: rgba($color: $white, $alpha: 0.43);
+	color: rgba( $color: $white, $alpha: 0.43 );
 }
 
 .placeholder {

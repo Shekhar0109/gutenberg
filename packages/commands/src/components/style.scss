@@ -1,14 +1,14 @@
 // dirty hack to clean up modal
 .commands-command-menu {
 	border-radius: $grid-unit-05;
-	width: calc(100% - #{$grid-unit-40});
+	width: calc( 100% - #{$grid-unit-40} );
 	margin: auto;
 	max-width: 400px;
 	position: relative;
-	top: calc(5% + #{$header-height});
+	top: calc( 5% + #{$header-height} );
 
 	@include break-small() {
-		top: calc(10% + #{$header-height});
+		top: calc( 10% + #{$header-height} );
 	}
 
 	.components-modal__content {
@@ -75,9 +75,9 @@
 		color: $gray-900;
 		font-size: $default-font-size;
 
-		&[aria-selected="true"],
+		&[aria-selected='true'],
 		&:active {
-			background: var(--wp-admin-theme-color);
+			background: var( --wp-admin-theme-color );
 			color: $white;
 
 			svg {
@@ -85,7 +85,7 @@
 			}
 		}
 
-		&[aria-disabled="true"] {
+		&[aria-disabled='true'] {
 			color: $gray-600;
 			cursor: not-allowed;
 		}
@@ -110,11 +110,14 @@
 		overflow: auto;
 
 		// Ensures there is always padding bottom on the last group, when there are commands.
-		& [cmdk-list-sizer] > [cmdk-group]:last-child [cmdk-group-items]:not(:empty) {
+		&
+			[cmdk-list-sizer]
+			> [cmdk-group]:last-child
+			[cmdk-group-items]:not( :empty ) {
 			padding-bottom: $grid-unit-10;
 		}
 
-		& [cmdk-list-sizer] > [cmdk-group] > [cmdk-group-items]:not(:empty) {
+		& [cmdk-list-sizer] > [cmdk-group] > [cmdk-group-items]:not( :empty ) {
 			padding: 0 $grid-unit-10;
 		}
 	}

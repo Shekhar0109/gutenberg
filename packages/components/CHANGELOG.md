@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+-   Added async validation support to `FormTokenField`. (props @Shekhar0109)
+
 ## 30.2.0 (2025-08-20)
 
 ### Bug fixes

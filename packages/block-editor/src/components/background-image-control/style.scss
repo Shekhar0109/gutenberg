@@ -55,11 +55,12 @@
 		display: block;
 
 		&:hover {
-			color: var(--wp-admin-theme-color);
+			color: var( --wp-admin-theme-color );
 		}
 
 		&:focus {
-			box-shadow: inset 0 0 0 var(--wp-admin-border-width-focus) var(--wp-admin-theme-color);
+			box-shadow: inset 0 0 0 var( --wp-admin-border-width-focus )
+				var( --wp-admin-theme-color );
 		}
 	}
 
@@ -113,14 +114,14 @@
 }
 
 .block-editor-global-styles-background-panel__inspector-image-indicator::after {
-	content: "";
+	content: '';
 	position: absolute;
 	top: -1px;
 	left: -1px;
 	bottom: -1px;
 	right: -1px;
 	border-radius: $radius-round;
-	box-shadow: inset 0 0 0 $border-width rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 0 0 $border-width rgba( 0, 0, 0, 0.2 );
 	// Show a thin outline in Windows high contrast mode, otherwise the button is invisible.
 	border: 1px solid transparent;
 	box-sizing: inherit;
@@ -149,7 +150,7 @@
 
 // Push control panel into the background when the media modal is open.
 .modal-open .block-editor-global-styles-background-panel__popover {
-	z-index: z-index(".block-editor-global-styles-background-panel__popover");
+	z-index: z-index( '.block-editor-global-styles-background-panel__popover' );
 }
 
 .block-editor-global-styles-background-panel__media-replace-popover {

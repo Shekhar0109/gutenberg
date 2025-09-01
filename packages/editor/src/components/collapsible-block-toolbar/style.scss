@@ -16,16 +16,16 @@
 		// Push down so that buttons are centered vertically.
 		// It should be 16px (64px header height - 32px compact button height = 32 / 2),
 		// but there is a -1px top-margin down the stack that affects this.
-		padding-top: math.div($header-height - $button-size-compact, 2) + 1;
+		padding-top: math.div( $header-height - $button-size-compact, 2 ) + 1;
 
 		// Match the height of other buttons in the header toolbar.
-		.components-button:not(.block-editor-block-mover-button) {
+		.components-button:not( .block-editor-block-mover-button ) {
 			height: $button-size-compact;
 		}
 	}
 
 	&::after {
-		content: "";
+		content: '';
 		width: $border-width;
 		height: $grid-unit-30;
 		background-color: $gray-300;
@@ -39,7 +39,7 @@
 		position: relative;
 
 		&::after {
-			content: "";
+			content: '';
 			width: $border-width;
 			height: $grid-unit-30;
 			background-color: $gray-300;
@@ -65,7 +65,8 @@
 		// Reduce height and move up a little to prevent the toolbar
 		// shift when focus is on the vertical movers.
 		@include break-small() {
-			&:not(.is-horizontal) .block-editor-block-mover__move-button-container {
+			&:not( .is-horizontal )
+				.block-editor-block-mover__move-button-container {
 				height: $grid-unit-50;
 				position: relative;
 				top: #{$grid-unit-05 * -1};
@@ -77,4 +78,3 @@
 		display: none;
 	}
 }
-

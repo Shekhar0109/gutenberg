@@ -103,6 +103,7 @@ register_block_style(
     )
 );
 ```
+
 Another way is using the `style_data`property, as in below code example. It adds a block style to the image block with an orange border and slightly rounded corners.
 
 ```php
@@ -122,6 +123,7 @@ register_block_style(
     )
 );
 ```
+
 Using the `style_data` property empowers the user to change it with the Global Styles UI via the **Editor > Styles**. The `style_data`property was added in WordPress 6.6.
 
 More information via WordPress 6.6 Dev Note: [Section Styles](https://make.wordpress.org/core/2024/06/24/section-styles/).

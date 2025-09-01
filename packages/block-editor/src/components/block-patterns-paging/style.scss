@@ -1,5 +1,4 @@
 .block-editor-patterns__grid-pagination-wrapper {
-
 	.block-editor-patterns__grid-pagination {
 		border-top: 1px solid $gray-800;
 		padding: $grid-unit-05;
@@ -17,7 +16,7 @@
 		// ... and display labels.
 		// Uses ::before as ::after is already used for active tab styling.
 		&::before {
-			content: attr(aria-label);
+			content: attr( aria-label );
 		}
 	}
 }

@@ -78,12 +78,12 @@ Example:
 
 ```html
 <div data-wp-interactive="myblock" data-wp-router-region="main-list">
-  <ul>
-     <li><a href="/post-1">Post 1</a></li>
-     <li><a href="/post-2">Post 2</a></li>
-     <li><a href="/post-3">Post 3</a></li>
-  </ul>
-  <a data-wp-on--click="actions.navigate" href="/page/2">Page 2</a>
+	<ul>
+		<li><a href="/post-1">Post 1</a></li>
+		<li><a href="/post-2">Post 2</a></li>
+		<li><a href="/post-3">Post 3</a></li>
+	</ul>
+	<a data-wp-on--click="actions.navigate" href="/page/2">Page 2</a>
 </div>
 ```
 
@@ -100,10 +100,10 @@ Example with `attachTo`:
 
 ```html
 <div
-  data-wp-interactive="myblock"
-  data-wp-router-region='{ "id": "myblock/overlay", "attachTo": "body" }'
+	data-wp-interactive="myblock"
+	data-wp-router-region='{ "id": "myblock/overlay", "attachTo": "body" }'
 >
-  I'm in a new region!
+	I'm in a new region!
 </div>
 ```
 

@@ -26,7 +26,7 @@
 			height: 1em;
 		}
 
-		span:not(.screen-reader-text) {
+		span:not( .screen-reader-text ) {
 			margin-left: 0.5em;
 			margin-right: 0.5em;
 			font-size: 0.65em;
@@ -70,7 +70,7 @@
 .wp-block-social-link {
 	display: block;
 	border-radius: 9999px; // This makes it pill-shaped instead of oval, in cases where the image fed is not perfectly sized.
-	@media not (prefers-reduced-motion) {
+	@media not ( prefers-reduced-motion ) {
 		transition: transform 0.1s ease;
 	}
 
@@ -84,7 +84,7 @@
 	}
 
 	&:hover {
-		transform: scale(1.1);
+		transform: scale( 1.1 );
 	}
 }
 
@@ -107,16 +107,16 @@
 }
 
 // Provide colors for a range of icons.
-:where(.wp-block-social-links:not(.is-style-logos-only)) {
+:where( .wp-block-social-links:not( .is-style-logos-only ) ) {
 	// Generic items such as mail, feed, etc.
-	@import "../social-link/socials-with-bg.scss";
+	@import '../social-link/socials-with-bg.scss';
 }
 
 // Treatment for logos only style.
 // The specificity for this selector has not been reduced to 0-1-0 as per
 // global styles variation selectors as the lack of background should be
 // enforced for this block style.
-:where(.wp-block-social-links.is-style-logos-only) {
+:where( .wp-block-social-links.is-style-logos-only ) {
 	.wp-social-link {
 		background: none;
 
@@ -127,7 +127,7 @@
 		}
 	}
 
-	@import "../social-link/socials-without-bg.scss";
+	@import '../social-link/socials-without-bg.scss';
 }
 
 // Treatment for pill shape style.
@@ -139,20 +139,22 @@
 
 // The following rules have their selector specificity set to 0-1-0 to
 // facilitate theme.json styling of the inner social-link block padding.
-:root :where(.wp-block-social-links .wp-social-link a) {
+:root :where( .wp-block-social-links .wp-social-link a ) {
 	padding: 0.25em;
 }
-:root :where(.wp-block-social-links.is-style-logos-only .wp-social-link a) {
+:root :where( .wp-block-social-links.is-style-logos-only .wp-social-link a ) {
 	padding: 0;
 }
-:root :where(.wp-block-social-links.is-style-pill-shape .wp-social-link a) {
-	padding-left: calc((2/3) * 1em);
-	padding-right: calc((2/3) * 1em);
+:root :where( .wp-block-social-links.is-style-pill-shape .wp-social-link a ) {
+	padding-left: calc( ( 2 / 3 ) * 1em );
+	padding-right: calc( ( 2 / 3 ) * 1em );
 }
 
 // Ensure the Snapchat label is visible when no custom
 // icon color or background color is set.
-.wp-block-social-links:not(.has-icon-color):not(.has-icon-background-color) {
+.wp-block-social-links:not( .has-icon-color ):not(
+		.has-icon-background-color
+	) {
 	.wp-social-link-snapchat {
 		.wp-block-social-link-label {
 			color: #000;

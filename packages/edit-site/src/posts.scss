@@ -1,14 +1,14 @@
-@import "../../dataviews/src/style.scss";
-@import "./components/layout/style.scss";
-@import "./components/page/style.scss";
-@import "./components/save-hub/style.scss";
-@import "./components/save-panel/style.scss";
-@import "./components/sidebar/style.scss";
-@import "./components/site-hub/style.scss";
-@import "./components/site-icon/style.scss";
-@import "./components/editor-canvas-container/style.scss";
-@import "./components/post-list/style.scss";
-@import "./components/resizable-frame/style.scss";
+@import '../../dataviews/src/style.scss';
+@import './components/layout/style.scss';
+@import './components/page/style.scss';
+@import './components/save-hub/style.scss';
+@import './components/save-panel/style.scss';
+@import './components/sidebar/style.scss';
+@import './components/site-hub/style.scss';
+@import './components/site-icon/style.scss';
+@import './components/editor-canvas-container/style.scss';
+@import './components/post-list/style.scss';
+@import './components/resizable-frame/style.scss';
 
 @include wordpress-admin-schemes();
 
@@ -23,7 +23,7 @@ body.js #wpbody {
 	padding-top: 0;
 }
 body {
-	@include wp-admin-reset("#gutenberg-posts-dashboard");
+	@include wp-admin-reset( '#gutenberg-posts-dashboard' );
 }
 #gutenberg-posts-dashboard {
 	@include reset;

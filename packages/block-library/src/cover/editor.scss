@@ -10,7 +10,9 @@
 		.components-placeholder {
 			&.is-large {
 				justify-content: flex-start;
-				z-index: z-index(".wp-block-cover.is-placeholder .components-placeholder.is-large");
+				z-index: z-index(
+					'.wp-block-cover.is-placeholder .components-placeholder.is-large'
+				);
 			}
 		}
 
@@ -30,7 +32,7 @@
 
 		&::before {
 			background-color: #fff;
-			content: "";
+			content: '';
 			height: 100%;
 			opacity: 0.3;
 			position: absolute;
@@ -48,7 +50,7 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%); // Account for spinner dimensions
+		transform: translate( -50%, -50% ); // Account for spinner dimensions
 		margin: 0;
 	}
 
@@ -71,11 +73,10 @@
 		bottom: 0;
 		left: 0;
 	}
-
 }
 
-[data-align="left"] > .wp-block-cover,
-[data-align="right"] > .wp-block-cover {
+[data-align='left'] > .wp-block-cover,
+[data-align='right'] > .wp-block-cover {
 	max-width: $content-width * 0.5;
 	width: 100%;
 }
@@ -107,13 +108,13 @@
 	}
 }
 
-
 // Remove the parallax fixed background when in the patterns preview panel as it
 // doesn't work with the transforms that are applied to resize the block in that context.
 .block-editor-block-patterns-list__list-item .has-parallax.wp-block-cover {
 	background-attachment: scroll;
 }
 
-.color-block-support-panel__inner-wrapper > :not(.block-editor-tools-panel-color-gradient-settings__item) {
+.color-block-support-panel__inner-wrapper
+	> :not( .block-editor-tools-panel-color-gradient-settings__item ) {
 	margin-top: $grid-unit-30;
 }

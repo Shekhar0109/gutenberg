@@ -128,11 +128,13 @@ const [ item, setItem ] = useState( '' );
 // ...
 
 <SelectControl
-    label={ __( 'My dinosaur' ) }
-    value={ item } // e.g: value = 'a'
-    onChange={ ( selection ) => { setItem( selection ) } }
-    __next40pxDefaultSize
-    __nextHasNoMarginBottom
+	label={ __( 'My dinosaur' ) }
+	value={ item } // e.g: value = 'a'
+	onChange={ ( selection ) => {
+		setItem( selection );
+	} }
+	__next40pxDefaultSize
+	__nextHasNoMarginBottom
 >
 	<optgroup label="Theropods">
 		<option value="Tyrannosaurus">Tyrannosaurus</option>
@@ -144,7 +146,7 @@ const [ item, setItem ] = useState( '' );
 		<option value="Saltasaurus">Saltasaurus</option>
 		<option value="Apatosaurus">Apatosaurus</option>
 	</optgroup>
-</SelectControl>
+</SelectControl>;
 ```
 
 ### Props
@@ -205,8 +207,9 @@ An array of objects containing the following properties, as well as any other `o
 
 An alternative to the `options` prop.
 Use the `children` prop to have more control on the style of the items being rendered, like `optgroup`s or `options` and possibly avoid re-rendering due to the reference update on the `options` prop.
-- Type: `ReactNode`
-- Required: No
+
+-   Type: `ReactNode`
+-   Required: No
 
 #### onChange
 
@@ -232,7 +235,7 @@ The style variant of the control.
 -   Required: No
 -   Default: `'default'`
 
-### __next40pxDefaultSize
+### \_\_next40pxDefaultSize
 
 Start opting into the larger default height that will become the default size in a future version.
 
@@ -240,7 +243,7 @@ Start opting into the larger default height that will become the default size in
 -   Required: No
 -   Default: `false`
 
-### __nextHasNoMarginBottom
+### \_\_nextHasNoMarginBottom
 
 Start opting into the new margin-free styles that will become the default in a future version.
 

@@ -26,7 +26,7 @@
 	position: absolute;
 	right: 0;
 	top: 0;
-	@media not (prefers-reduced-motion) {
+	@media not ( prefers-reduced-motion ) {
 		transition: all 0.3s; // Match .block-editor-iframe__body transition.
 	}
 }

@@ -40,7 +40,7 @@
 // otherwise it won't be able to drag elements containing
 // the preview iframe in Safari.
 .block-editor-block-preview__container::after {
-	content: "";
+	content: '';
 	position: absolute;
 	top: 0;
 	left: 0;

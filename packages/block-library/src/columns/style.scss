@@ -28,7 +28,7 @@
 		align-items: flex-end;
 	}
 
-	&:not(.is-not-stacked-on-mobile) > .wp-block-column {
+	&:not( .is-not-stacked-on-mobile ) > .wp-block-column {
 		@media (max-width: #{ ($break-medium - 1) }) {
 			// Responsiveness: Show at most one columns on mobile. This must be
 			// important since the Column assigns its own width as an inline style.
@@ -49,7 +49,7 @@
 
 			// Columns with an explicitly-assigned width should maintain their
 			// `flex-basis` width and not grow.
-			&[style*="flex-basis"] {
+			&[style*='flex-basis'] {
 				flex-grow: 0;
 			}
 		}
@@ -65,7 +65,7 @@
 			flex-grow: 1;
 			// Columns with an explicitly-assigned width should maintain their
 			// `flex-basis` width and not grow.
-			&[style*="flex-basis"] {
+			&[style*='flex-basis'] {
 				flex-grow: 0;
 			}
 		}
@@ -73,16 +73,15 @@
 }
 
 // Lower specificity of margin styles so they don't override the Layout block support.
-:where(.wp-block-columns) {
+:where( .wp-block-columns ) {
 	margin-bottom: 1.75em;
 }
 
 // Add low specificity default padding to columns blocks with backgrounds.
-:where(.wp-block-columns.has-background) {
+:where( .wp-block-columns.has-background ) {
 	// Matches paragraph block padding.
 	padding: $block-bg-padding--v $block-bg-padding--h;
 }
-
 
 .wp-block-column {
 	flex-grow: 1;

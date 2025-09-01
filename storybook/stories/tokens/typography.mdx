@@ -42,17 +42,17 @@ They are defined as SASS mixins and can be used like so:
 ### Headings
 
 <Typeset
-	fontSizes={[
-		Number(typography.size.s6),
-		Number(typography.size.s5),
-		Number(typography.size.s4),
-		Number(typography.size.s3),
-		Number(typography.size.s2),
-		Number(typography.size.s1),
-	]}
-	fontWeight={typography.weight.medium}
-	sampleText={SampleTextHeading}
-	fontFamily={typography.type.primary}
+	fontSizes={ [
+		Number( typography.size.s6 ),
+		Number( typography.size.s5 ),
+		Number( typography.size.s4 ),
+		Number( typography.size.s3 ),
+		Number( typography.size.s2 ),
+		Number( typography.size.s1 ),
+	] }
+	fontWeight={ typography.weight.medium }
+	sampleText={ SampleTextHeading }
+	fontFamily={ typography.type.primary }
 />
 
 <table>
@@ -65,23 +65,38 @@ They are defined as SASS mixins and can be used like so:
 	<tbody>
 		<tr>
 			<td>heading-2x-large</td>
-			<td>`$font-family-headings`, `font-weight-medium`, `font-size-2x-large`, `line-height-2x-large`</td>
+			<td>
+				`$font-family-headings`, `font-weight-medium`,
+				`font-size-2x-large`, `line-height-2x-large`
+			</td>
 		</tr>
 		<tr>
 			<td>heading-x-large</td>
-			<td>`$font-family-headings`, `font-weight-medium`, `font-size-x-large`, `line-height-medium`</td>
+			<td>
+				`$font-family-headings`, `font-weight-medium`,
+				`font-size-x-large`, `line-height-medium`
+			</td>
 		</tr>
 		<tr>
 			<td>heading-large</td>
-			<td>`$font-family-headings`, `font-weight-medium`, `font-size-large`, `line-height-small`</td>
+			<td>
+				`$font-family-headings`, `font-weight-medium`,
+				`font-size-large`, `line-height-small`
+			</td>
 		</tr>
 		<tr>
 			<td>heading-medium</td>
-			<td>`$font-family-headings`, `font-weight-medium`, `font-size-medium`, `line-height-small`</td>
+			<td>
+				`$font-family-headings`, `font-weight-medium`,
+				`font-size-medium`, `line-height-small`
+			</td>
 		</tr>
 		<tr>
 			<td>heading-small</td>
-			<td>`$font-family-headings`, `font-weight-medium`, `font-size-x-small`, `line-height-x-small`</td>
+			<td>
+				`$font-family-headings`, `font-weight-medium`,
+				`font-size-x-small`, `line-height-x-small`
+			</td>
 		</tr>
 	</tbody>
 </table>
@@ -89,15 +104,15 @@ They are defined as SASS mixins and can be used like so:
 ### Body
 
 <Typeset
-	fontSizes={[
-		Number(typography.size.s5),
-		Number(typography.size.s4),
-		Number(typography.size.s3),
-		Number(typography.size.s2),
-	]}
-	fontWeight={typography.weight.regular}
-	sampleText={SampleTextParagraph}
-	fontFamily={typography.type.primary}
+	fontSizes={ [
+		Number( typography.size.s5 ),
+		Number( typography.size.s4 ),
+		Number( typography.size.s3 ),
+		Number( typography.size.s2 ),
+	] }
+	fontWeight={ typography.weight.regular }
+	sampleText={ SampleTextParagraph }
+	fontFamily={ typography.type.primary }
 />
 
 <table>
@@ -110,28 +125,41 @@ They are defined as SASS mixins and can be used like so:
 	<tbody>
 		<tr>
 			<td>body-x-large</td>
-			<td>`$font-family-body`, `font-weight-regular`, `font-size-x-large`, `line-height-x-large`</td>
+			<td>
+				`$font-family-body`, `font-weight-regular`, `font-size-x-large`,
+				`line-height-x-large`
+			</td>
 		</tr>
 		<tr>
 			<td>body-large</td>
-			<td>`$font-family-body`, `font-weight-regular`, `font-size-large`, `line-height-medium`</td>
+			<td>
+				`$font-family-body`, `font-weight-regular`, `font-size-large`,
+				`line-height-medium`
+			</td>
 		</tr>
 		<tr>
 			<td>body-medium</td>
-			<td>`$font-family-body`, `font-weight-regular`, `font-size-medium`, `line-height-small`</td>
+			<td>
+				`$font-family-body`, `font-weight-regular`, `font-size-medium`,
+				`line-height-small`
+			</td>
 		</tr>
 		<tr>
 			<td>body-small</td>
-			<td>`$font-family-body`, `font-weight-regular`, `font-size-small`, `line-height-x-small`</td>
+			<td>
+				`$font-family-body`, `font-weight-regular`, `font-size-small`,
+				`line-height-x-small`
+			</td>
 		</tr>
 	</tbody>
 </table>
 
 ## Primitive tokens
- 
+
 Primitive tokens are organized into 4 sets relating to `size`, `line-height`, `weight`, and `family`, defined as SASS variables.
 
 ### Size
+
 ```css
 $font-size-x-small: 11px;
 $font-size-small: 12px;
@@ -162,8 +190,10 @@ $font-weight-medium: 500;
 ### Families
 
 ```css
-$font-family-headings: -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-$font-family-body: -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font-family-headings: -apple-system, 'system-ui', 'Segoe UI', Roboto,
+	Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+$font-family-body: -apple-system, 'system-ui', 'Segoe UI', Roboto, Oxygen-Sans,
+	Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 $font-family-mono: Menlo, Consolas, monaco, monospace;
 ```
 

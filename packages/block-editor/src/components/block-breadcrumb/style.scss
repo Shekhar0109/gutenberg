@@ -13,7 +13,7 @@
 			margin-right: -$grid-unit-05;
 
 			// Flip for RTL.
-			transform: scaleX(1) #{"/*rtl:scaleX(-1);*/"}; // This points the chevron right for LTR and left for RTL.
+			transform: scaleX( 1 ) #{'/*rtl:scaleX(-1);*/'}; // This points the chevron right for LTR and left for RTL.
 		}
 
 		&:last-child .block-editor-block-breadcrumb__separator {

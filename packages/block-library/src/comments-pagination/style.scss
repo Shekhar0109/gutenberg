@@ -10,18 +10,18 @@ $pagination-margin: 0.5em;
 		margin-right: 1ch;
 		display: inline-block; // Needed so that the transform works.
 		// chevron(`»`) symbol doesn't need the mirroring by us.
-		&:not(.is-arrow-chevron) {
+		&:not( .is-arrow-chevron ) {
 			// Flip for RTL.
-			transform: scaleX(1) #{"/*rtl:scaleX(-1);*/"}; // This points the arrow right for LTR and left for RTL.
+			transform: scaleX( 1 ) #{'/*rtl:scaleX(-1);*/'}; // This points the arrow right for LTR and left for RTL.
 		}
 	}
 	.wp-block-comments-pagination-next-arrow {
 		margin-left: 1ch;
 		display: inline-block; // Needed so that the transform works.
 		// chevron(`»`) symbol doesn't need the mirroring by us.
-		&:not(.is-arrow-chevron) {
+		&:not( .is-arrow-chevron ) {
 			// Flip for RTL.
-			transform: scaleX(1) #{"/*rtl:scaleX(-1);*/"}; // This points the arrow right for LTR and left for RTL.
+			transform: scaleX( 1 ) #{'/*rtl:scaleX(-1);*/'}; // This points the arrow right for LTR and left for RTL.
 		}
 	}
 

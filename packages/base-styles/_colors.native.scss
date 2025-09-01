@@ -1,6 +1,6 @@
 /** @format */
 
-@use "sass:color";
+@use 'sass:color';
 
 // Hugo's new WordPress shades of gray, from http://codepen.io/hugobaeta/pen/grJjVp.
 $black: #000;
@@ -10,17 +10,15 @@ $light-gray-500: #e2e4e7; // Good for "grayed" items and borders.
 $light-gray-400: #e8eaeb; // Good for "readonly" input fields and special text selection.
 
 // Dark opacities, for use with light themes.
-$dark-opacity-900: rgba(#000510, 0.9);
-$dark-opacity-800: rgba(#00000a, 0.85);
-$dark-opacity-600: rgba(#000913, 0.75);
-
+$dark-opacity-900: rgba( #000510, 0.9 );
+$dark-opacity-800: rgba( #00000a, 0.85 );
+$dark-opacity-600: rgba( #000913, 0.75 );
 
 // Light opacities, for use with dark themes.
-$light-opacity-700: rgba($white, 0.85);
-$light-opacity-200: rgba($white, 0.6);
-$light-opacity-light-100: rgba($white, 0.1);
-$light-opacity-light-700: rgba($white, 0.4);
-
+$light-opacity-700: rgba( $white, 0.85 );
+$light-opacity-200: rgba( $white, 0.6 );
+$light-opacity-light-100: rgba( $white, 0.1 );
+$light-opacity-light-700: rgba( $white, 0.4 );
 
 // Alert colors.
 $alert-yellow: #f0b849;
@@ -43,23 +41,23 @@ $blue-30: #5198d9;
 
 // Grays
 $gray: #87a6bc;
-$gray-light: color.adjust($gray, $lightness: 33%); //#f3f6f8
-$gray-dark: color.adjust($gray, $lightness: -38%); //#2e4453
+$gray-light: color.adjust( $gray, $lightness: 33% ); //#f3f6f8
+$gray-dark: color.adjust( $gray, $lightness: -38% ); //#2e4453
 $gray-900: #1a1a1a;
 $gray-700: #757575;
 
 // $gray-text: ideal for standard, non placeholder text
 // $gray-text-min: minimum contrast needed for WCAG 2.0 AA on white background
 $gray-text: $gray-dark;
-$gray-text-min: color.adjust($gray, $lightness: -18%); //#537994
+$gray-text-min: color.adjust( $gray, $lightness: -18% ); //#537994
 
 // Shades of gray
-$gray-lighten-10: color.adjust($gray, $lightness: 10%); // #a8bece
-$gray-lighten-20: color.adjust($gray, $lightness: 20%); // #c8d7e1
-$gray-lighten-30: color.adjust($gray, $lightness: 30%); // #e9eff3
-$gray-darken-10: color.adjust($gray, $lightness: -10%);
-$gray-darken-20: color.adjust($gray, $lightness: -20%); // #4f748e
-$gray-darken-30: color.adjust($gray, $lightness: -30%); // #3d596d
+$gray-lighten-10: color.adjust( $gray, $lightness: 10% ); // #a8bece
+$gray-lighten-20: color.adjust( $gray, $lightness: 20% ); // #c8d7e1
+$gray-lighten-30: color.adjust( $gray, $lightness: 30% ); // #e9eff3
+$gray-darken-10: color.adjust( $gray, $lightness: -10% );
+$gray-darken-20: color.adjust( $gray, $lightness: -20% ); // #4f748e
+$gray-darken-30: color.adjust( $gray, $lightness: -30% ); // #3d596d
 
 // Custom
 $toolbar-button: #7b9ab1;

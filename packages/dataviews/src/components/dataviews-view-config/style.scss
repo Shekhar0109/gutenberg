@@ -6,7 +6,8 @@
 	line-height: $default-line-height;
 }
 
-.dataviews-config__popover.is-expanded .dataviews-config__popover-content-wrapper {
+.dataviews-config__popover.is-expanded
+	.dataviews-config__popover-content-wrapper {
 	overflow-y: scroll;
 	height: 100%;
 	.dataviews-view-config {
@@ -14,7 +15,8 @@
 	}
 }
 
-.dataviews-view-config__sort-direction .components-toggle-group-control-option-base {
+.dataviews-view-config__sort-direction
+	.components-toggle-group-control-option-base {
 	text-transform: uppercase;
 }
 
@@ -39,13 +41,13 @@
 	}
 }
 
-.dataviews-settings-section:has(.dataviews-settings-section__content:empty) {
+.dataviews-settings-section:has( .dataviews-settings-section__content:empty ) {
 	display: none;
 }
 
 @container (max-width: 500px) {
 	.dataviews-settings-section.dataviews-settings-section {
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat( 2, 1fr );
 		.dataviews-settings-section__sidebar {
 			grid-column: span 2;
 		}

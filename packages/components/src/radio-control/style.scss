@@ -14,12 +14,12 @@
 .components-radio-control__option {
 	display: grid;
 	grid-template-columns: auto 1fr;
-	grid-template-rows: auto minmax(0, max-content);
+	grid-template-rows: auto minmax( 0, max-content );
 	column-gap: $grid-unit-10;
 	align-items: center;
 }
 
-.components-radio-control__input[type="radio"] {
+.components-radio-control__input[type='radio'] {
 	grid-column: 1;
 	grid-row: 1;
 
@@ -32,7 +32,7 @@
 	cursor: pointer;
 
 	&:focus {
-		@include button-style-outset__focus(var(--wp-admin-theme-color));
+		@include button-style-outset__focus( var( --wp-admin-theme-color ) );
 	}
 
 	&:checked {
@@ -40,7 +40,7 @@
 		border-color: $components-color-accent;
 
 		&::before {
-			content: "";
+			content: '';
 			border-radius: $radius-round;
 		}
 	}

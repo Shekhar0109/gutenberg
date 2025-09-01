@@ -231,11 +231,11 @@ This has happened occasionally, see [this one](https://github.com/WordPress/gute
 
 It's important to check that:
 
-- the plugin from the directory works as expected
-- the ZIP contents (see [Downloads](https://plugins.trac.wordpress.org/browser/gutenberg/)) looks correct (doesn't have anything obvious missing)
-- the [Gutenberg SVN repo](https://plugins.trac.wordpress.org/browser/gutenberg/) has two new commits (see [the log](https://plugins.trac.wordpress.org/browser/gutenberg/)):
-  - the `trunk` folder should have "Committing version X.Y.Z"
-  - there is a new `tags/X.Y.Z` folder with the same contents as `trunk` whose latest commit is "Tagging version X.Y.Z"
+-   the plugin from the directory works as expected
+-   the ZIP contents (see [Downloads](https://plugins.trac.wordpress.org/browser/gutenberg/)) looks correct (doesn't have anything obvious missing)
+-   the [Gutenberg SVN repo](https://plugins.trac.wordpress.org/browser/gutenberg/) has two new commits (see [the log](https://plugins.trac.wordpress.org/browser/gutenberg/)):
+    -   the `trunk` folder should have "Committing version X.Y.Z"
+    -   there is a new `tags/X.Y.Z` folder with the same contents as `trunk` whose latest commit is "Tagging version X.Y.Z"
 
 Most likely, the tag folder couldn't be created. This is a [known issue](https://github.com/WordPress/gutenberg/issues/55295) that [can be fixed manually](https://github.com/WordPress/gutenberg/issues/55295#issuecomment-1759292978).
 
@@ -484,13 +484,13 @@ Whilst waiting for the GitHub actions build for `wp/latest`[branch to pass](http
 1. `git checkout wp/latest`
 2. `npx lerna updated`
    Example:
-   ```shell
-   npx lerna updated
-   @wordpress/e2e-tests
-   @wordpress/jest-preset-default
-   @wordpress/scripts
-   lerna success found 3 packages ready to publish
-   ```
+    ```shell
+    npx lerna updated
+    @wordpress/e2e-tests
+    @wordpress/jest-preset-default
+    @wordpress/scripts
+    lerna success found 3 packages ready to publish
+    ```
 
 Check the versions listed in the current `CHANGELOG.md` file, looking through the commit history of a package e.g [@wordpress/scripts](https://github.com/WordPress/gutenberg/commits/HEAD/packages/scripts) and look out for _"chore(release): publish"_ and _"Update changelogs"_ commits to determine recent version bumps, then looking at the commits since the most recent release should aid with discovering what changes have occurred since the last release.
 

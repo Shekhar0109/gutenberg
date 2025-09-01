@@ -6,7 +6,7 @@
 	flex-direction: column;
 
 	// Show a dark background in "frame" mode to avoid edge artifacts.
-	&:not(.is-full-canvas) .editor-visual-editor {
+	&:not( .is-full-canvas ) .editor-visual-editor {
 		background: $gray-900;
 	}
 }
@@ -18,7 +18,7 @@
 }
 
 .edit-site-layout__sidebar-region {
-	z-index: z-index(".edit-site-layout__sidebar");
+	z-index: z-index( '.edit-site-layout__sidebar' );
 	width: 100vw;
 	flex-shrink: 0;
 
@@ -55,7 +55,7 @@
 .edit-site-layout__mobile {
 	position: relative;
 	width: 100%;
-	z-index: z-index(".edit-site-layout__canvas-container");
+	z-index: z-index( '.edit-site-layout__canvas-container' );
 	display: flex;
 	flex-direction: column;
 
@@ -79,7 +79,7 @@
 .edit-site-layout__canvas-container {
 	position: relative;
 	flex-grow: 1;
-	z-index: z-index(".edit-site-layout__canvas-container");
+	z-index: z-index( '.edit-site-layout__canvas-container' );
 	// When animating the frame size can exceed its container size.
 	overflow: visible;
 
@@ -91,8 +91,10 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		content: "";
-		z-index: z-index(".edit-site-layout__canvas-container.is-resizing::after");
+		content: '';
+		z-index: z-index(
+			'.edit-site-layout__canvas-container.is-resizing::after'
+		);
 	}
 }
 
@@ -117,18 +119,20 @@
 	@include break-medium {
 		top: $canvas-padding;
 		bottom: $canvas-padding;
-		width: calc(100% - #{$canvas-padding});
+		width: calc( 100% - #{$canvas-padding} );
 
 		.edit-site-resizable-frame__inner-content {
 			box-shadow: $elevation-x-small;
 			// This ensure the radius work properly.
 			overflow: hidden;
 
-			@media not (prefers-reduced-motion) {
-				transition: border-radius, box-shadow 0.4s;
+			@media not ( prefers-reduced-motion ) {
+				transition:
+					border-radius,
+					box-shadow 0.4s;
 			}
 
-			.edit-site-layout:not(.is-full-canvas) & {
+			.edit-site-layout:not( .is-full-canvas ) & {
 				border-radius: $radius-large;
 			}
 
@@ -158,20 +162,22 @@
 }
 
 /* stylelint-disable -- Disable reason: View Transitions not supported properly by stylelint. */
-html.canvas-mode-edit-transition::view-transition-group(toggle) {
+html.canvas-mode-edit-transition::view-transition-group( toggle ) {
 	animation-delay: 255ms;
 }
 
-@media (prefers-reduced-motion) {
-	::view-transition-group(*),
-	::view-transition-old(*),
-	::view-transition-new(*) {
+@media ( prefers-reduced-motion ) {
+	::view-transition-group( * ),
+	::view-transition-old( * ),
+	::view-transition-new( * ) {
 		animation: none !important;
 	}
 }
 /* stylelint-enable  */
 
-.edit-site-layout.is-full-canvas .edit-site-layout__sidebar-region .edit-site-layout__view-mode-toggle {
+.edit-site-layout.is-full-canvas
+	.edit-site-layout__sidebar-region
+	.edit-site-layout__view-mode-toggle {
 	display: none;
 }
 
@@ -198,13 +204,15 @@ html.canvas-mode-edit-transition::view-transition-group(toggle) {
 
 	&:focus-visible,
 	&:focus {
-		box-shadow: 0 0 0 3px #1e1e1e, 0 0 0 6px var(--wp-admin-theme-color);
+		box-shadow:
+			0 0 0 3px #1e1e1e,
+			0 0 0 6px var( --wp-admin-theme-color );
 		outline: 4px solid #0000;
 		outline-offset: 4px;
 	}
 
 	&::before {
-		content: "";
+		content: '';
 		display: block;
 		position: absolute;
 		top: 9px;
@@ -214,7 +222,7 @@ html.canvas-mode-edit-transition::view-transition-group(toggle) {
 		border-radius: $radius-medium;
 		box-shadow: none;
 
-		@media not (prefers-reduced-motion) {
+		@media not ( prefers-reduced-motion ) {
 			transition: box-shadow 0.1s ease;
 		}
 	}
@@ -229,7 +237,7 @@ html.canvas-mode-edit-transition::view-transition-group(toggle) {
 }
 
 .edit-site-layout__actions {
-	z-index: z-index(".edit-site-layout__actions");
+	z-index: z-index( '.edit-site-layout__actions' );
 	position: fixed !important; // Need to override the default relative positioning
 	top: -9999em;
 	bottom: auto;

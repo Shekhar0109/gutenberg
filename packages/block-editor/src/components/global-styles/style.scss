@@ -45,7 +45,7 @@
 	top: $grid-unit;
 	margin: auto $grid-unit auto;
 	opacity: 0;
-	@media not (prefers-reduced-motion) {
+	@media not ( prefers-reduced-motion ) {
 		transition: opacity 0.1s ease-in-out;
 	}
 
@@ -55,7 +55,7 @@
 		opacity: 1;
 	}
 
-	@media (hover: none) {
+	@media ( hover: none ) {
 		// Show reset button on devices that do not support hover.
 		opacity: 1;
 	}
@@ -78,22 +78,28 @@
 	width: $button-size-small + 2 * $border-width;
 	box-sizing: border-box;
 
-	transform: scale(1);
+	transform: scale( 1 );
 	@media not ( prefers-reduced-motion ) {
 		transition: transform 0.1s ease;
 	}
 	will-change: transform;
 
 	&:focus {
-		border: #{ $border-width * 2 } solid $gray-700;
+		border: #{$border-width * 2} solid $gray-700;
 	}
 
 	&:hover {
-		transform: scale(1.2);
+		transform: scale( 1.2 );
 	}
 
 	&.unset {
-		background: linear-gradient(-45deg, transparent 48%, $gray-300 48%, $gray-300 52%, transparent 52%);
+		background: linear-gradient(
+			-45deg,
+			transparent 48%,
+			$gray-300 48%,
+			$gray-300 52%,
+			transparent 52%
+		);
 	}
 }
 
@@ -110,7 +116,7 @@
 	top: $grid-unit;
 	margin: auto $grid-unit auto;
 	opacity: 0;
-	@media not (prefers-reduced-motion) {
+	@media not ( prefers-reduced-motion ) {
 		transition: opacity 0.1s ease-in-out;
 	}
 
@@ -120,7 +126,7 @@
 		opacity: 1;
 	}
 
-	@media (hover: none) {
+	@media ( hover: none ) {
 		// Show reset button on devices that do not support hover.
 		opacity: 1;
 	}

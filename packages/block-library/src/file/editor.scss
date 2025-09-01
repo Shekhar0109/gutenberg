@@ -1,10 +1,10 @@
 .wp-block-file {
-	.wp-block[data-align="left"] > &,
-	.wp-block[data-align="right"] > & {
+	.wp-block[data-align='left'] > &,
+	.wp-block[data-align='right'] > & {
 		// Stop file block from collapsing when floated.
 		height: auto;
 	}
-	.wp-block[data-align="center"] > & {
+	.wp-block[data-align='center'] > & {
 		text-align: center;
 	}
 
@@ -39,7 +39,7 @@
 	a {
 		min-width: 1em;
 
-		&:not(.wp-block-file__button) {
+		&:not( .wp-block-file__button ) {
 			display: inline-block;
 		}
 	}

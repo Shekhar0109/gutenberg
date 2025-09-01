@@ -69,7 +69,7 @@ div.components-toolbar {
 
 		&.has-left-divider::before {
 			display: inline-block;
-			content: "";
+			content: '';
 			box-sizing: content-box;
 			background-color: $gray-300;
 			position: absolute;

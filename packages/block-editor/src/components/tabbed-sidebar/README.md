@@ -22,7 +22,7 @@ const MyTabbedSidebar = () => (
 				name: 'slug-1',
 				title: _x( 'Title 1', 'context' ),
 				panel: <PanelContents />,
-				panelRef: useRef('an-optional-ref'),
+				panelRef: useRef( 'an-optional-ref' ),
 			},
 			{
 				name: 'slug-2',
@@ -75,10 +75,10 @@ The ID of the currently selected tab.
 
 Array of tab objects. Each tab should have:
 
-- `name` (string): Unique identifier for the tab
-- `title` (string): Display title for the tab
-- `panel` (React.Node): Content to display in the tab panel
-- `panelRef` (React.Ref, optional): Reference to the tab panel element
+-   `name` (string): Unique identifier for the tab
+-   `title` (string): Display title for the tab
+-   `panel` (React.Node): Content to display in the tab panel
+-   `panelRef` (React.Ref, optional): Reference to the tab panel element
 
 #### `closeButtonLabel`
 

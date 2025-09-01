@@ -12,17 +12,20 @@
 	border: $border-width solid $gray-300;
 	border-width: $border-width 0;
 	// Cover up horizontal areas off the sides of the box rectangle
-	box-shadow: -$grid-unit-40 0 0 0 $white, $grid-unit-40 0 0 0 $white;
+	box-shadow:
+		-$grid-unit-40 0 0 0 $white,
+		$grid-unit-40 0 0 0 $white;
 	padding: $grid-unit-10;
 	background-color: $white;
 	text-align: center;
 	position: sticky;
 	// When sticking, tuck the top border beneath the modal header border
-	top: ($grid-unit-05 + 1) * -1;
-	z-index: z-index(".block-editor-block-manager__disabled-blocks-count");
+	top: ( $grid-unit-05 + 1 ) * -1;
+	z-index: z-index( '.block-editor-block-manager__disabled-blocks-count' );
 
 	// Stick the category titles to the bottom
-	~ .block-editor-block-manager__results .block-editor-block-manager__category-title {
+	~ .block-editor-block-manager__results
+		.block-editor-block-manager__category-title {
 		top: $grid-unit-40 - 1;
 	}
 	.is-link {
@@ -36,10 +39,10 @@
 
 .block-editor-block-manager__category-title {
 	position: sticky;
-	top: - $grid-unit-05; // Offsets the top padding on the modal content container
+	top: -$grid-unit-05; // Offsets the top padding on the modal content container
 	padding: $grid-unit-20 0;
 	background-color: $white;
-	z-index: z-index(".block-editor-block-manager__category-title");
+	z-index: z-index( '.block-editor-block-manager__category-title' );
 
 	.components-checkbox-control__label {
 		font-weight: 600;
@@ -77,6 +80,7 @@
 }
 
 // Remove the top border from results when adjacent to the disabled block count
-.block-editor-block-manager__disabled-blocks-count + .block-editor-block-manager__results {
+.block-editor-block-manager__disabled-blocks-count
+	+ .block-editor-block-manager__results {
 	border-top-width: 0;
 }

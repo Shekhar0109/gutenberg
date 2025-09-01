@@ -2,7 +2,7 @@
 	display: flex;
 	align-items: stretch;
 	flex-direction: row;
-	&[aria-orientation="vertical"] {
+	&[aria-orientation='vertical'] {
 		flex-direction: column;
 	}
 }
@@ -19,7 +19,7 @@
 	margin-left: 0;
 	font-weight: 500;
 
-	&:focus:not(:disabled) {
+	&:focus:not( :disabled ) {
 		position: relative;
 		box-shadow: none;
 		outline: none;
@@ -27,7 +27,7 @@
 
 	// Tab indicator
 	&::after {
-		content: "";
+		content: '';
 		position: absolute;
 		right: 0;
 		bottom: 0;
@@ -36,18 +36,18 @@
 
 		// Draw the indicator.
 		background: $components-color-accent;
-		height: calc(0 * var(--wp-admin-border-width-focus));
+		height: calc( 0 * var( --wp-admin-border-width-focus ) );
 		border-radius: 0;
 
 		// Animation
-		@media not (prefers-reduced-motion) {
+		@media not ( prefers-reduced-motion ) {
 			transition: all 0.1s linear;
 		}
 	}
 
 	// Active.
 	&.is-active::after {
-		height: calc(1 * var(--wp-admin-border-width-focus));
+		height: calc( 1 * var( --wp-admin-border-width-focus ) );
 
 		// Windows high contrast mode.
 		outline: 2px solid transparent;
@@ -56,7 +56,7 @@
 
 	// Focus.
 	&::before {
-		content: "";
+		content: '';
 		position: absolute;
 		top: $grid-unit-15;
 		right: $grid-unit-15;
@@ -69,13 +69,14 @@
 		border-radius: $radius-small;
 
 		// Animation
-		@media not (prefers-reduced-motion) {
+		@media not ( prefers-reduced-motion ) {
 			transition: all 0.1s linear;
 		}
 	}
 
 	&:focus-visible::before {
-		box-shadow: 0 0 0 var(--wp-admin-border-width-focus) $components-color-accent;
+		box-shadow: 0 0 0 var( --wp-admin-border-width-focus )
+			$components-color-accent;
 
 		// Windows high contrast mode.
 		outline: 2px solid transparent;
@@ -89,7 +90,8 @@
 	}
 
 	&:focus-visible {
-		box-shadow: 0 0 0 var(--wp-admin-border-width-focus) $components-color-accent;
+		box-shadow: 0 0 0 var( --wp-admin-border-width-focus )
+			$components-color-accent;
 
 		// Windows high contrast mode.
 		outline: 2px solid transparent;

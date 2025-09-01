@@ -51,7 +51,8 @@ $ npx @wordpress/create-block@latest my-block --namespace=my-namespace
 This creates `my-namespace/my-block` instead of `create-block/my-block`.
 
 If you've already created a block, update the namespace in:
-- `block.json` - the `name` property
+
+-   `block.json` - the `name` property
 
 ### `slug`
 

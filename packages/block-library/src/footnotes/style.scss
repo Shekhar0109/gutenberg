@@ -15,7 +15,7 @@ a[data-fn].fn {
 }
 
 a[data-fn].fn::after {
-	content: "[" counter(footnotes) "]";
+	content: '[' counter( footnotes ) ']';
 	text-indent: 0;
 	float: left;
 }

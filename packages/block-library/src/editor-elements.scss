@@ -4,7 +4,7 @@
 .wp-element-button {
 	cursor: revert;
 
-	&[role="textbox"] {
+	&[role='textbox'] {
 		cursor: text;
 	}
 }

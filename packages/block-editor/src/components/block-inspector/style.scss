@@ -1,5 +1,5 @@
 .block-editor-block-inspector {
-	p:not(.components-base-control__help) {
+	p:not( .components-base-control__help ) {
 		margin-top: 0;
 	}
 
@@ -14,7 +14,7 @@
 	.components-radio-control,
 	.block-editor-html-element-control,
 	.block-editor-image-size-control {
-		&:where(:not(:last-child)) {
+		&:where( :not( :last-child ) ) {
 			margin-bottom: $grid-unit-20;
 		}
 	}
@@ -44,7 +44,7 @@
 	display: block;
 	font-size: $default-font-size;
 	background: $white;
-	padding: ($grid-unit-20 * 2) $grid-unit-20;
+	padding: ( $grid-unit-20 * 2 ) $grid-unit-20;
 	text-align: center;
 }
 

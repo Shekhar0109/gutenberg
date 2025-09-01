@@ -6,7 +6,6 @@ When registering a block with JavaScript on the client, the `edit` and `save` fu
 
 The `edit` function describes the structure of your block in the context of the editor. This represents what the editor will render when the block is used.
 
-
 ```jsx
 import { useBlockProps } from '@wordpress/block-editor';
 
@@ -30,7 +29,6 @@ The first thing to notice here is the use of the `useBlockProps` React hook on t
 
 If the element wrapper needs any extra custom HTML attributes, these need to be passed as an argument to the `useBlockProps` hook. For example to add a `my-random-classname` className to the wrapper, you can use the following code:
 
-
 ```jsx
 import { useBlockProps } from '@wordpress/block-editor';
 
@@ -50,7 +48,6 @@ const blockSettings = {
 };
 ```
 
-
 ### attributes
 
 The `edit` function also receives a number of properties through an object argument. You can use these properties to adapt the behavior of your block.
@@ -58,7 +55,6 @@ The `edit` function also receives a number of properties through an object argum
 The `attributes` property surfaces all the available attributes and their corresponding values, as described by the `attributes` property when the block type was registered. See [attributes documentation](/docs/reference-guides/block-api/block-attributes.md) for how to specify attribute sources.
 
 In this case, assuming we had defined an attribute of `content` during block registration, we would receive and use that value in our edit function:
-
 
 ```js
 edit: ( { attributes } ) => {
@@ -68,13 +64,11 @@ edit: ( { attributes } ) => {
 };
 ```
 
-
 The value of `attributes.content` will be displayed inside the `div` when inserting the block in the editor.
 
 ### isSelected
 
 The isSelected property is a boolean that communicates whether the block is currently selected.
-
 
 ```jsx
 edit: ( { attributes, isSelected } ) => {
@@ -94,7 +88,6 @@ edit: ( { attributes, isSelected } ) => {
 ### setAttributes
 
 This function allows the block to update individual attributes based on user interactions.
-
 
 ```jsx
 edit: ( { attributes, setAttributes, isSelected } ) => {
@@ -132,7 +125,6 @@ const addListItem = ( newListItem ) => {
 };
 ```
 
-
 Why do this? In JavaScript, arrays and objects are passed by reference, so this practice ensures changes won't affect other code that might hold references to the same data. Furthermore, the Gutenberg project follows the philosophy of the Redux library that [state should be immutable](https://redux.js.org/faq/immutable-data#what-are-the-benefits-of-immutability)—data should not be changed directly, but instead a new version of the data created containing the changes.
 
 The `setAttribute` also supports an updater function as an argument. It must be a pure function, which takes current attributes as its only argument and returns updated attributes. This method is helpful when you want to update an value based on a previous state or when working with objects and arrays.
@@ -157,7 +149,6 @@ const addListItem = ( newListItem ) =>
 
 The `save` function defines the way in which the different attributes should be combined into the final markup, which is then serialized into `post_content`.
 
-
 ```jsx
 save: () => {
 	const blockProps = useBlockProps.save();
@@ -165,7 +156,6 @@ save: () => {
 	return <div { ...blockProps }> Your block. </div>;
 };
 ```
-
 
 For most blocks, the return value of `save` should be an [instance of WordPress Element](/packages/element/README.md) representing how the block is to appear on the front of the site.
 
@@ -191,7 +181,6 @@ Like the `edit` function, when rendering static blocks, it's important to add th
 
 As with `edit`, the `save` function also receives an object argument including attributes which can be inserted into the markup.
 
-
 ```jsx
 save: ( { attributes } ) => {
 	const blockProps = useBlockProps.save();
@@ -199,7 +188,6 @@ save: ( { attributes } ) => {
 	return <div { ...blockProps }>{ attributes.content }</div>;
 };
 ```
-
 
 When saving your block, you want to save the attributes in the same format specified by the attribute source definition. If no attribute source is specified, the attribute will be saved to the block's comment delimiter. See the [Block Attributes documentation](/docs/reference-guides/block-api/block-attributes.md) for more details.
 
@@ -210,7 +198,6 @@ There is a second property in the props passed to the `save` function, `innerBlo
 `innerBlocks`, when initialized, is an array containing object representations of nested blocks. In those rare cases where you might use this property,
 it can help you adjust how a block is rendered. For example, you could render a block differently based on the number of nested blocks or if a specific block type is present..
 
-
 ```jsx
 save: ( { attributes, innerBlocks } ) => {
 	const { className, ...rest } = useBlockProps.save();
@@ -219,13 +206,12 @@ save: ( { attributes, innerBlocks } ) => {
 	const numberOfInnerBlocks = innerBlocks?.length;
 	if ( numberOfInnerBlocks > 1 ) {
 		className = className + ( className ? ' ' : '' ) + 'more-than-one';
-	};
-	const blockProps =  { ...rest, className };
+	}
+	const blockProps = { ...rest, className };
 
 	return <div { ...blockProps }>{ attributes.content }</div>;
 };
 ```
-
 
 Here, an additional class is added to the block if number of inner blocks is greater than one, allowing for different styling of the block.
 
@@ -234,7 +220,6 @@ Here, an additional class is added to the block if number of inner blocks is gre
 Here are a couple examples of using attributes, edit, and save all together.
 
 ### Saving Attributes to Child Elements
-
 
 ```jsx
 attributes: {
@@ -270,13 +255,11 @@ save: ( { attributes } ) => {
 },
 ```
 
-
 ### Saving Attributes via Serialization
 
 Ideally, the attributes saved should be included in the markup. However, there are times when this is not practical, so if no attribute source is specified the attribute is serialized and saved to the block's comment delimiter.
 
 This example could be for a dynamic block, such as the [Latest Posts block](https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-library/src/latest-posts/index.js), which renders the markup server-side. The save function is still required, however in this case it simply returns null since the block is not saving content from the editor.
-
 
 ```jsx
 attributes: {

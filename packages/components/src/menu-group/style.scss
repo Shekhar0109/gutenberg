@@ -9,7 +9,7 @@
 	}
 }
 
-.components-menu-group:has(> div:empty) {
+.components-menu-group:has( > div:empty ) {
 	display: none;
 }
 

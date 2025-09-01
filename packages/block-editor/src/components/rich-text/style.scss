@@ -1,7 +1,9 @@
 .components-popover.block-editor-rich-text__inline-format-toolbar {
 	// Set z-index as if it's displayed on the bottom, otherwise the block
 	// switcher popover might overlap if displayed on the bottom.
-	z-index: z-index(".components-popover.block-editor-rich-text__inline-format-toolbar");
+	z-index: z-index(
+		'.components-popover.block-editor-rich-text__inline-format-toolbar'
+	);
 
 	.components-popover__content {
 		width: auto;
@@ -46,7 +48,7 @@
 			}
 			// ... and display labels.
 			&::after {
-				content: attr(aria-label);
+				content: attr( aria-label );
 			}
 		}
 	}

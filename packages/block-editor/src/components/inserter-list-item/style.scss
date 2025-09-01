@@ -1,4 +1,3 @@
-
 .block-editor-block-types-list__list-item {
 	display: block;
 	width: 33.33%;
@@ -7,24 +6,24 @@
 
 	&.is-synced {
 		.components-button.block-editor-block-types-list__item {
-			&:not(:disabled) {
+			&:not( :disabled ) {
 				.block-editor-block-icon.has-colors {
-					color: var(--wp-block-synced-color);
+					color: var( --wp-block-synced-color );
 				}
 
 				&:hover {
 					.block-editor-block-types-list__item-title {
-						color: var(--wp-block-synced-color) !important;
-						filter: brightness(0.95);
+						color: var( --wp-block-synced-color ) !important;
+						filter: brightness( 0.95 );
 					}
 
 					svg {
-						color: var(--wp-block-synced-color) !important;
+						color: var( --wp-block-synced-color ) !important;
 					}
 				}
 
 				&::after {
-					background: var(--wp-block-synced-color);
+					background: var( --wp-block-synced-color );
 				}
 			}
 		}
@@ -50,24 +49,24 @@
 	height: auto;
 
 	&:disabled,
-	&[aria-disabled="true"] {
+	&[aria-disabled='true'] {
 		opacity: 0.6;
 		cursor: default;
 	}
 
-	&:not(:disabled, [aria-disabled="true"]) {
+	&:not( :disabled, [aria-disabled='true'] ) {
 		&:hover {
 			.block-editor-block-types-list__item-title {
-				color: var(--wp-admin-theme-color) !important;
-				filter: brightness(0.95);
+				color: var( --wp-admin-theme-color ) !important;
+				filter: brightness( 0.95 );
 			}
 
 			svg {
-				color: var(--wp-admin-theme-color) !important;
+				color: var( --wp-admin-theme-color ) !important;
 			}
 
 			&::after {
-				content: "";
+				content: '';
 				position: absolute;
 				top: 0;
 				bottom: 0;
@@ -75,7 +74,7 @@
 				right: 0;
 				border-radius: $radius-small;
 				opacity: 0.04;
-				background: var(--wp-admin-theme-color);
+				background: var( --wp-admin-theme-color );
 				// This fixes drag-and-drop in Firefox.
 				pointer-events: none;
 			}
@@ -91,9 +90,10 @@
 		}
 	}
 
-	&:not(:disabled) {
+	&:not( :disabled ) {
 		&:focus {
-			box-shadow: inset 0 0 0 var(--wp-admin-border-width-focus) var(--wp-admin-theme-color);
+			box-shadow: inset 0 0 0 var( --wp-admin-border-width-focus )
+				var( --wp-admin-theme-color );
 		}
 	}
 }
@@ -116,7 +116,7 @@
 		}
 	}
 
-	.block-editor-block-types-list__list-item[draggable="true"] & {
+	.block-editor-block-types-list__list-item[draggable='true'] & {
 		cursor: grab;
 	}
 }

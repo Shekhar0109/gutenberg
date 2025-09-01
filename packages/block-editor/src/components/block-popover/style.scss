@@ -1,6 +1,5 @@
-
 .components-popover.block-editor-block-popover {
-	z-index: z-index(".block-editor-block-popover");
+	z-index: z-index( '.block-editor-block-popover' );
 	position: absolute;
 	// Shouldn't be needed but it looks
 	// like the popover is impacted by the block gap margin.
@@ -17,7 +16,12 @@
 	}
 
 	// Enable pointer events for the toolbar's content.
-	&:not(.block-editor-block-popover__inbetween, .block-editor-block-popover__drop-zone, .block-editor-block-list__block-side-inserter-popover) .components-popover__content {
+	&:not(
+			.block-editor-block-popover__inbetween,
+			.block-editor-block-popover__drop-zone,
+			.block-editor-block-list__block-side-inserter-popover
+		)
+		.components-popover__content {
 		* {
 			pointer-events: all;
 		}
@@ -45,7 +49,6 @@
 	}
 }
 
-
 .components-popover.block-editor-block-popover__drop-zone {
 	// Disable pointer events for dragging and dropping.
 	// This drop zone is fully presentational, the actual DnD implementation is handled elsewhere.
@@ -56,7 +59,7 @@
 	.block-editor-block-popover__drop-zone-foreground {
 		position: absolute;
 		inset: 0;
-		background-color: var(--wp-admin-theme-color);
+		background-color: var( --wp-admin-theme-color );
 		border-radius: $radius-small;
 	}
 }

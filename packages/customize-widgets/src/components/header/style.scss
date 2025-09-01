@@ -20,7 +20,7 @@
 	background: #f0f0f1;
 	border-bottom: 1px solid $gray-200;
 
-	z-index: z-index(".customize-widgets__topbar");
+	z-index: z-index( '.customize-widgets__topbar' );
 }
 
 .customize-widgets-header-toolbar {
@@ -42,8 +42,8 @@
 		}
 
 		svg {
-			@media not (prefers-reduced-motion) {
-				transition: transform cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
+			@media not ( prefers-reduced-motion ) {
+				transition: transform cubic-bezier( 0.165, 0.84, 0.44, 1 ) 0.2s;
 			}
 		}
 
@@ -51,7 +51,7 @@
 			background: $gray-900;
 
 			svg {
-				transform: rotate(45deg);
+				transform: rotate( 45deg );
 			}
 		}
 	}

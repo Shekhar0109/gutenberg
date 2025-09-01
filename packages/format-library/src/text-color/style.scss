@@ -5,9 +5,9 @@ $swatch-gap: 12px;
 $panelPadding: $grid-unit-20;
 
 .format-library__inline-color-popover {
-
-	[role="tabpanel"] {
+	[role='tabpanel'] {
 		padding: $panelPadding;
-		width: ( $swatch-size * 6 ) + ( $swatch-gap * 5 ) + ( $panelPadding * 2 );
+		width: ( $swatch-size * 6 ) + ( $swatch-gap * 5 ) +
+			( $panelPadding * 2 );
 	}
 }

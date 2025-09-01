@@ -92,7 +92,7 @@ registerBlockType( 'myguten/meta-block', {
 			<div { ...blockProps }>
 				<TextControl
 					__nextHasNoMarginBottom
-					__next40pxDefaultSize				
+					__next40pxDefaultSize
 					label="Meta Block Field"
 					value={ metaFieldValue }
 					onChange={ updateMetaValue }
@@ -263,4 +263,4 @@ Please also note that if your plugin triggers a PHP warning or notice to be outp
 
 ## Additional resources
 
-- [Creating a custom block that stores post meta](https://developer.wordpress.org/news/2023/03/03/creating-a-custom-block-that-stores-post-meta/)
+-   [Creating a custom block that stores post meta](https://developer.wordpress.org/news/2023/03/03/creating-a-custom-block-that-stores-post-meta/)

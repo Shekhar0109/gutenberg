@@ -91,8 +91,9 @@ add_filter( 'get_block_type_variations', 'my_custom_image_variation', 10, 2 );
 ```
 
 The `get_block_type_variations` filter is called when variations are requested for a block type. It receives two parameters:
-- `$variations`: An array of currently registered variations for the block type
-- `$block_type`: The full block type object
+
+-   `$variations`: An array of currently registered variations for the block type
+-   `$block_type`: The full block type object
 
 Note that variations registered through PHP will be merged with any variations registered through JavaScript using `registerBlockVariation()`.
 

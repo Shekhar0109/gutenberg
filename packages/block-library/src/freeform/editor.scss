@@ -38,7 +38,7 @@
 	}
 
 	a {
-		color: var(--wp-admin-theme-color);
+		color: var( --wp-admin-theme-color );
 	}
 
 	&:focus a[data-mce-selected] {
@@ -89,7 +89,7 @@
 		margin: 15px auto;
 		outline: 0;
 		cursor: default;
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADtgAAAAoBAMAAAA86gLBAAAAJFBMVEVMaXG7u7vBwcHDw8POzs68vLzGxsbMzMy+vr7AwMDQ0NDGxsYKLGzpAAAADHRSTlMA///zWf+/f///TMxNVGuqAAABwklEQVR4Ae3dMXLaQBTH4bfj8UCpx8hq0vgKvgFNemhT6Qo6gg6R+0ZahM2QLmyBJ99XWP9V5+o3jIUcLQEAAAAAAAAAAAAAAAAAAAAAAABQ8j0WL9lfTtlt18uNXAUA8O/KVtfa1tdcrOdSh9gCQAMlh1hMNbZZ1bsrsQWABsrhLRbz7z5in/32UbfUMUbkMQCAh5RfGYv82UdMdZ6HS2wjT2ILAI8r3XmM2B3WvM59vfO2xXYW2yYAENuPU8S+X/N67mKxzy225yaxBQCxLV392UdcvwV0jPVUj98ntkBWT7C7+9u2/V/vGtvXIWJ6/4rtbottWa6Ri0NUT/u72LYttrb97LHdvUXMxxrb8TO2W2TF1rYbbLG1bbGNjMi4+2Sbi1FsbbvNFlvbFtt5fDnE3d9sP1/XeIyV2Nr2U2/guZUuptNrH/dPI9eLB6SaAEBs6wPJf3/PNk9tYgsAYrv/8TFuzx/fvkFqGtrEFgDEdpcZUb7ejXy6ntrEFgDENvL6gsas4vbdyKt4DACI7TxElJv/Z7udpqFNbAFAbKduy2uU2trttM/x28UWAAAAAAAAAAAAAAAAAAAAAAAAAADgDyPwGmGTCZp7AAAAAElFTkSuQmCC);
+		background-image: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADtgAAAAoBAMAAAA86gLBAAAAJFBMVEVMaXG7u7vBwcHDw8POzs68vLzGxsbMzMy+vr7AwMDQ0NDGxsYKLGzpAAAADHRSTlMA///zWf+/f///TMxNVGuqAAABwklEQVR4Ae3dMXLaQBTH4bfj8UCpx8hq0vgKvgFNemhT6Qo6gg6R+0ZahM2QLmyBJ99XWP9V5+o3jIUcLQEAAAAAAAAAAAAAAAAAAAAAAABQ8j0WL9lfTtlt18uNXAUA8O/KVtfa1tdcrOdSh9gCQAMlh1hMNbZZ1bsrsQWABsrhLRbz7z5in/32UbfUMUbkMQCAh5RfGYv82UdMdZ6HS2wjT2ILAI8r3XmM2B3WvM59vfO2xXYW2yYAENuPU8S+X/N67mKxzy225yaxBQCxLV392UdcvwV0jPVUj98ntkBWT7C7+9u2/V/vGtvXIWJ6/4rtbottWa6Ri0NUT/u72LYttrb97LHdvUXMxxrb8TO2W2TF1rYbbLG1bbGNjMi4+2Sbi1FsbbvNFlvbFtt5fDnE3d9sP1/XeIyV2Nr2U2/guZUuptNrH/dPI9eLB6SaAEBs6wPJf3/PNk9tYgsAYrv/8TFuzx/fvkFqGtrEFgDEdpcZUb7ejXy6ntrEFgDENvL6gsas4vbdyKt4DACI7TxElJv/Z7udpqFNbAFAbKduy2uU2trttM/x28UWAAAAAAAAAAAAAAAAAAAAAAAAAADgDyPwGmGTCZp7AAAAAElFTkSuQmCC );
 		background-size: 1900px 20px;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -147,7 +147,7 @@
 			left: 0;
 		}
 
-		&[data-mce-selected="2"] .mce-shim {
+		&[data-mce-selected='2'] .mce-shim {
 			display: none;
 		}
 
@@ -185,7 +185,7 @@
 		// from the styles applied in the tinymce skin,
 		// /wp-includes/js/tinymce/skins/wordpress/wp-content.css.
 		&.wpview-type-gallery::after {
-			content: "";
+			content: '';
 			display: table;
 			clear: both;
 		}
@@ -226,7 +226,7 @@
 
 	@for $i from 1 through 9 {
 		.gallery-columns-#{ $i } .gallery-item {
-			width: #{ math.div(100, $i) + "%" };
+			width: #{math.div( 100, $i ) + '%'};
 		}
 	}
 
@@ -238,14 +238,16 @@
 	}
 }
 
-div[data-type="core/freeform"] {
+div[data-type='core/freeform'] {
 	&::before {
 		border: $border-width solid $gray-300;
 		// Windows High Contrast mode will show this outline.
 		outline: $border-width solid transparent;
 
-		@media not (prefers-reduced-motion) {
-			transition: border-color 0.1s linear, box-shadow 0.1s linear;
+		@media not ( prefers-reduced-motion ) {
+			transition:
+				border-color 0.1s linear,
+				box-shadow 0.1s linear;
 		}
 	}
 
@@ -260,7 +262,7 @@ div[data-type="core/freeform"] {
 
 	// Ensure aligned blocks at end are within the selected block.
 	&.is-selected .block-library-rich-text__tinymce::after {
-		content: "";
+		content: '';
 		display: table;
 		clear: both;
 	}
@@ -296,7 +298,7 @@ div[data-type="core/freeform"] {
 	width: auto;
 	margin: 0;
 	position: sticky;
-	z-index: z-index(".block-library-classic__toolbar");
+	z-index: z-index( '.block-library-classic__toolbar' );
 	top: 0;
 	border: $border-width solid $gray-300;
 	border-bottom: none;
@@ -309,7 +311,7 @@ div[data-type="core/freeform"] {
 	// By using the `data-type` attribute in this selector it ensures these
 	// styles only appear when the block itself is selected, without it they
 	// would also show when a parent block is selected.
-	div[data-type="core/freeform"].is-selected & {
+	div[data-type='core/freeform'].is-selected & {
 		display: block;
 		border-color: $gray-900;
 	}
@@ -331,7 +333,7 @@ div[data-type="core/freeform"] {
 		&::before {
 			font-family: $default-font;
 			font-size: $default-font-size;
-			content: attr(data-placeholder);
+			content: attr( data-placeholder );
 			color: #555d66;
 			line-height: 37px;
 			padding: $block-padding;
@@ -367,7 +369,7 @@ div[data-type="core/freeform"] {
 		padding: 1px 3px;
 	}
 
-	.mce-toolbar-grp .mce-toolbar:not(:first-child) {
+	.mce-toolbar-grp .mce-toolbar:not( :first-child ) {
 		display: none;
 	}
 
@@ -385,10 +387,9 @@ div[data-type="core/freeform"] {
 		// available height so that the Cancel/Save buttons are always into the
 		// view. On smaller screens, the modal content is scrollable.
 		@include break-large() {
-
 			// On medium and large screens, the modal component sets a max-height.
 			// We want the modal to be as tall as possible also when the content is short.
-			&:not(.is-full-screen) {
+			&:not( .is-full-screen ) {
 				height: 9999rem;
 			}
 
@@ -397,7 +398,7 @@ div[data-type="core/freeform"] {
 			}
 
 			.mce-tinymce {
-				height: calc(100% - #{$button-size} - #{$grid-unit-20});
+				height: calc( 100% - #{$button-size} - #{$grid-unit-20} );
 			}
 
 			.mce-container-body {

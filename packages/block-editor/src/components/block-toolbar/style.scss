@@ -13,9 +13,10 @@
 	overflow-x: auto;
 
 	@media not ( prefers-reduced-motion ) {
-
 		// Animation
-		transition: border-color 0.1s linear, box-shadow 0.1s linear;
+		transition:
+			border-color 0.1s linear,
+			box-shadow 0.1s linear;
 	}
 
 	@include break-small() {
@@ -41,20 +42,26 @@
 
 	&.is-connected {
 		.block-editor-block-switcher .components-button::before {
-			background: color-mix(in srgb, var(--wp-block-synced-color) 10%, transparent);
+			background: color-mix(
+				in srgb,
+				var( --wp-block-synced-color ) 10%,
+				transparent
+			);
 			border-radius: $radius-small;
 		}
 	}
 
 	&.is-synced,
 	&.is-connected {
-		.block-editor-block-switcher .components-button .block-editor-block-icon {
-			color: var(--wp-block-synced-color);
+		.block-editor-block-switcher
+			.components-button
+			.block-editor-block-icon {
+			color: var( --wp-block-synced-color );
 		}
 
 		.components-toolbar-button.block-editor-block-switcher__no-switcher-icon {
 			&:disabled .block-editor-block-icon.has-colors {
-				color: var(--wp-block-synced-color);
+				color: var( --wp-block-synced-color );
 			}
 		}
 	}
@@ -78,7 +85,7 @@
 .block-editor-block-contextual-toolbar {
 	position: sticky;
 	top: 0;
-	z-index: z-index(".block-editor-block-popover");
+	z-index: z-index( '.block-editor-block-popover' );
 	display: block;
 	width: 100%;
 	// Block UI appearance.
@@ -92,13 +99,13 @@
 	}
 
 	&.is-unstyled {
-		box-shadow: 0 $border-width 0 0 rgba($color: #000, $alpha: 0.133); // 0.133 = $gray-200 but with alpha.
+		box-shadow: 0 $border-width 0 0 rgba( $color: #000, $alpha: 0.133 ); // 0.133 = $gray-200 but with alpha.
 	}
 
 	.block-editor-block-toolbar {
 		overflow: auto;
 		overflow-y: hidden;
-		@include custom-scrollbars-on-hover($gray-200, $gray-600);
+		@include custom-scrollbars-on-hover( $gray-200, $gray-600 );
 
 		// Prevents padding from being applied to the left and right sides of the element.
 		scrollbar-gutter: auto;
@@ -129,7 +136,7 @@
 			align-items: center;
 			background-color: $gray-900;
 			border-radius: 100%;
-			content: "";
+			content: '';
 			display: inline-flex;
 			height: 2px;
 			position: absolute;
@@ -139,7 +146,6 @@
 		}
 	}
 }
-
 
 // Block controls.
 .block-editor-block-toolbar__block-controls {
@@ -184,14 +190,17 @@
 			}
 			// ... and display labels.
 			&::after {
-				content: attr(aria-label);
+				content: attr( aria-label );
 				font-size: $helptext-font-size;
 			}
 		}
 	}
 
 	// Padding overrides.
-	.components-accessible-toolbar .components-toolbar-group > div:first-child:last-child > .components-button.has-icon {
+	.components-accessible-toolbar
+		.components-toolbar-group
+		> div:first-child:last-child
+		> .components-button.has-icon {
 		padding-left: 6px;
 		padding-right: 6px;
 	}
@@ -206,7 +215,8 @@
 	}
 
 	// Parent selector overrides
-	.block-editor-block-parent-selector .block-editor-block-parent-selector__button {
+	.block-editor-block-parent-selector
+		.block-editor-block-parent-selector__button {
 		border-top-right-radius: 0;
 		border-bottom-right-radius: 0;
 		padding-left: $grid-unit-15;
@@ -224,9 +234,10 @@
 			position: relative;
 		}
 
-		&:not(.is-horizontal) .block-editor-block-mover__move-button-container::before {
+		&:not( .is-horizontal )
+			.block-editor-block-mover__move-button-container::before {
 			@include break-small() {
-				content: "";
+				content: '';
 				height: $border-width;
 				width: 100%;
 				background: $gray-200;
@@ -235,7 +246,7 @@
 				left: 50%;
 				// With Top toolbar enabled, this separator has a smaller width. Translating the
 				// X axis allows to make the separator always centered regardless of its width.
-				transform: translate(-50%, 0);
+				transform: translate( -50%, 0 );
 				margin-top: -$border-width * 0.5;
 			}
 
@@ -253,7 +264,8 @@
 		}
 	}
 
-	.block-editor-block-mover:not(.is-horizontal) .block-editor-block-mover-button {
+	.block-editor-block-mover:not( .is-horizontal )
+		.block-editor-block-mover-button {
 		padding-left: $grid-unit;
 		padding-right: $grid-unit;
 	}
@@ -271,7 +283,9 @@
 		padding-right: $grid-unit-15;
 	}
 
-	.block-editor-block-contextual-toolbar .block-editor-block-mover.is-horizontal .block-editor-block-mover-button.block-editor-block-mover-button {
+	.block-editor-block-contextual-toolbar
+		.block-editor-block-mover.is-horizontal
+		.block-editor-block-mover-button.block-editor-block-mover-button {
 		width: auto;
 	}
 

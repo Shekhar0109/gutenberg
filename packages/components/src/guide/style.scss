@@ -78,7 +78,7 @@
 			color: $gray-200;
 		}
 
-		li[aria-current="step"] .components-button {
+		li[aria-current='step'] .components-button {
 			color: $components-color-accent;
 		}
 	}
@@ -91,7 +91,7 @@
 
 	@media ( max-width: $break-small ) {
 		margin: auto;
-		max-width: calc(100vw - #{$grid-unit-20} * 2);
+		max-width: calc( 100vw - #{$grid-unit-20} * 2 );
 	}
 }
 

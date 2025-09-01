@@ -23,10 +23,10 @@
 		}
 
 		&::before {
-			@media not (prefers-reduced-motion) {
+			@media not ( prefers-reduced-motion ) {
 				transition: box-shadow 0.1s ease;
 			}
-			content: "";
+			content: '';
 			display: block;
 			position: absolute;
 			top: 9px;
@@ -34,12 +34,14 @@
 			bottom: 9px + $border-width; // Height of toolbar in edit-post (not edit-site) is 61px tall.
 			left: 9px;
 			border-radius: $radius-small + $border-width + $border-width;
-			box-shadow: inset 0 0 0 var(--wp-admin-border-width-focus) $gray-900;
+			box-shadow: inset 0 0 0 var( --wp-admin-border-width-focus )
+				$gray-900;
 		}
 
 		// Hover color.
 		&:hover::before {
-			box-shadow: inset 0 0 0 var(--wp-admin-border-width-focus) $gray-700;
+			box-shadow: inset 0 0 0 var( --wp-admin-border-width-focus )
+				$gray-700;
 		}
 
 		&.has-icon:hover::before {
@@ -48,7 +50,11 @@
 
 		// Lightened spot color focus.
 		&:focus::before {
-			box-shadow: inset 0 0 0 var(--wp-admin-border-width-focus) rgba($white, 0.1), inset 0 0 0 var(--wp-admin-border-width-focus) var(--wp-admin-theme-color);
+			box-shadow:
+				inset 0 0 0 var( --wp-admin-border-width-focus )
+					rgba( $white, 0.1 ),
+				inset 0 0 0 var( --wp-admin-border-width-focus )
+					var( --wp-admin-theme-color );
 		}
 	}
 
@@ -58,7 +64,7 @@
 		border-radius: $radius-small;
 		object-fit: cover;
 		// Compensate for the top-bar border.
-		margin-top: -($border-width);
+		margin-top: -( $border-width );
 	}
 }
 

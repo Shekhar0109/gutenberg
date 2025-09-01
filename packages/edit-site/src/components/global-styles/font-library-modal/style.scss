@@ -129,7 +129,7 @@ $footer-height: 70px;
 		white-space: nowrap;
 		flex-shrink: 0;
 
-		@media not (prefers-reduced-motion) {
+		@media not ( prefers-reduced-motion ) {
 			transition: opacity 0.3s ease-in-out;
 		}
 	}
@@ -149,7 +149,7 @@ $footer-height: 70px;
 	padding: 0 $grid-unit-20;
 	z-index: 1;
 
-	[role="tablist"] {
+	[role='tablist'] {
 		margin-bottom: -1px;
 	}
 }
@@ -206,8 +206,7 @@ button.font-library-modal__upload-area {
 }
 
 .font-library-modal__select-all {
-	padding:
-		$grid-unit-20 $grid-unit-20 $grid-unit-20 $grid-unit-20 +
+	padding: $grid-unit-20 $grid-unit-20 $grid-unit-20 $grid-unit-20 +
 		$border-width;
 
 	.components-checkbox-control__label {

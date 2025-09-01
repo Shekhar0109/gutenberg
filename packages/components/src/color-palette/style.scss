@@ -1,4 +1,4 @@
-$border-as-box-shadow: inset 0 0 0 $border-width rgba(0, 0, 0, 0.2);
+$border-as-box-shadow: inset 0 0 0 $border-width rgba( 0, 0, 0, 0.2 );
 
 .components-color-palette__custom-color-wrapper {
 	position: relative;
@@ -18,13 +18,14 @@ $border-as-box-shadow: inset 0 0 0 $border-width rgba(0, 0, 0, 0.2);
 	box-shadow: $border-as-box-shadow;
 
 	&:focus {
-		box-shadow: inset 0 0 0 var(--wp-admin-border-width-focus) $components-color-accent;
+		box-shadow: inset 0 0 0 var( --wp-admin-border-width-focus )
+			$components-color-accent;
 		// Show a outline in Windows high contrast mode.
 		outline-width: 2px;
 	}
 
 	&::after {
-		content: "";
+		content: '';
 		position: absolute;
 		inset: $border-width;
 		z-index: -1;
@@ -32,13 +33,29 @@ $border-as-box-shadow: inset 0 0 0 $border-width rgba(0, 0, 0, 0.2);
 		// make it work both in LTR and RTL.
 		// See https://github.com/WordPress/gutenberg/pull/42510
 		/*rtl:begin:ignore*/
-		background-image:
-			repeating-linear-gradient(45deg, $gray-200 25%, transparent 25%, transparent 75%, $gray-200 75%, $gray-200),
-			repeating-linear-gradient(45deg, $gray-200 25%, transparent 25%, transparent 75%, $gray-200 75%, $gray-200);
-		background-position: 0 0, 24px 24px;
+		background-image: repeating-linear-gradient(
+				45deg,
+				$gray-200 25%,
+				transparent 25%,
+				transparent 75%,
+				$gray-200 75%,
+				$gray-200
+			),
+			repeating-linear-gradient(
+				45deg,
+				$gray-200 25%,
+				transparent 25%,
+				transparent 75%,
+				$gray-200 75%,
+				$gray-200
+			);
+		background-position:
+			0 0,
+			24px 24px;
 		/*rtl:end:ignore*/
-		background-size: calc(2 * 24px) calc(2 * 24px);
-		border-radius: $radius-medium - $border-width $radius-medium - $border-width 0 0;
+		background-size: calc( 2 * 24px ) calc( 2 * 24px );
+		border-radius: $radius-medium - $border-width $radius-medium -
+			$border-width 0 0;
 	}
 }
 
@@ -51,9 +68,9 @@ $border-as-box-shadow: inset 0 0 0 $border-width rgba(0, 0, 0, 0.2);
 	// Add a border with the same technique as the button above,
 	// but only for left, bottom, and right sides.
 	box-shadow:
-		inset 0 -1 * $border-width 0 0 rgba(0, 0, 0, 0.2),
-		inset $border-width 0 0 0 rgba(0, 0, 0, 0.2),
-		inset -1 * $border-width 0 0 0 rgba(0, 0, 0, 0.2);
+		inset 0 -1 * $border-width 0 0 rgba( 0, 0, 0, 0.2 ),
+		inset $border-width 0 0 0 rgba( 0, 0, 0, 0.2 ),
+		inset -1 * $border-width 0 0 0 rgba( 0, 0, 0, 0.2 );
 }
 
 .components-color-palette__custom-color-name {
@@ -71,7 +88,7 @@ $border-as-box-shadow: inset 0 0 0 $border-width rgba(0, 0, 0, 0.2);
 	// Add a zero-width space when this element is empty to preserve
 	// a minimum height of 1 line of text, and avoid layout jumps.
 	&:empty::after {
-		content: "\200B";
+		content: '\200B';
 		visibility: hidden;
 	}
 }

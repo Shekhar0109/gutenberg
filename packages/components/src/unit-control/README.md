@@ -15,7 +15,13 @@ import { __experimentalUnitControl as UnitControl } from '@wordpress/components'
 const Example = () => {
 	const [ value, setValue ] = useState( '10px' );
 
-	return <UnitControl __next40pxDefaultSize onChange={ setValue } value={ value } />;
+	return (
+		<UnitControl
+			__next40pxDefaultSize
+			onChange={ setValue }
+			value={ value }
+		/>
+	);
 };
 ```
 
@@ -128,7 +134,12 @@ const Example = () => {
 	];
 
 	return (
-		<UnitControl __next40pxDefaultSize onChange={ setValue } value={ value } units={ units } />
+		<UnitControl
+			__next40pxDefaultSize
+			onChange={ setValue }
+			value={ value }
+			units={ units }
+		/>
 	);
 };
 ```

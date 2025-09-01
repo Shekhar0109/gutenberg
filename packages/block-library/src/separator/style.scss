@@ -9,13 +9,13 @@
 }
 
 // Dots block style variation
-:root :where(.wp-block-separator.is-style-dots) {
+:root :where( .wp-block-separator.is-style-dots ) {
 	text-align: center;
 	line-height: 1;
 	height: auto;
 
 	&::before {
-		content: "\00b7 \00b7 \00b7";
+		content: '\00b7 \00b7 \00b7';
 		color: currentColor;
 		font-size: 1.5em;
 		letter-spacing: 2em;

@@ -7,11 +7,11 @@
 	border-top: $border-width solid $gray-100;
 	flex-shrink: 0;
 
-	@media not (prefers-reduced-motion) {
+	@media not ( prefers-reduced-motion ) {
 		transition: padding ease-out 0.1s;
 	}
 
-	z-index: z-index(".dataviews-footer");
+	z-index: z-index( '.dataviews-footer' );
 }
 
 @container (max-width: 430px) {

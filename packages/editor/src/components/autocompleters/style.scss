@@ -2,7 +2,7 @@
 	.editor-autocompleters__no-avatar::before {
 		/* stylelint-disable-next-line font-family-no-missing-generic-family-keyword -- dashicons don't need a generic family keyword. */
 		font: normal 20px/1 dashicons;
-		content: "\f110";
+		content: '\f110';
 		margin-right: 5px;
 		vertical-align: middle;
 	}
@@ -31,7 +31,7 @@
 		flex-grow: 0;
 		flex-shrink: 0;
 	}
-	&:not(.is-primary) .editor-autocompleters__user-slug {
+	&:not( .is-primary ) .editor-autocompleters__user-slug {
 		color: $gray-700;
 	}
 }

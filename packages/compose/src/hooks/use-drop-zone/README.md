@@ -13,17 +13,15 @@ import { useDropZone } from '@wordpress/compose';
 const WithWrapperDropZoneElement = () => {
 	const [ dropZoneElement, setDropZoneElement ] = useState( null );
 
-	const dropZoneRef = useDropZone(
-		{
-			dropZoneElement,
-			onDrop() {
-				console.log( 'Dropped within the drop zone.' );
-			},
-			onDragEnter() {
-				console.log( 'Dragging within the drop zone' );
-			}
-		}
-	)
+	const dropZoneRef = useDropZone( {
+		dropZoneElement,
+		onDrop() {
+			console.log( 'Dropped within the drop zone.' );
+		},
+		onDragEnter() {
+			console.log( 'Dragging within the drop zone' );
+		},
+	} );
 
 	return (
 		<div className="outer-wrapper" ref={ setDropZoneElement }>
@@ -35,16 +33,14 @@ const WithWrapperDropZoneElement = () => {
 };
 
 const WithoutWrapperDropZoneElement = () => {
-	const dropZoneRef = useDropZone(
-		{
-			onDrop() {
-				console.log( 'Dropped within the drop zone.' );
-			},
-			onDragEnter() {
-				console.log( 'Dragging within the drop zone' );
-			}
-		}
-	)
+	const dropZoneRef = useDropZone( {
+		onDrop() {
+			console.log( 'Dropped within the drop zone.' );
+		},
+		onDragEnter() {
+			console.log( 'Dragging within the drop zone' );
+		},
+	} );
 
 	return (
 		<div ref={ dropZoneRef }>

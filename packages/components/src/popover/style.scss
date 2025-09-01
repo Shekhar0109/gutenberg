@@ -7,7 +7,7 @@ $shadow-popover-border-top-only-alternate: 0 #{-$border-width} 0 $gray-900;
 
 .components-popover {
 	@include reset;
-	z-index: z-index(".components-popover");
+	z-index: z-index( '.components-popover' );
 	will-change: transform;
 
 	&.is-expanded {
@@ -16,7 +16,7 @@ $shadow-popover-border-top-only-alternate: 0 #{-$border-width} 0 $gray-900;
 		left: 0;
 		right: 0;
 		bottom: 0;
-		z-index: z-index(".components-popover") !important;
+		z-index: z-index( '.components-popover' ) !important;
 	}
 }
 
@@ -42,7 +42,7 @@ $shadow-popover-border-top-only-alternate: 0 #{-$border-width} 0 $gray-900;
 
 	.components-popover.is-expanded & {
 		position: static;
-		height: calc(100% - #{ $panel-header-height });
+		height: calc( 100% - #{$panel-header-height} );
 		overflow-y: visible;
 		width: auto;
 		box-shadow: $shadow-popover-border-top-only;
@@ -69,7 +69,7 @@ $shadow-popover-border-top-only-alternate: 0 #{-$border-width} 0 $gray-900;
 }
 
 .components-popover__close.components-button {
-	z-index: z-index(".components-popover__close");
+	z-index: z-index( '.components-popover__close' );
 }
 
 .components-popover__arrow {
@@ -83,7 +83,7 @@ $shadow-popover-border-top-only-alternate: 0 #{-$border-width} 0 $gray-900;
 	// popover__content's outline is fully overlapped by the
 	// arrow
 	&::before {
-		content: "";
+		content: '';
 		position: absolute;
 		top: -1px;
 		left: 1px;
@@ -96,21 +96,21 @@ $shadow-popover-border-top-only-alternate: 0 #{-$border-width} 0 $gray-900;
 	// The `!important' is necessary to override the inline styles.
 	&.is-top {
 		bottom: -1 * $arrow-triangle-base-size !important;
-		transform: rotate(0);
+		transform: rotate( 0 );
 	}
 	&.is-right {
 		/*rtl:begin:ignore*/
 		left: -1 * $arrow-triangle-base-size !important;
-		transform: rotate(90deg);
+		transform: rotate( 90deg );
 	}
 	&.is-bottom {
 		top: -1 * $arrow-triangle-base-size !important;
-		transform: rotate(180deg);
+		transform: rotate( 180deg );
 	}
 	&.is-left {
 		/*rtl:begin:ignore*/
 		right: -1 * $arrow-triangle-base-size !important;
-		transform: rotate(-90deg);
+		transform: rotate( -90deg );
 		/*rtl:end:ignore*/
 	}
 }

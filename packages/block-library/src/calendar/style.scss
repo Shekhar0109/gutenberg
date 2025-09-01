@@ -28,7 +28,7 @@
 		}
 	}
 
-	:where(table:not(.has-text-color)) {
+	:where( table:not( .has-text-color ) ) {
 		color: #40464d;
 
 		// Keep the hard-coded border color for backward compatibility.
@@ -40,6 +40,6 @@
 }
 
 // Keep the hard-coded header background color for backward compatibility.
-:where(.wp-block-calendar table:not(.has-background) th) {
+:where( .wp-block-calendar table:not( .has-background ) th ) {
 	background: $gray-300;
 }

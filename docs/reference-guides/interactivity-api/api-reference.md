@@ -895,7 +895,6 @@ store( 'myPlugin', {
 
 You may notice the use of the [`withSyncEvent()`](#withsyncevent) utility function in this example. This is necessary due to an ongoing effort to handle store actions asynchronously by default, unless they require synchronous event access (which this example does due to the call to `event.preventDefault()`). Otherwise a deprecation warning will be triggered, and in a future release the behavior will change accordingly.
 
-
 #### Side Effects
 
 Automatically react to state changes. Usually triggered by `data-wp-watch` or `data-wp-init` directives.
@@ -1259,10 +1258,10 @@ Actions that require synchronous access to the `event` object need to use the `w
 
 Only very specific event methods and properties require synchronous access, so it is advised to only use `withSyncEvent()` when necessary. The following event methods and properties require synchronous access:
 
-* `event.currentTarget`
-* `event.preventDefault()`
-* `event.stopImmediatePropagation()`
-* `event.stopPropagation()`
+-   `event.currentTarget`
+-   `event.preventDefault()`
+-   `event.stopImmediatePropagation()`
+-   `event.stopPropagation()`
 
 Here is an example, where one action requires synchronous event access while the other actions do not:
 

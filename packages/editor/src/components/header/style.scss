@@ -4,11 +4,17 @@
 	background: $white;
 	display: grid;
 	grid-auto-flow: row;
-	grid-template: auto / $header-height minmax(0, max-content) minmax(min-content, 1fr) $header-height;
-	&:has(> .editor-header__center) {
+	grid-template: auto / $header-height minmax( 0, max-content ) minmax(
+			min-content,
+			1fr
+		) $header-height;
+	&:has( > .editor-header__center ) {
 		grid-template: auto / $header-height min-content 1fr min-content $header-height;
 		@include break-medium {
-			grid-template: auto / $header-height minmax(min-content, 2fr) 2.5fr minmax(min-content, 2fr) $header-height;
+			grid-template: auto / $header-height minmax( min-content, 2fr ) 2.5fr minmax(
+					min-content,
+					2fr
+				) $header-height;
 		}
 	}
 	@include break-mobile {
@@ -49,7 +55,7 @@
 	min-width: 0;
 	align-items: center;
 	// Clip the box while leaving room for focus rings.
-	clip-path: inset(-2px);
+	clip-path: inset( -2px );
 	@include break-mobile {
 		clip-path: none;
 	}
@@ -80,7 +86,7 @@
 	// To enable shrinking and truncating of child text, apply an explicit min-width.
 	min-width: 0;
 	// Clip the box while leaving room for focus rings.
-	clip-path: inset(-2px);
+	clip-path: inset( -2px );
 	// At less than mobile the header’s `gap` is zero so margins are added to create a smaller
 	// gap around the center’s contents.
 	@media (max-width: #{$break-mobile - 1}) {
@@ -99,7 +105,7 @@
 
 .editor-header__settings {
 	grid-column: 3 / -1;
-	.editor-header:has(> .editor-header__center) & {
+	.editor-header:has( > .editor-header__center ) & {
 		grid-column: 4 / -1;
 	}
 	justify-self: end;
@@ -108,7 +114,7 @@
 	flex-wrap: nowrap;
 	padding-right: $grid-unit-05;
 
-	@include break-small () {
+	@include break-small() {
 		padding-right: $grid-unit-10;
 	}
 
@@ -130,16 +136,16 @@
 		}
 		// ... and display labels.
 		&::after {
-			content: attr(aria-label);
+			content: attr( aria-label );
 			white-space: nowrap;
 		}
-		&[aria-disabled="true"] {
+		&[aria-disabled='true'] {
 			background-color: transparent;
 		}
 	}
 	.is-tertiary {
 		&:active {
-			box-shadow: 0 0 0 1.5px var(--wp-admin-theme-color);
+			box-shadow: 0 0 0 1.5px var( --wp-admin-theme-color );
 			background-color: transparent;
 		}
 	}
@@ -154,7 +160,8 @@
 	}
 
 	// Don't hide MenuItemsChoice check icons
-	.components-menu-items-choice .components-menu-items__item-icon.components-menu-items__item-icon {
+	.components-menu-items-choice
+		.components-menu-items__item-icon.components-menu-items__item-icon {
 		display: block;
 	}
 	.editor-document-tools__inserter-toggle.editor-document-tools__inserter-toggle,
@@ -182,7 +189,7 @@
 		border-left: none;
 
 		&::before {
-			content: "";
+			content: '';
 			width: $border-width;
 			height: $grid-unit-30;
 			background-color: $gray-300;
@@ -193,9 +200,9 @@
 		// Modified block movers horizontal separator.
 		.block-editor-block-mover__move-button-container {
 			&::before {
-				width: calc(100% - #{$grid-unit-30});
+				width: calc( 100% - #{$grid-unit-30} );
 				background: $gray-300;
-				left: calc(50% + 1px);
+				left: calc( 50% + 1px );
 			}
 		}
 	}
@@ -216,11 +223,11 @@
 		width: 14.625rem;
 		justify-content: flex-start;
 
-		&[aria-expanded="true"] svg {
+		&[aria-expanded='true'] svg {
 			display: block;
 			max-width: $grid-unit-30;
 		}
-		&[aria-expanded="false"] {
+		&[aria-expanded='false'] {
 			padding-left: $grid-unit-50;
 		}
 		svg {
@@ -245,23 +252,25 @@
 		width: 100%;
 
 		@include break-medium {
-			box-shadow: 0 $border-width 0 0 rgba($color: #000, $alpha: 0.133); // 0.133 = $gray-200 but with alpha.
+			box-shadow: 0 $border-width 0 0 rgba( $color: #000, $alpha: 0.133 ); // 0.133 = $gray-200 but with alpha.
 			position: absolute;
 		}
 
-
 		// hide some parts
-		& > .edit-post-header__settings > .edit-post-header__post-preview-button {
+		&
+			> .edit-post-header__settings
+			> .edit-post-header__post-preview-button {
 			visibility: hidden;
 		}
 
-		& > .editor-header__toolbar .editor-document-tools__document-overview-toggle,
+		&
+			> .editor-header__toolbar
+			.editor-document-tools__document-overview-toggle,
 		& > .editor-header__settings > .editor-preview-dropdown,
 		& > .editor-header__settings > .interface-pinned-items,
 		& > .editor-header__settings > .editor-zoom-out-toggle {
 			display: none;
 		}
-
 	}
 
 	// We need ! important because we override inline styles
@@ -269,9 +278,8 @@
 	.interface-interface-skeleton__header:focus-within {
 		opacity: 1 !important;
 		div {
-			transform: translateX(0) translateZ(0) !important;
+			transform: translateX( 0 ) translateZ( 0 ) !important;
 		}
-
 	}
 
 	.components-editor-notices__dismissible {
@@ -281,5 +289,5 @@
 }
 
 .components-popover.more-menu-dropdown__content {
-	z-index: z-index(".components-popover.more-menu__content");
+	z-index: z-index( '.components-popover.more-menu__content' );
 }

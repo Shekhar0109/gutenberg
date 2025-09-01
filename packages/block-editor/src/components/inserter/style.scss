@@ -109,7 +109,7 @@ $block-inserter-tabs-height: 44px;
 }
 
 .components-popover.block-editor-inserter__popover {
-	z-index: z-index(".components-popover.block-editor-inserter__popover");
+	z-index: z-index( '.components-popover.block-editor-inserter__popover' );
 }
 
 .block-editor-inserter__search {
@@ -148,7 +148,8 @@ $block-inserter-tabs-height: 44px;
 	font-weight: 500;
 }
 
-.block-editor-inserter__panel-dropdown select.components-select-control__input.components-select-control__input.components-select-control__input {
+.block-editor-inserter__panel-dropdown
+	select.components-select-control__input.components-select-control__input.components-select-control__input {
 	height: 36px;
 	line-height: 36px;
 }
@@ -193,7 +194,7 @@ $block-inserter-tabs-height: 44px;
 	display: none;
 	width: $sidebar-width;
 	padding: $grid-unit-20;
-	max-height: calc(100% - #{$grid-unit-40});
+	max-height: calc( 100% - #{$grid-unit-40} );
 	overflow-y: hidden;
 
 	@include break-medium {
@@ -241,7 +242,7 @@ $block-inserter-tabs-height: 44px;
 		width: $sidebar-width;
 		position: absolute;
 		top: -$border-width;
-		height: calc(100% + #{$border-width});
+		height: calc( 100% + #{$border-width} );
 		background: $gray-100;
 		border-top: $border-width solid $gray-200;
 
@@ -314,14 +315,17 @@ $block-inserter-tabs-height: 44px;
 	}
 }
 
-.block-editor-inserter__quick-inserter-results .block-editor-inserter__panel-header {
+.block-editor-inserter__quick-inserter-results
+	.block-editor-inserter__panel-header {
 	height: 0;
 	padding: 0;
 	float: left;
 }
 
-.block-editor-inserter__quick-inserter.has-search .block-editor-inserter__panel-content,
-.block-editor-inserter__quick-inserter.has-expand .block-editor-inserter__panel-content {
+.block-editor-inserter__quick-inserter.has-search
+	.block-editor-inserter__panel-content,
+.block-editor-inserter__quick-inserter.has-expand
+	.block-editor-inserter__panel-content {
 	padding: $grid-unit-20;
 }
 
@@ -363,10 +367,10 @@ $block-inserter-tabs-height: 44px;
 	}
 
 	// Specificity is needed for the border color.
-	&.components-button:focus:not(:disabled) {
+	&.components-button:focus:not( :disabled ) {
 		box-shadow: none;
-		background: var(--wp-admin-theme-color);
-		border-color: var(--wp-admin-theme-color);
+		background: var( --wp-admin-theme-color );
+		border-color: var( --wp-admin-theme-color );
 	}
 }
 
@@ -410,15 +414,15 @@ $block-inserter-tabs-height: 44px;
 	.block-editor-block-patterns-list {
 		display: grid;
 		grid-gap: $grid-unit-40;
-		grid-template-columns: repeat(1, 1fr);
+		grid-template-columns: repeat( 1, 1fr );
 		margin-bottom: $grid-unit-20;
 
 		@include break-xlarge() {
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat( 2, 1fr );
 		}
 
 		@include break-huge() {
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat( 3, 1fr );
 		}
 
 		.block-editor-block-patterns-list__list-item {
@@ -472,7 +476,7 @@ $block-inserter-tabs-height: 44px;
 			margin-bottom: 0;
 			padding: $grid-unit-20 $grid-unit-30 $grid-unit-20;
 
-			&:not(:focus-within) {
+			&:not( :focus-within ) {
 				--wp-components-color-background: #{$white};
 			}
 		}
@@ -488,13 +492,13 @@ $block-inserter-tabs-height: 44px;
 		min-height: 100px;
 	}
 
-	&[draggable="true"] .block-editor-inserter__media-list__list-item {
+	&[draggable='true'] .block-editor-inserter__media-list__list-item {
 		cursor: grab;
 	}
 
 	&.is-hovered {
 		.block-editor-inserter__media-list__item-preview > * {
-			outline-color: rgba($black, 0.3);
+			outline-color: rgba( $black, 0.3 );
 		}
 
 		.block-editor-inserter__media-list__item-preview-options > button {
@@ -519,7 +523,10 @@ $block-inserter-tabs-height: 44px;
 			}
 
 			&:hover {
-				box-shadow: inset 0 0 0 2px $white, 0 0 0 var(--wp-admin-border-width-focus) var(--wp-admin-theme-color);
+				box-shadow:
+					inset 0 0 0 2px $white,
+					0 0 0 var( --wp-admin-border-width-focus )
+						var( --wp-admin-theme-color );
 
 				// Windows High Contrast mode will show this outline, but not the box-shadow.
 				outline: 2px solid transparent;
@@ -540,7 +547,7 @@ $block-inserter-tabs-height: 44px;
 		> * {
 			margin: 0 auto;
 			max-width: 100%;
-			outline: $border-width solid rgba($black, 0.1);
+			outline: $border-width solid rgba( $black, 0.1 );
 			outline-offset: -$border-width;
 		}
 
@@ -550,16 +557,16 @@ $block-inserter-tabs-height: 44px;
 			width: 100%;
 			position: absolute;
 			justify-content: center;
-			background: rgba($white, 0.7);
+			background: rgba( $white, 0.7 );
 			align-items: center;
 			pointer-events: none;
 		}
 	}
 
 	&:focus .block-editor-inserter__media-list__item-preview > * {
-		outline-color: var(--wp-admin-theme-color);
-		outline-width: var(--wp-admin-border-width-focus);
-		outline-offset: calc((-1 * var(--wp-admin-border-width-focus)));
+		outline-color: var( --wp-admin-theme-color );
+		outline-width: var( --wp-admin-border-width-focus );
+		outline-offset: calc( ( -1 * var( --wp-admin-border-width-focus ) ) );
 		@media not ( prefers-reduced-motion ) {
 			transition: outline 0.1s linear;
 		}
@@ -572,7 +579,6 @@ $block-inserter-tabs-height: 44px;
 	}
 }
 
-
 .block-editor-inserter__mobile-tab-navigation {
 	padding: $grid-unit-20;
 	height: 100%;
@@ -581,7 +587,6 @@ $block-inserter-tabs-height: 44px;
 		height: 100%;
 	}
 }
-
 
 .block-editor-inserter-media-tab-media-preview-inserter-external-image-modal {
 	@include break-small() {
@@ -615,7 +620,7 @@ $block-inserter-tabs-height: 44px;
 	&.show-panel::after {
 		// Makes space for the inserter flyout panel
 		@include break-medium {
-			content: "";
+			content: '';
 			display: block;
 			width: 300px;
 			height: 100%;
@@ -625,7 +630,8 @@ $block-inserter-tabs-height: 44px;
 
 .show-icon-labels {
 	@media (max-width: #{ ($break-large - 1) }) {
-		.block-editor-block-patterns-explorer .block-editor-patterns__grid-pagination {
+		.block-editor-block-patterns-explorer
+			.block-editor-patterns__grid-pagination {
 			flex-direction: column;
 			.block-editor-patterns__grid-pagination-previous,
 			.block-editor-patterns__grid-pagination-next {
@@ -634,7 +640,8 @@ $block-inserter-tabs-height: 44px;
 		}
 	}
 
-	.block-editor-inserter__category-panel .block-editor-patterns__grid-pagination {
+	.block-editor-inserter__category-panel
+		.block-editor-patterns__grid-pagination {
 		flex-direction: column;
 		.block-editor-patterns__grid-pagination-previous,
 		.block-editor-patterns__grid-pagination-next {

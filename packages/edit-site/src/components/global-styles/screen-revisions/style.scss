@@ -14,22 +14,22 @@
 	display: flex;
 	flex-direction: column;
 
-	&[role="option"]:active,
-	&[role="option"]:focus {
+	&[role='option']:active,
+	&[role='option']:focus {
 		@include button-style__focus();
 	}
 
 	&:hover {
-		background: rgba(var(--wp-admin-theme-color--rgb), 0.04);
+		background: rgba( var( --wp-admin-theme-color--rgb ), 0.04 );
 		.edit-site-global-styles-screen-revisions__date {
-			color: var(--wp-admin-theme-color);
+			color: var( --wp-admin-theme-color );
 		}
 	}
 
 	&::before,
 	&::after {
 		position: absolute;
-		content: "\a";
+		content: '\a';
 		display: block;
 	}
 
@@ -40,29 +40,29 @@
 		width: $grid-unit-10;
 		top: $grid-unit-20 + 2;
 		left: $grid-unit-20 + 1; // So the circle is centered on the line.
-		transform: translate(-50%, -50%);
+		transform: translate( -50%, -50% );
 		z-index: 1;
 
 		// This border serves as a background color in Windows High Contrast mode.
 		border: 4px solid transparent;
 	}
 
-	&[aria-selected="true"] {
+	&[aria-selected='true'] {
 		border-radius: $radius-small;
 
 		// Only visible in Windows High Contrast mode.
 		outline: 3px solid transparent;
 		outline-offset: -2px;
 
-		color: var(--wp-admin-theme-color);
-		background: rgba(var(--wp-admin-theme-color--rgb), 0.04);
+		color: var( --wp-admin-theme-color );
+		background: rgba( var( --wp-admin-theme-color--rgb ), 0.04 );
 
 		.edit-site-global-styles-screen-revisions__date {
-			color: var(--wp-admin-theme-color);
+			color: var( --wp-admin-theme-color );
 		}
 
 		&::before {
-			background: var(--wp-admin-theme-color);
+			background: var( --wp-admin-theme-color );
 		}
 
 		.edit-site-global-styles-screen-revisions__changes > li,
@@ -173,7 +173,7 @@
 	}
 
 	.components-button.is-tertiary:disabled,
-	.components-button.is-tertiary[aria-disabled="true"] {
+	.components-button.is-tertiary[aria-disabled='true'] {
 		color: $gray-600;
 	}
 }

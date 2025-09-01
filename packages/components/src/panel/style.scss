@@ -63,7 +63,7 @@
 	margin-top: 0;
 	margin-bottom: 0;
 
-	@media not (prefers-reduced-motion) {
+	@media not ( prefers-reduced-motion ) {
 		transition: 0.1s background ease-in-out;
 	}
 }
@@ -91,14 +91,15 @@
 	border: none;
 	box-shadow: none;
 
-	@media not (prefers-reduced-motion) {
+	@media not ( prefers-reduced-motion ) {
 		transition: 0.1s background ease-in-out;
 	}
 
 	height: auto;
 
 	&:focus {
-		box-shadow: inset 0 0 0 var(--wp-admin-border-width-focus) $components-color-accent;
+		box-shadow: inset 0 0 0 var( --wp-admin-border-width-focus )
+			$components-color-accent;
 		border-radius: 0;
 	}
 
@@ -106,11 +107,11 @@
 		position: absolute;
 		right: $grid-unit-20;
 		top: 50%;
-		transform: translateY(-50%);
+		transform: translateY( -50% );
 		color: $gray-900;
 		fill: currentColor;
 
-		@media not (prefers-reduced-motion) {
+		@media not ( prefers-reduced-motion ) {
 			transition: 0.1s color ease-in-out;
 		}
 	}
@@ -118,7 +119,7 @@
 	// mirror the arrow horizontally in RTL languages
 	/* rtl:begin:ignore */
 	body.rtl & .dashicons-arrow-right {
-		transform: scaleX(-1);
+		transform: scaleX( -1 );
 		-ms-filter: fliph;
 		filter: FlipH;
 		margin-top: -10px;

@@ -5,7 +5,7 @@
 	/* stylelint-disable-next-line property-no-unknown -- '@container' not globally permitted */
 	container: edit-site-page / inline-size;
 
-	@media not (prefers-reduced-motion) {
+	@media not ( prefers-reduced-motion ) {
 		transition: width ease-out 0.2s;
 	}
 }
@@ -16,9 +16,9 @@
 	background: $white;
 	position: sticky;
 	top: 0;
-	z-index: z-index(".edit-site-page-header");
+	z-index: z-index( '.edit-site-page-header' );
 
-	@media not (prefers-reduced-motion) {
+	@media not ( prefers-reduced-motion ) {
 		transition: padding ease-out 0.1s;
 	}
 
@@ -52,5 +52,5 @@
 	display: flex;
 	flex-flow: column;
 	position: relative;
-	z-index: z-index(".edit-site-page-content");
+	z-index: z-index( '.edit-site-page-content' );
 }

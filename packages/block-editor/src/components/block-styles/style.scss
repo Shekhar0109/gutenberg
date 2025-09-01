@@ -1,7 +1,9 @@
 .block-editor-block-styles__preview-panel {
 	display: none;
 	// Same layer as the sidebar from which it's triggered.
-	z-index: z-index(".interface-interface-skeleton__sidebar {greater than small}");
+	z-index: z-index(
+		'.interface-interface-skeleton__sidebar {greater than small}'
+	);
 
 	// Only show in narrow widths.
 	@include break-medium() {
@@ -23,10 +25,10 @@
 		color: $gray-900;
 		box-shadow: inset 0 0 0 $border-width $gray-300;
 		display: inline-block;
-		width: calc(50% - #{$grid-unit-05});
+		width: calc( 50% - #{$grid-unit-05} );
 
 		&:hover {
-			color: var(--wp-admin-theme-color);
+			color: var( --wp-admin-theme-color );
 			box-shadow: inset 0 0 0 $border-width $gray-300;
 		}
 

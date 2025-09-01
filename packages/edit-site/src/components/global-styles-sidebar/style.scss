@@ -8,11 +8,13 @@
 	}
 }
 
-.edit-site-global-styles-sidebar .edit-site-global-styles-sidebar__header-title {
+.edit-site-global-styles-sidebar
+	.edit-site-global-styles-sidebar__header-title {
 	margin: 0;
 }
 
-.edit-site-global-styles-sidebar .edit-site-global-styles-sidebar__header-actions {
+.edit-site-global-styles-sidebar
+	.edit-site-global-styles-sidebar__header-actions {
 	flex: 1;
 }
 
@@ -68,10 +70,9 @@
 			}
 			// ... and display labels.
 			&::after {
-				content: attr(aria-label);
+				content: attr( aria-label );
 				font-size: $helptext-font-size;
 			}
 		}
 	}
 }
-

@@ -1,4 +1,5 @@
-#customize-theme-controls .customize-pane-child.accordion-section-content.customize-widgets-layout__inspector {
+#customize-theme-controls
+	.customize-pane-child.accordion-section-content.customize-widgets-layout__inspector {
 	background: $white;
 	box-sizing: border-box;
 
@@ -16,6 +17,7 @@
 	}
 }
 
-#customize-theme-controls .customize-pane-child.control-section-sidebar.is-sub-section-open {
-	transform: translateX(-100%);
+#customize-theme-controls
+	.customize-pane-child.control-section-sidebar.is-sub-section-open {
+	transform: translateX( -100% );
 }

@@ -5,7 +5,7 @@ html.interface-interface-skeleton__html-container {
 	width: 100%;
 
 	@include break-medium() {
-		&:not(:has(.is-zoom-out)) {
+		&:not( :has( .is-zoom-out ) ) {
 			position: initial;
 			width: initial;
 		}
@@ -42,7 +42,7 @@ html.interface-interface-skeleton__html-container {
 	overflow: hidden;
 }
 
-@include editor-left(".interface-interface-skeleton");
+@include editor-left( '.interface-interface-skeleton' );
 
 .interface-interface-skeleton__body {
 	position: relative;
@@ -90,7 +90,7 @@ html.interface-interface-skeleton__html-container {
 	// On Safari iOS on smaller viewports lack of a z-index causes the background
 	// to "bleed" through the header.
 	// See https://github.com/WordPress/gutenberg/issues/32631
-	z-index: z-index(".interface-interface-skeleton__content");
+	z-index: z-index( '.interface-interface-skeleton__content' );
 
 	// On Safari the z-index is not respected when the element is fixed.
 	// Setting it to auto fixes the problem
@@ -103,7 +103,7 @@ html.interface-interface-skeleton__html-container {
 .interface-interface-skeleton__sidebar {
 	flex-shrink: 0;
 	position: absolute;
-	z-index: z-index(".interface-interface-skeleton__sidebar");
+	z-index: z-index( '.interface-interface-skeleton__sidebar' );
 	top: 0;
 	left: 0;
 	bottom: 0;
@@ -122,7 +122,7 @@ html.interface-interface-skeleton__html-container {
 	overflow: hidden;
 
 	@include break-medium() {
-		box-shadow: -$border-width 0 0 0 rgba($color: #000, $alpha: 0.133); // 0.133 = $gray-200 but with alpha.
+		box-shadow: -$border-width 0 0 0 rgba( $color: #000, $alpha: 0.133 ); // 0.133 = $gray-200 but with alpha.
 		outline: 1px solid transparent; // Shown for Windows 10 High Contrast mode.
 	}
 }
@@ -132,16 +132,16 @@ html.interface-interface-skeleton__html-container {
 	right: 0;
 
 	@include break-medium() {
-		box-shadow: $border-width 0 0 0 rgba($color: #000, $alpha: 0.133); // 0.133 = $gray-200 but with alpha.
+		box-shadow: $border-width 0 0 0 rgba( $color: #000, $alpha: 0.133 ); // 0.133 = $gray-200 but with alpha.
 		outline: 1px solid transparent; // Shown for Windows 10 High Contrast mode.
 	}
 }
 
 .interface-interface-skeleton__header {
 	flex-shrink: 0;
-	height: auto;  // Keep the height flexible.
-	box-shadow: 0 $border-width 0 0 rgba($color: #000, $alpha: 0.133); // 0.133 = $gray-200 but with alpha.
-	z-index: z-index(".interface-interface-skeleton__header");
+	height: auto; // Keep the height flexible.
+	box-shadow: 0 $border-width 0 0 rgba( $color: #000, $alpha: 0.133 ); // 0.133 = $gray-200 but with alpha.
+	z-index: z-index( '.interface-interface-skeleton__header' );
 	color: $gray-900;
 	outline: 1px solid transparent; // Shown for Windows 10 High Contrast mode.
 }
@@ -156,7 +156,7 @@ html.interface-interface-skeleton__html-container {
 	left: 0;
 	width: 100%;
 	background-color: $white;
-	z-index: z-index(".interface-interface-skeleton__footer");
+	z-index: z-index( '.interface-interface-skeleton__footer' );
 
 	// On Mobile the footer is hidden
 	display: none;
@@ -165,18 +165,18 @@ html.interface-interface-skeleton__html-container {
 	}
 
 	.block-editor-block-breadcrumb {
-		z-index: z-index(".edit-post-layout__footer");
+		z-index: z-index( '.edit-post-layout__footer' );
 		display: flex;
 		background: $white;
 		height: $button-size-small;
 		align-items: center;
 		font-size: $default-font-size;
-		padding: 0 ($grid-unit-15 + 6px);
+		padding: 0 ( $grid-unit-15 + 6px );
 	}
 }
 
 .interface-interface-skeleton__actions {
-	z-index: z-index(".interface-interface-skeleton__actions");
+	z-index: z-index( '.interface-interface-skeleton__actions' );
 	position: fixed !important; // Need to override the default relative positioning
 	top: -9999em;
 	bottom: auto;

@@ -4,7 +4,6 @@
 	margin-left: $grid-unit-10;
 }
 
-
 // Prevent toolbar from jumping when selecting / hovering a link.
 .wp-social-link:hover {
 	transform: none;
@@ -12,12 +11,12 @@
 
 // Specificity for the following styles are fixed at 0-1-0 to match and be
 // overridable by global styles.
-:root :where(.wp-block-social-links) {
+:root :where( .wp-block-social-links ) {
 	padding: 0;
 }
 
 // Center flex items. This has an equivalent in style.scss.
-.wp-block[data-align="center"] > .wp-block-social-links,
+.wp-block[data-align='center'] > .wp-block-social-links,
 .wp-block.wp-block-social-links.aligncenter {
 	justify-content: center;
 }

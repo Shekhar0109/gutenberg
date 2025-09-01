@@ -14,7 +14,7 @@
 	font-size: 60px;
 }
 
-[data-theme="dark"] .title {
+[data-theme='dark'] .title {
 	color: #fff;
 }
 
@@ -26,7 +26,7 @@
 	max-width: 1000px;
 	display: grid;
 	gap: 2rem;
-	grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+	grid-template-columns: repeat( auto-fill, minmax( 130px, 1fr ) );
 }
 
 .image {
@@ -47,6 +47,6 @@
 	text-align: center;
 }
 
-[data-theme="dark"] .blockTitle {
+[data-theme='dark'] .blockTitle {
 	color: #fff;
 }

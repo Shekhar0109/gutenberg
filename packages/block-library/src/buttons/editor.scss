@@ -35,12 +35,13 @@ $blocks-block__margin: 0.5em;
 	// newer justification options on the button block, hence the :not.
 	/* stylelint-disable @stylistic/indentation -- Disable the stylelint rule, otherwise this selector is ugly! */
 	&:not(
-		.is-content-justification-space-between,
-		.is-content-justification-right,
-		.is-content-justification-left,
-		.is-content-justification-center
-	) .wp-block[data-align="center"] {
-	/* stylelint-enable @stylistic/indentation */
+			.is-content-justification-space-between,
+			.is-content-justification-right,
+			.is-content-justification-left,
+			.is-content-justification-center
+		)
+		.wp-block[data-align='center'] {
+		/* stylelint-enable @stylistic/indentation */
 		margin-left: auto;
 		margin-right: auto;
 		margin-top: 0;
@@ -54,11 +55,11 @@ $blocks-block__margin: 0.5em;
 	}
 }
 
-.wp-block[data-align="center"] > .wp-block-buttons {
+.wp-block[data-align='center'] > .wp-block-buttons {
 	align-items: center;
 	justify-content: center;
 }
 
-.wp-block[data-align="right"] > .wp-block-buttons {
+.wp-block[data-align='right'] > .wp-block-buttons {
 	justify-content: flex-end;
 }

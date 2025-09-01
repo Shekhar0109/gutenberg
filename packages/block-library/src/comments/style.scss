@@ -15,7 +15,7 @@
 	/* end utility classes */
 	.navigation {
 		&::after {
-			content: "";
+			content: '';
 			display: table;
 			clear: both;
 		}
@@ -93,9 +93,8 @@
 	}
 
 	.comment-form {
-
 		textarea,
-		input:not([type="submit"]):not([type="checkbox"]) {
+		input:not( [type='submit'] ):not( [type='checkbox'] ) {
 			display: block;
 			box-sizing: border-box;
 			width: 100%;
@@ -114,8 +113,8 @@
 	.comment-reply-title {
 		margin-bottom: 0;
 
-		:where(small) {
-			font-size: var(--wp--preset--font-size--medium, smaller);
+		:where( small ) {
+			font-size: var( --wp--preset--font-size--medium, smaller );
 			margin-left: 0.5em;
 		}
 	}
@@ -126,23 +125,24 @@
 	}
 
 	textarea,
-	input:not([type="submit"]) {
+	input:not( [type='submit'] ) {
 		border: 1px solid $gray-600;
 		font-size: 1em;
 		font-family: inherit;
 	}
 
 	textarea,
-	input:not([type="submit"]):not([type="checkbox"]) {
-		padding: calc(0.667em + 2px); // The extra 2px is added to match outline buttons.
+	input:not( [type='submit'] ):not( [type='checkbox'] ) {
+		padding: calc(
+			0.667em + 2px
+		); // The extra 2px is added to match outline buttons.
 	}
 }
-
 
 // Using :where to give this a low specificity so that element styles take precedence.
 // Needed for backwards compatibility.
 // Styles copied from button block styles.
-:where(.wp-block-post-comments input[type="submit"]) {
+:where( .wp-block-post-comments input[type='submit'] ) {
 	border: none;
 }
 

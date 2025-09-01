@@ -73,7 +73,7 @@
 	}
 }
 
-.wp-block-pullquote :where(cite) {
+.wp-block-pullquote :where( cite ) {
 	color: inherit;
 	display: block;
 }

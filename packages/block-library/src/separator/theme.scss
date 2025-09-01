@@ -1,5 +1,5 @@
 // Import styles for rendering the static content of deprecated block versions.
-@import "./deprecated.scss";
+@import './deprecated.scss';
 
 .wp-block-separator {
 	border: none;
@@ -12,16 +12,16 @@
 	}
 
 	// Default, thin style
-	&:not(.is-style-wide):not(.is-style-dots) {
+	&:not( .is-style-wide ):not( .is-style-dots ) {
 		width: 100px;
 	}
 
-	&.has-background:not(.is-style-dots) {
+	&.has-background:not( .is-style-dots ) {
 		border-bottom: none;
 		height: 1px;
 	}
 
-	&.has-background:not(.is-style-wide):not(.is-style-dots) {
+	&.has-background:not( .is-style-wide ):not( .is-style-dots ) {
 		height: 2px;
 	}
 }

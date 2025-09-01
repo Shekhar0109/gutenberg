@@ -290,11 +290,11 @@ $cell-disable-opacity: 0.38;
 }
 
 .placeholderColorDisabled {
-	color: rgba($gray-dark, $cell-disable-opacity);
+	color: rgba( $gray-dark, $cell-disable-opacity );
 }
 
 .placeholderColorDisabledDark {
-	color: rgba($white, $cell-disable-opacity);
+	color: rgba( $white, $cell-disable-opacity );
 }
 
 .applyButton {

@@ -23,12 +23,17 @@
 // it just makes the selection indication slightly less precise. That makes this
 // hack a progressive enhancement.
 /* stylelint-disable -- Stylelint is disabled to allow the hack to work. */
-_::-webkit-full-page-media, _:future, :root .block-editor-block-list__layout::selection,
-_::-webkit-full-page-media, _:future, :root [data-has-multi-selection="true"] .block-editor-block-list__layout::selection {
+_::-webkit-full-page-media,
+_:future,
+:root .block-editor-block-list__layout::selection,
+_::-webkit-full-page-media,
+_:future,
+:root
+	[data-has-multi-selection='true']
+	.block-editor-block-list__layout::selection {
 	background-color: transparent;
 }
 /* stylelint-enable */
-
 
 // Note to developers refactoring this, please test navigation mode, and
 // multi selection and hovering the block switcher to highlight the block.
@@ -38,7 +43,9 @@ _::-webkit-full-page-media, _:future, :root [data-has-multi-selection="true"] .b
 	position: relative;
 
 	// Block multi selection
-	.block-editor-block-list__block.is-multi-selected:not(.is-partially-selected) {
+	.block-editor-block-list__block.is-multi-selected:not(
+			.is-partially-selected
+		) {
 		// Hide the native selection indicator, for the selection, and children.
 		&::selection,
 		& ::selection {
@@ -47,7 +54,7 @@ _::-webkit-full-page-media, _:future, :root [data-has-multi-selection="true"] .b
 
 		// Draw a spot color overlay.
 		&::after {
-			content: "";
+			content: '';
 			position: absolute;
 			z-index: 1;
 			pointer-events: none;
@@ -55,11 +62,10 @@ _::-webkit-full-page-media, _:future, :root [data-has-multi-selection="true"] .b
 			right: 0;
 			bottom: 0;
 			left: 0;
-			background: var(--wp-admin-theme-color);
+			background: var( --wp-admin-theme-color );
 			opacity: 0.4;
 
 			@media not ( prefers-reduced-motion ) {
-
 				// Animate.
 				animation: selection-overlay__fade-in-animation 0.1s ease-out;
 				animation-fill-mode: forwards;
@@ -82,7 +88,7 @@ _::-webkit-full-page-media, _:future, :root [data-has-multi-selection="true"] .b
 	// since things like border-radius need to be able to be set on the block itself.
 	.block-editor-block-list__block.is-highlighted,
 	.block-editor-block-list__block.is-highlighted ~ .is-multi-selected,
-	.block-editor-block-list__block:not([contenteditable="true"]):focus {
+	.block-editor-block-list__block:not( [contenteditable='true'] ):focus {
 		outline: none;
 
 		// We're using a pseudo element to overflow placeholder borders
@@ -94,7 +100,7 @@ _::-webkit-full-page-media, _:future, :root [data-has-multi-selection="true"] .b
 	}
 
 	// Re-enable it on components inside.
-	[class^="components-"] {
+	[class^='components-'] {
 		user-select: text;
 	}
 }
@@ -120,12 +126,14 @@ _::-webkit-full-page-media, _:future, :root [data-has-multi-selection="true"] .b
 		&.is-selected,
 		&.has-child-selected {
 			// Bring the selected block forward so we can see it.
-			z-index: z-index(".block-editor-block-list__block.is-selected");
+			z-index: z-index( '.block-editor-block-list__block.is-selected' );
 		}
 	}
 
 	.reusable-block-edit-panel * {
-		z-index: z-index(".block-editor-block-list__block .reusable-block-edit-panel *");
+		z-index: z-index(
+			'.block-editor-block-list__block .reusable-block-edit-panel *'
+		);
 	}
 
 	/**
@@ -164,13 +172,13 @@ _::-webkit-full-page-media, _:future, :root [data-has-multi-selection="true"] .b
 
 	// Scrim overlay.
 	&.has-warning::after {
-		content: "";
+		content: '';
 		position: absolute;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
-		background-color: rgba($white, 0.4);
+		background-color: rgba( $white, 0.4 );
 	}
 
 	// Avoid conflict with the multi-selection highlight color.
@@ -180,17 +188,16 @@ _::-webkit-full-page-media, _:future, :root [data-has-multi-selection="true"] .b
 
 	// Reusable blocks parent border.
 	&.is-reusable.has-child-selected::after {
-		box-shadow: 0 0 0 1px var(--wp-admin-theme-color);
+		box-shadow: 0 0 0 1px var( --wp-admin-theme-color );
 	}
 
 	// Clear floats.
-	&[data-clear="true"] {
+	&[data-clear='true'] {
 		float: none;
 	}
 }
 
-.is-outline-mode .block-editor-block-list__block:not(.remove-outline) {
-
+.is-outline-mode .block-editor-block-list__block:not( .remove-outline ) {
 	&.is-selected,
 	&.is-hovered {
 		cursor: default;
@@ -201,9 +208,8 @@ _::-webkit-full-page-media, _:future, :root [data-has-multi-selection="true"] .b
 		}
 	}
 
-	&.is-hovered:not(.is-selected),
-	&:not(.rich-text):not([contenteditable="true"]).is-selected {
-
+	&.is-hovered:not( .is-selected ),
+	&:not( .rich-text ):not( [contenteditable='true'] ).is-selected {
 		&::after {
 			@include selected-block-focus();
 		}
@@ -211,18 +217,21 @@ _::-webkit-full-page-media, _:future, :root [data-has-multi-selection="true"] .b
 }
 
 // Colorize outlines for template parts and synced patterns (.is-reusable).
-.is-outline-mode .block-editor-block-list__block:not(.remove-outline).wp-block-template-part,
-.is-outline-mode .block-editor-block-list__block:not(.remove-outline).is-reusable {
-
+.is-outline-mode
+	.block-editor-block-list__block:not(
+		.remove-outline
+	).wp-block-template-part,
+.is-outline-mode
+	.block-editor-block-list__block:not( .remove-outline ).is-reusable {
 	&.is-hovered::after,
 	&.is-selected::after,
 	&.is-highlighted::after {
-		outline-color: var(--wp-block-synced-color);
+		outline-color: var( --wp-block-synced-color );
 	}
 
-	&.block-editor-block-list__block:not([contenteditable]):focus {
+	&.block-editor-block-list__block:not( [contenteditable] ):focus {
 		&::after {
-			outline-color: var(--wp-block-synced-color);
+			outline-color: var( --wp-block-synced-color );
 		}
 	}
 }
@@ -230,33 +239,35 @@ _::-webkit-full-page-media, _:future, :root [data-has-multi-selection="true"] .b
 // Add fade in/out background for editable blocks in synced patterns.
 @keyframes block-editor-is-editable__animation {
 	from {
-		background-color: rgba(var(--wp-admin-theme-color--rgb), 0.1);
+		background-color: rgba( var( --wp-admin-theme-color--rgb ), 0.1 );
 	}
 	to {
-		background-color: rgba(var(--wp-admin-theme-color--rgb), 0);
+		background-color: rgba( var( --wp-admin-theme-color--rgb ), 0 );
 	}
 }
 
 @keyframes block-editor-is-editable__animation_reduce-motion {
 	0% {
-		background-color: rgba(var(--wp-admin-theme-color--rgb), 0.1);
+		background-color: rgba( var( --wp-admin-theme-color--rgb ), 0.1 );
 	}
 	99% {
-		background-color: rgba(var(--wp-admin-theme-color--rgb), 0.1);
+		background-color: rgba( var( --wp-admin-theme-color--rgb ), 0.1 );
 	}
 	100% {
-		background-color: rgba(var(--wp-admin-theme-color--rgb), 0);
+		background-color: rgba( var( --wp-admin-theme-color--rgb ), 0 );
 	}
 }
 
-.is-root-container:not([inert]) .block-editor-block-list__block.is-selected .block-editor-block-list__block.has-editable-outline::after {
+.is-root-container:not( [inert] )
+	.block-editor-block-list__block.is-selected
+	.block-editor-block-list__block.has-editable-outline::after {
 	animation-name: block-editor-is-editable__animation;
 	animation-duration: 0.8s;
 	animation-timing-function: ease-out;
 	animation-delay: 0.1s;
 	animation-fill-mode: backwards;
 	bottom: 0;
-	content: "";
+	content: '';
 	left: 0;
 	pointer-events: none;
 	position: absolute;
@@ -264,14 +275,14 @@ _::-webkit-full-page-media, _:future, :root [data-has-multi-selection="true"] .b
 	top: 0;
 
 	// Unique reduced-motion affordance to ensure the effect is still visible when reduce motion is enabled.
-	@media (prefers-reduced-motion: reduce) {
+	@media ( prefers-reduced-motion: reduce ) {
 		animation-name: block-editor-is-editable__animation_reduce-motion;
 		animation-delay: 0s;
 	}
 }
 
 // Spotlight mode. Fade out blocks unless they contain a selected block.
-.is-focus-mode .block-editor-block-list__block:not(.has-child-selected) {
+.is-focus-mode .block-editor-block-list__block:not( .has-child-selected ) {
 	opacity: 0.2;
 	@media not ( prefers-reduced-motion ) {
 		transition: opacity 0.1s linear;
@@ -288,33 +299,35 @@ _::-webkit-full-page-media, _:future, :root [data-has-multi-selection="true"] .b
 	}
 }
 
-.is-focus-mode .block-editor-block-list__block.is-content-locked.has-child-selected,
-.is-focus-mode .block-editor-block-list__block.is-content-locked-temporarily-editing-as-blocks.has-child-selected {
+.is-focus-mode
+	.block-editor-block-list__block.is-content-locked.has-child-selected,
+.is-focus-mode
+	.block-editor-block-list__block.is-content-locked-temporarily-editing-as-blocks.has-child-selected {
 	&,
 	& .block-editor-block-list__block {
 		opacity: 1;
 	}
 }
 
-.wp-block[data-align="left"] > *,
-.wp-block[data-align="right"] > *,
+.wp-block[data-align='left'] > *,
+.wp-block[data-align='right'] > *,
 .wp-block.alignleft,
 .wp-block.alignright {
 	// Without z-index, won't be clickable as "above" adjacent content.
-	z-index: z-index("{core/image aligned left or right} .wp-block");
+	z-index: z-index( '{core/image aligned left or right} .wp-block' );
 }
 
-.wp-site-blocks > [data-align="left"] {
+.wp-site-blocks > [data-align='left'] {
 	float: left;
 	margin-right: 2em;
 }
 
-.wp-site-blocks > [data-align="right"] {
+.wp-site-blocks > [data-align='right'] {
 	float: right;
 	margin-left: 2em;
 }
 
-.wp-site-blocks > [data-align="center"] {
+.wp-site-blocks > [data-align='center'] {
 	justify-content: center;
 	margin-left: auto;
 	margin-right: auto;
@@ -348,12 +361,13 @@ _::-webkit-full-page-media, _:future, :root [data-has-multi-selection="true"] .b
 	}
 }
 
-.block-editor-block-list__block:not(.is-selected):not(.has-child-selected) .block-editor-default-block-appender {
+.block-editor-block-list__block:not( .is-selected ):not( .has-child-selected )
+	.block-editor-default-block-appender {
 	display: none;
 
 	.block-editor-inserter__toggle {
 		opacity: 0;
-		transform: scale(0);
+		transform: scale( 0 );
 	}
 }
 
@@ -377,17 +391,17 @@ _::-webkit-full-page-media, _:future, :root [data-has-multi-selection="true"] .b
 	}
 
 	&:focus {
-		box-shadow: inset 0 0 0 var(--wp-admin-border-width-focus) var(--wp-admin-theme-color);
+		box-shadow: inset 0 0 0 var( --wp-admin-border-width-focus )
+			var( --wp-admin-theme-color );
 	}
 }
-
 
 /**
  * Warnings.
  */
 
 .block-editor-block-list__block .block-editor-warning {
-	z-index: z-index(".block-editor-warning");
+	z-index: z-index( '.block-editor-warning' );
 	position: relative;
 
 	&.block-editor-block-list__block-crash-warning {
@@ -420,7 +434,9 @@ _::-webkit-full-page-media, _:future, :root [data-has-multi-selection="true"] .b
 
 	.is-zoomed-out & {
 		// Maintains an absolute font-size by counter-scaling based on the zoom level.
-		font-size: calc(#{$default-font-size} / var(--wp-block-editor-iframe-zoom-out-scale));
+		font-size: calc(
+			#{$default-font-size} / var( --wp-block-editor-iframe-zoom-out-scale )
+		);
 	}
 
 	&.is-dragged-over {
@@ -430,10 +446,12 @@ _::-webkit-full-page-media, _:future, :root [data-has-multi-selection="true"] .b
 
 // In Post Editor allow the separator to occupy the full width by ignoring (cancelling out) the global padding.
 .has-global-padding > .block-editor-block-list__zoom-out-separator,
-.block-editor-block-list__layout.is-root-container.has-global-padding > .block-editor-block-list__zoom-out-separator {
+.block-editor-block-list__layout.is-root-container.has-global-padding
+	> .block-editor-block-list__zoom-out-separator {
 	max-width: none;
 	// Additional -1px is required to avoid sub pixel rounding errors allowing background to show.
-	margin: 0 calc(-1 * var(--wp--style--root--padding-right) - 1px) 0 calc(-1 * var(--wp--style--root--padding-left) - 1px) !important;
+	margin: 0 calc( -1 * var( --wp--style--root--padding-right ) - 1px ) 0
+		calc( -1 * var( --wp--style--root--padding-left ) - 1px ) !important;
 }
 
 // This only works in Firefox, Chrome and Safari don't accept a custom cursor

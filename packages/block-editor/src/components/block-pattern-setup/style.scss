@@ -27,7 +27,7 @@
 			}
 
 			.block-editor-block-preview__container,
-			div[role="button"] {
+			div[role='button'] {
 				cursor: pointer;
 			}
 
@@ -35,15 +35,17 @@
 				scroll-margin: 5px 0;
 
 				&:hover .block-editor-block-preview__container {
-					box-shadow: 0 0 0 2px var(--wp-admin-theme-color);
+					box-shadow: 0 0 0 2px var( --wp-admin-theme-color );
 				}
 
 				&:focus .block-editor-block-preview__container {
-					@include button-style-outset__focus(var(--wp-admin-theme-color));
+					@include button-style-outset__focus(
+						var( --wp-admin-theme-color )
+					);
 				}
 				&:hover .block-editor-block-pattern-setup-list__item-title,
 				&:focus .block-editor-block-pattern-setup-list__item-title {
-					color: var(--wp-admin-theme-color);
+					color: var( --wp-admin-theme-color );
 				}
 			}
 
@@ -96,7 +98,9 @@
 
 		.block-editor-block-pattern-setup__navigation,
 		.block-editor-block-pattern-setup__actions {
-			width: calc(50% - 36px); // This ensures the grid / list toggle is centrally aligned.
+			width: calc(
+				50% - 36px
+			); // This ensures the grid / list toggle is centrally aligned.
 			display: flex;
 		}
 
@@ -131,24 +135,34 @@
 				margin: auto;
 				padding: 0;
 				@media not ( prefers-reduced-motion ) {
-					transition: transform 0.5s, z-index 0.5s;
+					transition:
+						transform 0.5s,
+						z-index 0.5s;
 				}
-				z-index: z-index(".block-editor-block-pattern-setup .pattern-slide");
+				z-index: z-index(
+					'.block-editor-block-pattern-setup .pattern-slide'
+				);
 
 				&.active-slide {
 					opacity: 1;
 					position: relative;
-					z-index: z-index(".block-editor-block-pattern-setup .active-slide");
+					z-index: z-index(
+						'.block-editor-block-pattern-setup .active-slide'
+					);
 				}
 
 				&.previous-slide {
-					transform: translateX(-100%);
-					z-index: z-index(".block-editor-block-pattern-setup .{next,previous}-slide");
+					transform: translateX( -100% );
+					z-index: z-index(
+						'.block-editor-block-pattern-setup .{next,previous}-slide'
+					);
 				}
 
 				&.next-slide {
-					transform: translateX(100%);
-					z-index: z-index(".block-editor-block-pattern-setup .{next,previous}-slide");
+					transform: translateX( 100% );
+					z-index: z-index(
+						'.block-editor-block-pattern-setup .{next,previous}-slide'
+					);
 				}
 			}
 		}

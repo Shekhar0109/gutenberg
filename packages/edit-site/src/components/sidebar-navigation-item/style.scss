@@ -7,7 +7,7 @@
 
 	&:hover,
 	&:focus,
-	&[aria-current="true"] {
+	&[aria-current='true'] {
 		color: $gray-200;
 
 		.edit-site-sidebar-navigation-item__drilldown-indicator {
@@ -15,7 +15,7 @@
 		}
 	}
 
-	&[aria-current="true"] {
+	&[aria-current='true'] {
 		background: $gray-800;
 		color: $white;
 		font-weight: $font-weight-medium;
@@ -23,7 +23,7 @@
 
 	// Make sure the focus style is drawn on top of the current item background.
 	&:focus-visible {
-		transform: translateZ(0);
+		transform: translateZ( 0 );
 	}
 
 	.edit-site-sidebar-navigation-item__drilldown-indicator {
@@ -35,7 +35,8 @@
 	}
 }
 
-.edit-site-sidebar-navigation-screen__content .block-editor-list-view-block-select-button {
+.edit-site-sidebar-navigation-screen__content
+	.block-editor-list-view-block-select-button {
 	cursor: grab;
 	padding: $grid-unit-10 $grid-unit-10 $grid-unit-10 0;
 }

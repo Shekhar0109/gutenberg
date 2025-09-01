@@ -10,7 +10,7 @@
 	text-align: left;
 	width: 100%;
 
-	&:focus:not(:disabled) {
+	&:focus:not( :disabled ) {
 		@include block-toolbar-button-style__focus();
 	}
 }

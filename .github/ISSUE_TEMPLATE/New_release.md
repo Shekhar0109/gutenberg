@@ -1,6 +1,6 @@
 ---
 name: Gutenberg Release
-title: "Gutenberg {VERSION_NUMBER} release checklist"
+title: 'Gutenberg {VERSION_NUMBER} release checklist'
 about: A checklist for the Gutenberg plugin release process
 labels: Gutenberg Plugin, [Type] Project Management
 ---

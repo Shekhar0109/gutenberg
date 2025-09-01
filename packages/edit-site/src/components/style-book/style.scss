@@ -20,8 +20,9 @@
 		border-radius: $radius-large;
 	}
 	&.is-focused {
-		outline: calc(2 * var(--wp-admin-border-width-focus)) solid var(--wp-admin-theme-color);
-		outline-offset: calc(-2 * var(--wp-admin-border-width-focus));
+		outline: calc( 2 * var( --wp-admin-border-width-focus ) ) solid
+			var( --wp-admin-theme-color );
+		outline-offset: calc( -2 * var( --wp-admin-border-width-focus ) );
 	}
 }
 

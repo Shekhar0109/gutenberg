@@ -27,7 +27,7 @@
 
 					// Prevent the menu from disappearing when the mouse is over the gap
 					&::before {
-						content: "";
+						content: '';
 						position: absolute;
 						right: 100%;
 						height: 100%;

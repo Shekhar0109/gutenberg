@@ -30,7 +30,7 @@
 		&.dataviews-view-table__actions-column--stuck {
 			&::after {
 				display: block;
-				content: "";
+				content: '';
 				position: absolute;
 				top: 0;
 				bottom: 0;
@@ -62,7 +62,7 @@
 			padding-left: $grid-unit-60;
 
 			.dataviews-view-table-header-button {
-				margin-left: - #{$grid-unit-10};
+				margin-left: -#{$grid-unit-10};
 			}
 		}
 
@@ -90,7 +90,8 @@
 			}
 		}
 
-		.dataviews-item-actions .components-button:not(.dataviews-all-actions-button) {
+		.dataviews-item-actions
+			.components-button:not( .dataviews-all-actions-button ) {
 			opacity: 0;
 		}
 
@@ -98,45 +99,59 @@
 		&.is-hovered,
 		&:hover {
 			.components-checkbox-control__input,
-			.dataviews-item-actions .components-button:not(.dataviews-all-actions-button) {
+			.dataviews-item-actions
+				.components-button:not( .dataviews-all-actions-button ) {
 				opacity: 1;
 			}
 		}
 
-		@media (hover: none) {
+		@media ( hover: none ) {
 			// Show checkboxes and quick-actions on devices that do not support hover.
 			.components-checkbox-control__input.components-checkbox-control__input,
-			.dataviews-item-actions .components-button:not(.dataviews-all-actions-button) {
+			.dataviews-item-actions
+				.components-button:not( .dataviews-all-actions-button ) {
 				opacity: 1;
 			}
 		}
 
 		&.is-selected {
-			background-color: rgba(var(--wp-admin-theme-color--rgb), 0.04);
+			background-color: rgba( var( --wp-admin-theme-color--rgb ), 0.04 );
 			color: $gray-700;
 
 			&,
 			& + tr {
-				border-top: 1px solid rgba(var(--wp-admin-theme-color--rgb), 0.12);
+				border-top: 1px solid
+					rgba( var( --wp-admin-theme-color--rgb ), 0.12 );
 			}
 
 			&:hover {
-				background-color: rgba(var(--wp-admin-theme-color--rgb), 0.08);
+				background-color: rgba(
+					var( --wp-admin-theme-color--rgb ),
+					0.08
+				);
 			}
 
 			.dataviews-view-table__actions-column--sticky {
-				background-color: color-mix(in srgb, rgb(var(--wp-admin-theme-color--rgb)) 4%, $white);
+				background-color: color-mix(
+					in srgb,
+					rgb( var( --wp-admin-theme-color--rgb ) ) 4%,
+					$white
+				);
 			}
 
 			&:hover .dataviews-view-table__actions-column--sticky {
-				background-color: color-mix(in srgb, rgb(var(--wp-admin-theme-color--rgb)) 8%, $white);
+				background-color: color-mix(
+					in srgb,
+					rgb( var( --wp-admin-theme-color--rgb ) ) 8%,
+					$white
+				);
 			}
 		}
 	}
 	thead {
 		position: sticky;
 		inset-block-start: 0;
-		z-index: z-index(".dataviews-view-table thead");
+		z-index: z-index( '.dataviews-view-table thead' );
 
 		tr {
 			border: 0;
@@ -150,7 +165,7 @@
 			text-transform: uppercase;
 			font-weight: 500;
 
-			&:has(.dataviews-view-table-header-button):not(:first-child) {
+			&:has( .dataviews-view-table-header-button ):not( :first-child ) {
 				padding-left: $grid-unit-05;
 			}
 		}
@@ -173,7 +188,8 @@
 			}
 		}
 
-		.components-v-stack > .dataviews-view-table__cell-content-wrapper:not(:first-child) {
+		.components-v-stack
+			> .dataviews-view-table__cell-content-wrapper:not( :first-child ) {
 			min-height: 0;
 		}
 	}
@@ -183,7 +199,7 @@
 		text-transform: uppercase;
 		font-weight: 500;
 
-		&:not(:hover) {
+		&:not( :hover ) {
 			color: $gray-900;
 		}
 
@@ -206,7 +222,7 @@
 		min-width: inherit;
 	}
 
-	&:has(tr.is-selected) {
+	&:has( tr.is-selected ) {
 		.components-checkbox-control__input {
 			opacity: 1;
 		}
@@ -216,7 +232,9 @@
 	&.has-compact-density {
 		thead {
 			th {
-				&:has(.dataviews-view-table-header-button):not(:first-child) {
+				&:has( .dataviews-view-table-header-button ):not(
+						:first-child
+					) {
 					padding-left: 0;
 				}
 			}
@@ -279,20 +297,20 @@
 	}
 
 	&::after {
-		content: "";
+		content: '';
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		box-shadow: inset 0 0 0 $border-width rgba(0, 0, 0, 0.1);
+		box-shadow: inset 0 0 0 $border-width rgba( 0, 0, 0, 0.1 );
 		border-radius: $radius-medium;
 	}
 }
 
 .dataviews-view-table__cell-content-wrapper,
 .dataviews-view-table__primary-column-content {
-	&:not(.dataviews-column-primary__media) {
+	&:not( .dataviews-column-primary__media ) {
 		min-width: 15ch;
 		max-width: 80ch;
 	}

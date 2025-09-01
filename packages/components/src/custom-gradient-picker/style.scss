@@ -12,12 +12,27 @@ $components-custom-gradient-picker__padding: $grid-unit-20; // 48px container, 1
 		// make it work both in LTR and RTL.
 		// See https://github.com/WordPress/gutenberg/pull/42510
 		/*rtl:begin:ignore*/
-		background-image:
-			repeating-linear-gradient(45deg, $gray-200 25%, transparent 25%, transparent 75%, $gray-200 75%, $gray-200),
-			repeating-linear-gradient(45deg, $gray-200 25%, transparent 25%, transparent 75%, $gray-200 75%, $gray-200);
-		background-position: 0 0, 12px 12px;
+		background-image: repeating-linear-gradient(
+				45deg,
+				$gray-200 25%,
+				transparent 25%,
+				transparent 75%,
+				$gray-200 75%,
+				$gray-200
+			),
+			repeating-linear-gradient(
+				45deg,
+				$gray-200 25%,
+				transparent 25%,
+				transparent 75%,
+				$gray-200 75%,
+				$gray-200
+			);
+		background-position:
+			0 0,
+			12px 12px;
 		/*rtl:end:ignore*/
-		background-size: calc(2 * 12px) calc(2 * 12px);
+		background-size: calc( 2 * 12px ) calc( 2 * 12px );
 	}
 
 	.components-custom-gradient-picker__gradient-bar-background {
@@ -27,7 +42,7 @@ $components-custom-gradient-picker__padding: $grid-unit-20; // 48px container, 1
 
 	.components-custom-gradient-picker__markers-container {
 		position: relative;
-		width: calc(100% - #{ $grid-unit-60 });
+		width: calc( 100% - #{$grid-unit-60} );
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -69,14 +84,19 @@ $components-custom-gradient-picker__padding: $grid-unit-20; // 48px container, 1
 		padding: 0;
 
 		// Shadow and stroke.
-		box-shadow: inset 0 0 0 var(--wp-admin-border-width-focus) $white, 0 0 $border-width-focus-fallback 0 rgba($black, 0.25);
+		box-shadow:
+			inset 0 0 0 var( --wp-admin-border-width-focus ) $white,
+			0 0 $border-width-focus-fallback 0 rgba( $black, 0.25 );
 
 		// Windows High Contrast mode will show this outline, but not the box-shadow.
 		outline: 2px solid transparent;
 
 		&:focus,
 		&.is-active {
-			box-shadow: inset 0 0 0 calc(var(--wp-admin-border-width-focus) * 2) $white, 0 0 $border-width-focus-fallback 0 rgba($black, 0.25);
+			box-shadow:
+				inset 0 0 0 calc( var( --wp-admin-border-width-focus ) * 2 )
+					$white,
+				0 0 $border-width-focus-fallback 0 rgba( $black, 0.25 );
 
 			// Windows High Contrast mode will show this outline, but not the box-shadow.
 			outline: $border-width-tab solid transparent;

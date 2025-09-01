@@ -10,7 +10,7 @@
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: calc($grid-unit-10 / 2) $grid-unit-10;
+	gap: calc( $grid-unit-10 / 2 ) $grid-unit-10;
 
 	&.block-editor-block-card__title {
 		font-size: $default-font-size;
@@ -32,6 +32,5 @@
 }
 
 .block-editor-block-card.is-synced .block-editor-block-icon {
-	color: var(--wp-block-synced-color);
+	color: var( --wp-block-synced-color );
 }
-

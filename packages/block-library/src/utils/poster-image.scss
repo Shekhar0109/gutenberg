@@ -48,7 +48,7 @@
 	display: flex;
 	justify-content: center;
 	height: auto !important;
-	outline: $border-width solid rgba($black, 0.1);
+	outline: $border-width solid rgba( $black, 0.1 );
 
 	.block-library-poster-image__preview-image {
 		object-fit: cover;
@@ -59,7 +59,7 @@
 }
 
 .block-library-poster-image__actions {
-	&:not(.block-library-poster-image__actions-select) {
+	&:not( .block-library-poster-image__actions-select ) {
 		bottom: 0;
 		opacity: 0; // Use opacity instead of visibility so that the buttons remain in the tab order.
 		padding: $grid-unit-10;
@@ -70,8 +70,8 @@
 		}
 
 		.block-library-poster-image__action {
-			backdrop-filter: blur(16px) saturate(180%);
-			background: rgba(255, 255, 255, 0.75);
+			backdrop-filter: blur( 16px ) saturate( 180% );
+			background: rgba( 255, 255, 255, 0.75 );
 		}
 	}
 

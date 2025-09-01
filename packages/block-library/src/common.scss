@@ -1,4 +1,4 @@
-@import "./elements.scss";
+@import './elements.scss';
 
 // The following selectors have increased specificity (using the :root prefix)
 // to assure colors take effect over another base class color, mainly to let
@@ -24,11 +24,11 @@
 }
 
 .has-normal-font-size {
-	font-size: var(--wp--preset--font-size--normal);
+	font-size: var( --wp--preset--font-size--normal );
 }
 
 .has-huge-font-size {
-	font-size: var(--wp--preset--font-size--huge);
+	font-size: var( --wp--preset--font-size--huge );
 }
 
 // Text alignments.
@@ -75,7 +75,7 @@
 
 .screen-reader-text {
 	border: 0;
-	clip-path: inset(50%);
+	clip-path: inset( 50% );
 	height: 1px;
 	margin: -1px;
 	overflow: hidden;
@@ -112,42 +112,42 @@
  *
  * See: https://github.com/WordPress/gutenberg/pull/33743
  */
-html :where(.has-border-color) {
+html :where( .has-border-color ) {
 	border-style: solid;
 }
-html :where([style*="border-top-color"]) {
+html :where( [style*='border-top-color'] ) {
 	border-top-style: solid;
 }
-html :where([style*="border-right-color"]) {
+html :where( [style*='border-right-color'] ) {
 	border-right-style: solid;
 }
-html :where([style*="border-bottom-color"]) {
+html :where( [style*='border-bottom-color'] ) {
 	border-bottom-style: solid;
 }
-html :where([style*="border-left-color"]) {
+html :where( [style*='border-left-color'] ) {
 	border-left-style: solid;
 }
 
-html :where([style*="border-width"]) {
+html :where( [style*='border-width'] ) {
 	border-style: solid;
 }
-html :where([style*="border-top-width"]) {
+html :where( [style*='border-top-width'] ) {
 	border-top-style: solid;
 }
-html :where([style*="border-right-width"]) {
+html :where( [style*='border-right-width'] ) {
 	border-right-style: solid;
 }
-html :where([style*="border-bottom-width"]) {
+html :where( [style*='border-bottom-width'] ) {
 	border-bottom-style: solid;
 }
-html :where([style*="border-left-width"]) {
+html :where( [style*='border-left-width'] ) {
 	border-left-style: solid;
 }
 
 /**
  * Provide baseline responsiveness for images.
  */
-html :where(img[class*="wp-image-"]) {
+html :where( img[class*='wp-image-'] ) {
 	height: auto;
 	max-width: 100%;
 }
@@ -155,23 +155,26 @@ html :where(img[class*="wp-image-"]) {
 /**
  * Reset user agent styles for figure element margins.
  */
-:where(figure) {
+:where( figure ) {
 	margin: 0 0 1em 0;
 }
 
 // Set the admin bar offset for sticky positioned blocks to the height of the admin bar.
 // This allows sticky positioned blocks to be positioned correctly when the admin bar is visible.
-html :where(.is-position-sticky) {
+html :where( .is-position-sticky ) {
 	/* stylelint-disable length-zero-no-unit -- 0px is set explicitly so that it can be used in a calc value. */
-	--wp-admin--admin-bar--position-offset: var(--wp-admin--admin-bar--height, 0px);
+	--wp-admin--admin-bar--position-offset: var(
+		--wp-admin--admin-bar--height,
+		0px
+	);
 	/* stylelint-enable length-zero-no-unit */
 }
 
 // To support sticky positioning, reset the admin bar offset to 0px on mobile devices,
 // within the scope of the position classname. This is required because the admin bar
 // is not fixed to the top on mobile devices, but is fixed on viewports larger than 600px.
-@media screen and (max-width: 600px) {
-	html :where(.is-position-sticky) {
+@media screen and ( max-width: 600px ) {
+	html :where( .is-position-sticky ) {
 		/* stylelint-disable length-zero-no-unit -- 0px is set explicitly so that it can be used in a calc value. */
 		--wp-admin--admin-bar--position-offset: 0px;
 		/* stylelint-enable length-zero-no-unit */

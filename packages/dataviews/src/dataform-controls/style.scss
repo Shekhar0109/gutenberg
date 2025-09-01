@@ -10,8 +10,8 @@
 
 .dataviews-controls__date {
 	// Hide the native date picker icon since we're using our own calendar.
-	input[type="date"]::-webkit-inner-spin-button,
-	input[type="date"]::-webkit-calendar-picker-indicator {
+	input[type='date']::-webkit-inner-spin-button,
+	input[type='date']::-webkit-calendar-picker-indicator {
 		display: none;
 		-webkit-appearance: none;
 	}

@@ -9,6 +9,7 @@
 	height: 46px;
 }
 
-.editor-with-undo-redo__toolbar .components-accessible-toolbar.block-editor-block-contextual-toolbar {
+.editor-with-undo-redo__toolbar
+	.components-accessible-toolbar.block-editor-block-contextual-toolbar {
 	border-bottom: none;
 }

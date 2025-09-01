@@ -15,7 +15,8 @@
 
 // Any children of the popover-row that are not the settings-toggle
 // should take up as much space as possible.
-.block-editor-url-popover__row > :not(.block-editor-url-popover__settings-toggle) {
+.block-editor-url-popover__row
+	> :not( .block-editor-url-popover__settings-toggle ) {
 	flex-grow: 1;
 	gap: $grid-unit-10;
 }
@@ -34,8 +35,8 @@
 .block-editor-url-popover__settings-toggle {
 	flex-shrink: 0;
 
-	&[aria-expanded="true"] .dashicon {
-		transform: rotate(180deg);
+	&[aria-expanded='true'] .dashicon {
+		transform: rotate( 180deg );
 	}
 }
 

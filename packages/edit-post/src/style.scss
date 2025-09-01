@@ -1,10 +1,10 @@
-@import "./components/back-button/style.scss";
-@import "./components/layout/style.scss";
-@import "./components/meta-boxes/meta-boxes-area/style.scss";
-@import "./components/welcome-guide/style.scss";
+@import './components/back-button/style.scss';
+@import './components/layout/style.scss';
+@import './components/meta-boxes/meta-boxes-area/style.scss';
+@import './components/welcome-guide/style.scss';
 
 body.js.block-editor-page {
-	@include wp-admin-reset( ".block-editor" );
+	@include wp-admin-reset( '.block-editor' );
 }
 
 // Fix issue with wp-admin menu not scrolling between 170% and 200% zoom.
@@ -28,12 +28,12 @@ body.js.block-editor-page {
 		right: 0;
 		bottom: 0;
 		left: 0;
-		min-height: calc(100vh - #{$admin-bar-height-big});
+		min-height: calc( 100vh - #{$admin-bar-height-big} );
 	}
 
 	// The WP header height changes at this breakpoint.
 	@include break-medium {
-		min-height: calc(100vh - #{$admin-bar-height});
+		min-height: calc( 100vh - #{$admin-bar-height} );
 
 		body.is-fullscreen-mode & {
 			min-height: 100vh;

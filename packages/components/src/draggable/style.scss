@@ -1,5 +1,5 @@
 body.is-dragging-components-draggable {
-	cursor: move;/* Fallback for IE/Edge < 14 */
+	cursor: move; /* Fallback for IE/Edge < 14 */
 	cursor: grabbing !important;
 }
 
@@ -15,5 +15,5 @@ body.is-dragging-components-draggable {
 	padding: 0; // Should match clonePadding variable.
 	background: transparent;
 	pointer-events: none;
-	z-index: z-index(".components-draggable__clone");
+	z-index: z-index( '.components-draggable__clone' );
 }

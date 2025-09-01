@@ -1,50 +1,50 @@
-@import "../../dataviews/src/style.scss";
-@import "../../fields/src/style.scss";
-@import "./components/add-new-template/style.scss";
-@import "./components/block-editor/style.scss";
-@import "./components/canvas-loader/style.scss";
-@import "./components/global-styles/style.scss";
-@import "./components/global-styles/screen-revisions/style.scss";
-@import "./components/global-styles-sidebar/style.scss";
-@import "./components/page/style.scss";
-@import "./components/page-patterns/style.scss";
-@import "./components/page-templates/style.scss";
-@import "./components/editor/style.scss";
-@import "./components/welcome-guide/style.scss";
-@import "./components/layout/style.scss";
-@import "./components/save-hub/style.scss";
-@import "./components/save-panel/style.scss";
-@import "./components/sidebar/style.scss";
-@import "./components/sidebar-button/style.scss";
-@import "./components/sidebar-navigation-item/style.scss";
-@import "./components/sidebar-navigation-screen/style.scss";
-@import "./components/sidebar-navigation-screen-details-footer/style.scss";
-@import "./components/sidebar-navigation-screen-navigation-menu/style.scss";
-@import "./components/sidebar-navigation-screen-patterns/style.scss";
-@import "./components/sidebar-navigation-screen-navigation-menus/style.scss";
-@import "./components/sidebar-navigation-screen-main/style.scss";
-@import "./components/sidebar-navigation-screen-templates-browse/style.scss";
-@import "./components/sidebar-dataviews/style.scss";
-@import "./components/site-hub/style.scss";
-@import "./components/site-icon/style.scss";
-@import "./components/style-book/style.scss";
-@import "./components/editor-canvas-container/style.scss";
-@import "./components/post-edit/style.scss";
-@import "./components/post-list/style.scss";
-@import "./components/resizable-frame/style.scss";
-@import "./hooks/push-changes-to-global-styles/style.scss";
-@import "./components/global-styles/font-library-modal/style.scss";
-@import "./components/pagination/style.scss";
-@import "./components/global-styles/variations/style.scss";
-@import "./components/sidebar-global-styles-wrapper/style.scss";
+@import '../../dataviews/src/style.scss';
+@import '../../fields/src/style.scss';
+@import './components/add-new-template/style.scss';
+@import './components/block-editor/style.scss';
+@import './components/canvas-loader/style.scss';
+@import './components/global-styles/style.scss';
+@import './components/global-styles/screen-revisions/style.scss';
+@import './components/global-styles-sidebar/style.scss';
+@import './components/page/style.scss';
+@import './components/page-patterns/style.scss';
+@import './components/page-templates/style.scss';
+@import './components/editor/style.scss';
+@import './components/welcome-guide/style.scss';
+@import './components/layout/style.scss';
+@import './components/save-hub/style.scss';
+@import './components/save-panel/style.scss';
+@import './components/sidebar/style.scss';
+@import './components/sidebar-button/style.scss';
+@import './components/sidebar-navigation-item/style.scss';
+@import './components/sidebar-navigation-screen/style.scss';
+@import './components/sidebar-navigation-screen-details-footer/style.scss';
+@import './components/sidebar-navigation-screen-navigation-menu/style.scss';
+@import './components/sidebar-navigation-screen-patterns/style.scss';
+@import './components/sidebar-navigation-screen-navigation-menus/style.scss';
+@import './components/sidebar-navigation-screen-main/style.scss';
+@import './components/sidebar-navigation-screen-templates-browse/style.scss';
+@import './components/sidebar-dataviews/style.scss';
+@import './components/site-hub/style.scss';
+@import './components/site-icon/style.scss';
+@import './components/style-book/style.scss';
+@import './components/editor-canvas-container/style.scss';
+@import './components/post-edit/style.scss';
+@import './components/post-list/style.scss';
+@import './components/resizable-frame/style.scss';
+@import './hooks/push-changes-to-global-styles/style.scss';
+@import './components/global-styles/font-library-modal/style.scss';
+@import './components/pagination/style.scss';
+@import './components/global-styles/variations/style.scss';
+@import './components/sidebar-global-styles-wrapper/style.scss';
 
 /* stylelint-disable -- Disable reason: View Transitions not supported properly by stylelint. */
-::view-transition-image-pair(root) {
+::view-transition-image-pair( root ) {
 	isolation: auto;
 }
 
-::view-transition-old(root),
-::view-transition-new(root) {
+::view-transition-old( root ),
+::view-transition-new( root ) {
 	animation: none;
 	mix-blend-mode: normal;
 	display: block;
@@ -62,7 +62,7 @@ body.js #wpbody {
 
 body.js.appearance_page_gutenberg-template-parts,
 body.js.site-editor-php {
-	@include wp-admin-reset(".edit-site");
+	@include wp-admin-reset( '.edit-site' );
 }
 
 body.js.site-editor-php {

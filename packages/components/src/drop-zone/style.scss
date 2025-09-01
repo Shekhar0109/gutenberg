@@ -4,7 +4,7 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	z-index: z-index(".components-drop-zone");
+	z-index: z-index( '.components-drop-zone' );
 	visibility: hidden;
 	opacity: 0;
 	border-radius: $radius-small;
@@ -26,7 +26,7 @@
 		background-color: $components-color-accent;
 		align-items: center;
 		justify-content: center;
-		z-index: z-index(".components-drop-zone__content");
+		z-index: z-index( '.components-drop-zone__content' );
 		text-align: center;
 		color: $white;
 		opacity: 0;
@@ -39,23 +39,23 @@
 
 	.components-drop-zone__content-inner {
 		opacity: 0;
-		transform: scale(0.9);
+		transform: scale( 0.9 );
 	}
 
 	&.is-active.is-dragging-over-element {
 		.components-drop-zone__content {
 			opacity: 1;
 
-			@media not (prefers-reduced-motion) {
+			@media not ( prefers-reduced-motion ) {
 				transition: opacity 0.2s ease-in-out;
 			}
 		}
 
 		.components-drop-zone__content-inner {
 			opacity: 1;
-			transform: scale(1);
+			transform: scale( 1 );
 
-			@media not (prefers-reduced-motion) {
+			@media not ( prefers-reduced-motion ) {
 				transition:
 					opacity 0.1s ease-in-out 0.1s,
 					transform 0.1s ease-in-out 0.1s;

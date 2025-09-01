@@ -6,7 +6,7 @@
 		word-break: normal;
 	}
 
-	:where(figcaption) {
+	:where( figcaption ) {
 		@include caption-style-theme();
 	}
 }

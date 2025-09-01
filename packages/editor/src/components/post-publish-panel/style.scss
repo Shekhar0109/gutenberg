@@ -1,6 +1,6 @@
 .editor-post-publish-panel__content {
 	// Ensure the post-publish panel accounts for the header and footer height.
-	min-height: calc(100% - #{$header-height + 84px});
+	min-height: calc( 100% - #{$header-height + 84px} );
 
 	> .components-spinner {
 		display: block;
@@ -188,7 +188,7 @@
 	color: $alert-yellow;
 }
 
-@media screen and (max-width: 782px) {
+@media screen and ( max-width: 782px ) {
 	.post-publish-panel__postpublish-post-address__button-wrap {
 		// match copy button height to the address field height in smaller screens
 		.components-button {
@@ -200,7 +200,7 @@
 .editor-post-publish-panel {
 	@include reset;
 	position: fixed;
-	z-index: z-index(".editor-post-publish-panel");
+	z-index: z-index( '.editor-post-publish-panel' );
 	background: $white;
 	top: $admin-bar-height-big;
 	bottom: 0;
@@ -209,15 +209,16 @@
 	overflow: auto;
 
 	@include break-medium() {
-		z-index: z-index(".editor-post-publish-panel {greater than small}");
+		z-index: z-index( '.editor-post-publish-panel {greater than small}' );
 		top: $admin-bar-height;
 		left: auto;
 		width: $sidebar-width + $border-width;
 		border-left: $border-width solid $gray-300;
 
-		@media not (prefers-reduced-motion) {
-			transform: translateX(+100%);
-			animation: editor-post-publish-panel__slide-in-animation 0.1s forwards;
+		@media not ( prefers-reduced-motion ) {
+			transform: translateX( +100% );
+			animation: editor-post-publish-panel__slide-in-animation 0.1s
+				forwards;
 		}
 
 		body.is-fullscreen-mode & {
@@ -225,14 +226,14 @@
 		}
 
 		// Keep it open on focus to avoid conflict with navigate-regions animation.
-		[role="region"]:focus & {
-			transform: translateX(0%);
+		[role='region']:focus & {
+			transform: translateX( 0% );
 		}
 	}
 }
 
 @keyframes editor-post-publish-panel__slide-in-animation {
 	100% {
-		transform: translateX(0%);
+		transform: translateX( 0% );
 	}
 }

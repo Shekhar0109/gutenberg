@@ -30,7 +30,7 @@
 
 .edit-site-page-templates {
 	.dataviews-pagination {
-		z-index: z-index(".edit-site-templates__dataviews-list-pagination");
+		z-index: z-index( '.edit-site-templates__dataviews-list-pagination' );
 	}
 }
 
@@ -50,7 +50,7 @@
 		opacity: 0;
 		border-radius: 100%;
 
-		@media not (prefers-reduced-motion) {
+		@media not ( prefers-reduced-motion ) {
 			transition: opacity 0.1s linear;
 		}
 	}
@@ -81,7 +81,7 @@
 
 .edit-site-list__rename-modal {
 	// The rename dropdown popover is open at the same time as the rename modal. The latter has to be higher.
-	z-index: z-index(".edit-site-list__rename-modal");
+	z-index: z-index( '.edit-site-list__rename-modal' );
 	.components-base-control {
 		@include break-medium() {
 			width: $grid-unit * 40;

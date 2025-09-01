@@ -41,7 +41,8 @@
 		margin: 0;
 		padding: 0;
 
-		& + .edit-widgets-keyboard-shortcut-help-modal__shortcut-key-combination {
+		&
+			+ .edit-widgets-keyboard-shortcut-help-modal__shortcut-key-combination {
 			margin-top: 10px;
 		}
 	}

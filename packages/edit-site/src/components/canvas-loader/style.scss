@@ -9,7 +9,7 @@
 	align-items: center;
 	justify-content: center;
 
-	@media not (prefers-reduced-motion) {
+	@media not ( prefers-reduced-motion ) {
 		animation: 0.5s ease 0.2s edit-site-canvas-loader__fade-in-animation;
 		animation-fill-mode: forwards;
 	}

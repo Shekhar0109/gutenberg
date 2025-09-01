@@ -1,7 +1,7 @@
 // Deprecated gallery styles pre refactoring to use nested image blocks.
 // https://github.com/WordPress/gutenberg/pull/25940.
-.wp-block-gallery:not(.has-nested-images),
-.blocks-gallery-grid:not(.has-nested-images) {
+.wp-block-gallery:not( .has-nested-images ),
+.blocks-gallery-grid:not( .has-nested-images ) {
 	display: flex;
 	flex-wrap: wrap;
 	list-style-type: none;
@@ -20,9 +20,9 @@
 		position: relative;
 
 		// On mobile and responsive viewports, we allow only 1 or 2 columns at the most.
-		width: calc(50% - 1em);
+		width: calc( 50% - 1em );
 
-		&:nth-of-type(even) {
+		&:nth-of-type( even ) {
 			margin-right: 0;
 		}
 
@@ -51,7 +51,12 @@
 			color: $white;
 			text-align: center;
 			font-size: 0.8em;
-			background: linear-gradient(0deg, rgba($color: $black, $alpha: 0.7) 0, rgba($color: $black, $alpha: 0.3) 70%, transparent);
+			background: linear-gradient(
+				0deg,
+				rgba( $color: $black, $alpha: 0.7 ) 0,
+				rgba( $color: $black, $alpha: 0.3 ) 70%,
+				transparent
+			);
 			box-sizing: border-box;
 			margin: 0;
 			z-index: 2;
@@ -88,15 +93,24 @@
 		@for $i from 3 through 8 {
 			&.columns-#{ $i } .blocks-gallery-image,
 			&.columns-#{ $i } .blocks-gallery-item {
-				width: calc(#{ math.div(100%, $i) } - #{ math.div(1em * ( $i - 1 ), $i) });
+				width: calc(
+					#{math.div( 100%, $i )} -
+						#{math.div( 1em * ( $i - 1 ), $i )}
+				);
 				margin-right: 1em;
 			}
 		}
 
 		// Unset the right margin on every rightmost gallery item to ensure center balance.
 		@for $column-count from 1 through 8 {
-			&.columns-#{ $column-count } .blocks-gallery-image:nth-of-type(#{ $column-count }n),
-			&.columns-#{ $column-count } .blocks-gallery-item:nth-of-type(#{ $column-count }n) {
+			&.columns-#{
+				$column-count
+				}
+				.blocks-gallery-image:nth-of-type( #{ $column-count }n ),
+			&.columns-#{
+				$column-count
+				}
+				.blocks-gallery-item:nth-of-type( #{ $column-count }n ) {
 				margin-right: 0;
 			}
 		}
@@ -124,7 +138,7 @@
 }
 .wp-block-gallery {
 	// Non cropped images.
-	&:not(.is-cropped) {
+	&:not( .is-cropped ) {
 		.blocks-gallery-item {
 			align-self: flex-start;
 		}

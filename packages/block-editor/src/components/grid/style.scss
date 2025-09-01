@@ -1,7 +1,7 @@
 .block-editor-grid-visualizer {
 	// Specificity to override the z-index and pointer-events set by .components-popover.
 	&.block-editor-grid-visualizer.block-editor-grid-visualizer {
-		z-index: z-index(".block-editor-grid-visualizer");
+		z-index: z-index( '.block-editor-grid-visualizer' );
 
 		.components-popover__content * {
 			pointer-events: none;
@@ -38,7 +38,8 @@
 		overflow: hidden;
 
 		.block-editor-grid-visualizer__appender {
-			box-shadow: inset 0 0 0 1px color-mix(in srgb, currentColor  20%, #0000);
+			box-shadow: inset 0 0 0 1px
+				color-mix( in srgb, currentColor 20%, #0000 );
 			color: inherit;
 			overflow: hidden;
 			height: 100%;
@@ -46,25 +47,24 @@
 			padding: 0 !important;
 			opacity: 0;
 		}
-
 	}
 
 	&.is-highlighted {
 		.block-editor-inserter,
 		.block-editor-grid-visualizer__drop-zone {
-			background: var(--wp-admin-theme-color);
+			background: var( --wp-admin-theme-color );
 		}
 	}
 
 	&:hover .block-editor-grid-visualizer__appender,
 	.block-editor-grid-visualizer__appender:focus {
 		opacity: 1;
-		background-color: color-mix(in srgb, currentColor  20%, #0000);
+		background-color: color-mix( in srgb, currentColor 20%, #0000 );
 	}
 }
 
 .block-editor-grid-visualizer__drop-zone {
-	background: rgba($gray-400, 0.1);
+	background: rgba( $gray-400, 0.1 );
 	width: 100%;
 	height: 100%;
 	grid-column: 1;
@@ -78,7 +78,7 @@
 .block-editor-grid-item-resizer {
 	// Specificity to override the z-index and pointer-events set by .components-popover.
 	&.block-editor-grid-item-resizer.block-editor-grid-item-resizer {
-		z-index: z-index(".block-editor-grid-visualizer");
+		z-index: z-index( '.block-editor-grid-visualizer' );
 
 		.components-popover__content * {
 			pointer-events: none;
@@ -87,7 +87,7 @@
 }
 
 .block-editor-grid-item-resizer__box {
-	border: $border-width solid var(--wp-admin-theme-color);
+	border: $border-width solid var( --wp-admin-theme-color );
 
 	.components-resizable-box__handle {
 		// Specificity to override the pointer-events set by .components-popover.
@@ -115,7 +115,7 @@
 
 		// Focus and toggle pseudo elements.
 		&::before {
-			content: "";
+			content: '';
 			position: absolute;
 			display: block;
 			border-radius: $radius-small;
@@ -147,7 +147,6 @@
 	}
 }
 
-
 .block-editor-grid-item-mover__move-vertical-button-container {
 	display: flex;
 	position: relative;
@@ -162,7 +161,7 @@
 
 			// Focus style.
 			&::before {
-				height: calc(100% - 4px);
+				height: calc( 100% - 4px );
 			}
 		}
 
@@ -187,13 +186,12 @@
 }
 
 .show-icon-labels {
-
 	.block-editor-grid-item-mover__move-horizontal-button-container {
 		position: relative;
 
 		&::before {
 			@include break-small() {
-				content: "";
+				content: '';
 				height: 100%;
 				width: $border-width;
 				background: $gray-200;
@@ -226,7 +224,7 @@
 	.block-editor-grid-item-mover__move-vertical-button-container {
 		&::before {
 			@include break-small() {
-				content: "";
+				content: '';
 				height: $border-width;
 				width: 100%;
 				background: $gray-200;
@@ -235,7 +233,7 @@
 				left: 50%;
 				// With Top toolbar enabled, this separator has a smaller width. Translating the
 				// X axis allows to make the separator always centered regardless of its width.
-				transform: translate(-50%, 0);
+				transform: translate( -50%, 0 );
 				margin-top: -$border-width * 0.5;
 			}
 
@@ -258,8 +256,7 @@
 
 		.block-editor-grid-item-mover__move-vertical-button-container::before {
 			background: $gray-300;
-			width: calc(100% - #{$grid-unit-30});
+			width: calc( 100% - #{$grid-unit-30} );
 		}
 	}
 }
-

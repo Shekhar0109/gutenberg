@@ -34,7 +34,7 @@
 	padding-top: $grid-unit-60;
 	margin-bottom: $grid-unit-10;
 	padding-bottom: $grid-unit-10;
-	z-index: z-index(".edit-site-sidebar-navigation-screen__title-icon");
+	z-index: z-index( '.edit-site-sidebar-navigation-screen__title-icon' );
 }
 
 .edit-site-sidebar-navigation-screen__title {
@@ -52,7 +52,8 @@
 	flex-shrink: 0;
 }
 
-.edit-site-sidebar-navigation-screen__content .edit-site-global-styles-variation-container {
+.edit-site-sidebar-navigation-screen__content
+	.edit-site-global-styles-variation-container {
 	@include break-medium() {
 		// Safari does not currently support `scrollbar-gutter: stable`, so at
 		// particular viewport sizes it's possible for previews to render prior to a
@@ -74,15 +75,15 @@
 	font-weight: 500;
 }
 
-.edit-site-sidebar-navigation-screen__content .edit-site-global-styles-variations_item {
-
+.edit-site-sidebar-navigation-screen__content
+	.edit-site-global-styles-variations_item {
 	// Use a white outline to provide contrast with the dark background.
 	.edit-site-global-styles-variations_item-preview {
-		outline-color: rgba($white, 0.05);
+		outline-color: rgba( $white, 0.05 );
 	}
 
-	&:not(.is-active):hover .edit-site-global-styles-variations_item-preview {
-		outline-color: rgba($white, 0.15);
+	&:not( .is-active ):hover .edit-site-global-styles-variations_item-preview {
+		outline-color: rgba( $white, 0.15 );
 	}
 
 	&.is-active .edit-site-global-styles-variations_item-preview {
@@ -90,7 +91,7 @@
 	}
 
 	&:focus-visible .edit-site-global-styles-variations_item-preview {
-		outline-color: var(--wp-admin-theme-color);
+		outline-color: var( --wp-admin-theme-color );
 	}
 }
 

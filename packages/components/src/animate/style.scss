@@ -1,6 +1,7 @@
 .components-animate__appear {
-	@media not (prefers-reduced-motion) {
-		animation: components-animate__appear-animation 0.1s cubic-bezier(0, 0, 0.2, 1) 0s;
+	@media not ( prefers-reduced-motion ) {
+		animation: components-animate__appear-animation 0.1s
+			cubic-bezier( 0, 0, 0.2, 1 ) 0s;
 		animation-fill-mode: forwards;
 	}
 
@@ -22,36 +23,37 @@
 
 @keyframes components-animate__appear-animation {
 	from {
-		transform: translateY(-2em) scaleY(0) scaleX(0);
+		transform: translateY( -2em ) scaleY( 0 ) scaleX( 0 );
 	}
 	to {
-		transform: translateY(0%) scaleY(1) scaleX(1);
+		transform: translateY( 0% ) scaleY( 1 ) scaleX( 1 );
 	}
 }
 
 .components-animate__slide-in {
-	@media not (prefers-reduced-motion) {
-		animation: components-animate__slide-in-animation 0.1s cubic-bezier(0, 0, 0.2, 1);
+	@media not ( prefers-reduced-motion ) {
+		animation: components-animate__slide-in-animation 0.1s
+			cubic-bezier( 0, 0, 0.2, 1 );
 		animation-fill-mode: forwards;
 
 		&.is-from-left {
-			transform: translateX(+100%);
+			transform: translateX( +100% );
 		}
 
 		&.is-from-right {
-			transform: translateX(-100%);
+			transform: translateX( -100% );
 		}
 	}
 }
 
 @keyframes components-animate__slide-in-animation {
 	100% {
-		transform: translateX(0%);
+		transform: translateX( 0% );
 	}
 }
 
 .components-animate__loading {
-	@media not (prefers-reduced-motion) {
+	@media not ( prefers-reduced-motion ) {
 		animation: components-animate__loading 1.6s ease-in-out infinite;
 	}
 }

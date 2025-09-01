@@ -15,12 +15,16 @@
 	cursor: pointer;
 
 	.wp-block-navigation__submenu-container {
-		z-index: z-index(".has-child .wp-block-navigation__submenu-container");
+		z-index: z-index(
+			'.has-child .wp-block-navigation__submenu-container'
+		);
 	}
 
 	&:hover {
 		.wp-block-navigation__submenu-container {
-			z-index: z-index(".has-child:hover .wp-block-navigation__submenu-container");
+			z-index: z-index(
+				'.has-child:hover .wp-block-navigation__submenu-container'
+			);
 		}
 	}
 
@@ -38,7 +42,6 @@
 		}
 	}
 }
-
 
 /**
  * Navigation Items.

@@ -8,9 +8,9 @@
 		}
 
 		&__suggestions_list {
-			margin-left: - $grid-unit-15;
-			margin-right: - $grid-unit-15;
-			width: calc(100% + #{$grid-unit-15 * 2});
+			margin-left: -$grid-unit-15;
+			margin-right: -$grid-unit-15;
+			width: calc( 100% + #{$grid-unit-15 * 2} );
 		}
 	}
 
@@ -46,14 +46,14 @@
 			}
 
 			&:hover {
-				background: rgba(var(--wp-admin-theme-color--rgb), 0.04);
+				background: rgba( var( --wp-admin-theme-color--rgb ), 0.04 );
 
 				* {
-					color: var(--wp-admin-theme-color);
+					color: var( --wp-admin-theme-color );
 				}
 
 				mark {
-					color: var(--wp-admin-theme-color);
+					color: var( --wp-admin-theme-color );
 				}
 			}
 
@@ -61,8 +61,9 @@
 				background-color: $gray-100;
 			}
 
-			&:focus:not(:disabled) {
-				box-shadow: 0 0 0 var(--wp-admin-border-width-focus) var(--wp-admin-theme-color) inset;
+			&:focus:not( :disabled ) {
+				box-shadow: 0 0 0 var( --wp-admin-border-width-focus )
+					var( --wp-admin-theme-color ) inset;
 			}
 
 			&__title,
@@ -97,18 +98,17 @@
 }
 
 .edit-site-add-new-template__modal {
-
 	@include break-large() {
 		max-width: $grid-unit-80 * 13;
 		margin-top: $grid-unit-80;
-		width: calc(100% - #{$grid-unit-80 * 2});
-		max-height: calc(100% - #{$grid-unit-80 * 2});
+		width: calc( 100% - #{$grid-unit-80 * 2} );
+		max-height: calc( 100% - #{$grid-unit-80 * 2} );
 	}
 
 	.edit-site-add-new-template__template-button,
 	.edit-site-add-new-template__custom-template-button {
 		svg {
-			fill: var(--wp-admin-theme-color);
+			fill: var( --wp-admin-theme-color );
 		}
 	}
 
@@ -121,7 +121,7 @@
 
 	.edit-site-add-new-template__template-icon {
 		padding: $grid-unit-10;
-		background: rgba(var(--wp-admin-theme-color--rgb), 0.04);
+		background: rgba( var( --wp-admin-theme-color--rgb ), 0.04 );
 		border-radius: 100%;
 		max-height: $grid-unit-50;
 		max-width: $grid-unit-50;
@@ -149,24 +149,25 @@
 		}
 
 		&:hover {
-			color: var(--wp-admin-theme-color-darker-10);
-			background: rgba(var(--wp-admin-theme-color--rgb), 0.04);
+			color: var( --wp-admin-theme-color-darker-10 );
+			background: rgba( var( --wp-admin-theme-color--rgb ), 0.04 );
 			border-color: transparent;
 
 			span {
-				color: var(--wp-admin-theme-color);
+				color: var( --wp-admin-theme-color );
 			}
 		}
 
 		&:focus {
-			box-shadow: 0 0 0 var(--wp-admin-border-width-focus) var(--wp-admin-theme-color);
+			box-shadow: 0 0 0 var( --wp-admin-border-width-focus )
+				var( --wp-admin-theme-color );
 			border-color: transparent;
 
 			// Windows High Contrast mode will show this outline, but not the box-shadow.
 			outline: 3px solid transparent;
 
 			span:first-child {
-				color: var(--wp-admin-theme-color);
+				color: var( --wp-admin-theme-color );
 			}
 		}
 	}

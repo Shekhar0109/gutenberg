@@ -1,4 +1,3 @@
-
 .edit-post-meta-boxes-area {
 	position: relative;
 
@@ -34,7 +33,8 @@
 	/* Override Default meta box stylings */
 	#poststuff h3.hndle,
 	#poststuff .stuffbox > h3,
-	#poststuff h2.hndle { /* WordPress selectors yolo */
+	#poststuff h2.hndle {
+		/* WordPress selectors yolo */
 		box-sizing: border-box;
 		color: inherit;
 		font-weight: 600;
@@ -67,16 +67,16 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		content: "";
+		content: '';
 		background: transparent;
-		z-index: z-index(".edit-post-meta-boxes-area.is-loading::before");
+		z-index: z-index( '.edit-post-meta-boxes-area.is-loading::before' );
 	}
 
 	.components-spinner {
 		position: absolute;
 		top: 10px;
 		right: 20px;
-		z-index: z-index(".edit-post-meta-boxes-area .spinner");
+		z-index: z-index( '.edit-post-meta-boxes-area .spinner' );
 	}
 
 	// Hide disabled meta boxes using CSS so that we don't interfere with plugins
@@ -85,12 +85,11 @@
 		display: none;
 	}
 
-
 	// Until checkboxes WordPress-wide are updated to match the new style,
 	// checkboxes used in metaboxes have to be slightly unstyled here.
 	// @todo remove this entire rule once checkboxes are the same everywhere.
 	// See: https://github.com/WordPress/gutenberg/issues/18053
-	.metabox-location-side .postbox input[type="checkbox"] {
+	.metabox-location-side .postbox input[type='checkbox'] {
 		border: $border-width solid $gray-700;
 
 		&:checked {

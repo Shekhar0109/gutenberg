@@ -19,24 +19,24 @@ component, and the `Menu.Popover` component.
 
 ### `as`
 
- - Type: `"symbol" | "object" | "a" | "abbr" | "address" | "area" | "article" | "aside" | "audio" | "b" | "base" | "bdi" | "bdo" | "big" | "blockquote" | "body" | "br" | "button" | "canvas" | ... 516 more ... | ("view" & FunctionComponent<...>)`
- - Required: No
+-   Type: `"symbol" | "object" | "a" | "abbr" | "address" | "area" | "article" | "aside" | "audio" | "b" | "base" | "bdi" | "bdo" | "big" | "blockquote" | "body" | "br" | "button" | "canvas" | ... 516 more ... | ("view" & FunctionComponent<...>)`
+-   Required: No
 
 The HTML element or React component to render the component as.
 
 ### `children`
 
- - Type: `ReactNode`
- - Required: No
+-   Type: `ReactNode`
+-   Required: No
 
 The elements, which should include one instance of the `Menu.TriggerButton`
 component and one instance of the `Menu.Popover` component.
 
 ### `defaultOpen`
 
- - Type: `boolean`
- - Required: No
- - Default: `false`
+-   Type: `boolean`
+-   Required: No
+-   Default: `false`
 
 Whether the menu popover and its contents should be visible by default.
 
@@ -45,8 +45,8 @@ provided (meaning the component will be used in "controlled" mode).
 
 ### `open`
 
- - Type: `boolean`
- - Required: No
+-   Type: `boolean`
+-   Required: No
 
 Whether the menu popover and its contents should be visible.
 Should be used in conjunction with `onOpenChange` in order to control
@@ -57,16 +57,16 @@ override the `defaultOpen` prop.
 
 ### `onOpenChange`
 
- - Type: `(open: boolean) => void`
- - Required: No
+-   Type: `(open: boolean) => void`
+-   Required: No
 
 A callback that gets called when the `open` state changes.
 
 ### `placement`
 
- - Type: `"top" | "bottom" | "left" | "right" | "top-start" | "bottom-start" | "left-start" | "right-start" | "top-end" | "bottom-end" | ...`
- - Required: No
- - Default: `'bottom-start' for root-level menus, 'right-start' for submenus`
+-   Type: `"top" | "bottom" | "left" | "right" | "top-start" | "bottom-start" | "left-start" | "right-start" | "top-end" | "bottom-end" | ...`
+-   Required: No
+-   Default: `'bottom-start' for root-level menus, 'right-start' for submenus`
 
 The placement of the menu popover.
 
@@ -81,8 +81,8 @@ Renders a menu button that toggles the visibility of a sibling
 
 ##### `accessibleWhenDisabled`
 
- - Type: `boolean`
- - Required: No
+-   Type: `boolean`
+-   Required: No
 
 Indicates whether the element should be focusable even when it is
 `disabled`.
@@ -90,26 +90,26 @@ Indicates whether the element should be focusable even when it is
 This is important when discoverability is a concern. For example:
 
 > A toolbar in an editor contains a set of special smart paste functions
-that are disabled when the clipboard is empty or when the function is not
-applicable to the current content of the clipboard. It could be helpful to
-keep the disabled buttons focusable if the ability to discover their
-functionality is primarily via their presence on the toolbar.
+> that are disabled when the clipboard is empty or when the function is not
+> applicable to the current content of the clipboard. It could be helpful to
+> keep the disabled buttons focusable if the ability to discover their
+> functionality is primarily via their presence on the toolbar.
 
 Learn more on [Focusability of disabled
 controls](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#focusabilityofdisabledcontrols).
 
 ##### `children`
 
- - Type: `ReactNode`
- - Required: No
+-   Type: `ReactNode`
+-   Required: No
 
 The contents of the menu trigger button.
 
 ##### `disabled`
 
- - Type: `boolean`
- - Required: No
- - Default: `false`
+-   Type: `boolean`
+-   Required: No
+-   Default: `false`
 
 Determines if the element is disabled. This sets the `aria-disabled`
 attribute accordingly, enabling support for all elements, including those
@@ -120,8 +120,8 @@ make disabled elements still accessible via keyboard.
 
 ##### `render`
 
- - Type: `ReactElement<any, string | JSXElementConstructor<any>> | RenderProp<HTMLAttributes<any> & { ref?: Ref<any>; }>`
- - Required: No
+-   Type: `ReactElement<any, string | JSXElementConstructor<any>> | RenderProp<HTMLAttributes<any> & { ref?: Ref<any>; }>`
+-   Required: No
 
 Allows the component to be rendered as a different HTML element or React
 component. The value can be a React element or a function that takes in the
@@ -142,8 +142,8 @@ and `Menu` (for nested dropdown menus).
 
 ##### `children`
 
- - Type: `ReactNode`
- - Required: No
+-   Type: `ReactNode`
+-   Required: No
 
 The contents of the menu popover, which should include instances of the
 `Menu.Item`, `Menu.CheckboxItem`, `Menu.RadioItem`, `Menu.Group`, and
@@ -151,17 +151,17 @@ The contents of the menu popover, which should include instances of the
 
 ##### `gutter`
 
- - Type: `number`
- - Required: No
- - Default: `8 for root-level menus, 16 for nested menus`
+-   Type: `number`
+-   Required: No
+-   Default: `8 for root-level menus, 16 for nested menus`
 
 The distance between the popover and the anchor element.
 
 ##### `hideOnEscape`
 
- - Type: `BooleanOrCallback<KeyboardEvent | React.KeyboardEvent<Element>>`
- - Required: No
- - Default: ``( event ) => { event.preventDefault(); return true; }``
+-   Type: `BooleanOrCallback<KeyboardEvent | React.KeyboardEvent<Element>>`
+-   Required: No
+-   Default: `( event ) => { event.preventDefault(); return true; }`
 
 Determines if the menu popover will hide when the user presses the
 Escape key.
@@ -173,9 +173,9 @@ keyboard event or a React synthetic event.
 
 ##### `modal`
 
- - Type: `boolean`
- - Required: No
- - Default: `true`
+-   Type: `boolean`
+-   Required: No
+-   Default: `true`
 
 The modality of the menu popover. When set to true, interaction with
 outside elements will be disabled and only menu content will be visible to
@@ -183,15 +183,16 @@ screen readers.
 
 Determines whether the menu popover is modal. Modal dialogs have distinct
 states and behaviors:
-- The `portal` and `preventBodyScroll` props are set to `true`. They can
-  still be manually set to `false`.
-- When the dialog is open, element tree outside it will be inert.
+
+-   The `portal` and `preventBodyScroll` props are set to `true`. They can
+    still be manually set to `false`.
+-   When the dialog is open, element tree outside it will be inert.
 
 ##### `shift`
 
- - Type: `number`
- - Required: No
- - Default: `0 for root-level menus, -8 for nested menus`
+-   Type: `number`
+-   Required: No
+-   Default: `0 for root-level menus, -8 for nested menus`
 
 The skidding of the popover along the anchor element. Can be set to
 negative values to make the popover shift to the opposite side.
@@ -207,8 +208,8 @@ and one instance of the `Menu.ItemHelpText` component.
 
 ##### `children`
 
- - Type: `ReactNode`
- - Required: Yes
+-   Type: `ReactNode`
+-   Required: Yes
 
 The contents of the menu item, which could include one instance of the
 `Menu.ItemLabel` component and/or one instance of the `Menu.ItemHelpText`
@@ -216,9 +217,9 @@ component.
 
 ##### `disabled`
 
- - Type: `boolean`
- - Required: No
- - Default: `false`
+-   Type: `boolean`
+-   Required: No
+-   Default: `false`
 
 Determines if the element is disabled. This sets the `aria-disabled`
 attribute accordingly, enabling support for all elements, including those
@@ -226,9 +227,9 @@ that don't support the native `disabled` attribute.
 
 ##### `hideOnClick`
 
- - Type: `BooleanOrCallback<MouseEvent<HTMLElement, MouseEvent>>`
- - Required: No
- - Default: `true`
+-   Type: `BooleanOrCallback<MouseEvent<HTMLElement, MouseEvent>>`
+-   Required: No
+-   Default: `true`
 
 Determines if the menu should hide when this item is clicked.
 
@@ -238,15 +239,15 @@ download it.
 
 ##### `prefix`
 
- - Type: `ReactNode`
- - Required: No
+-   Type: `ReactNode`
+-   Required: No
 
 The contents of the menu item's prefix, such as an icon.
 
 ##### `render`
 
- - Type: `ReactElement<any, string | JSXElementConstructor<any>> | RenderProp<HTMLAttributes<any> & { ref?: Ref<any>; }>`
- - Required: No
+-   Type: `ReactElement<any, string | JSXElementConstructor<any>> | RenderProp<HTMLAttributes<any> & { ref?: Ref<any>; }>`
+-   Required: No
 
 Allows the component to be rendered as a different HTML element or React
 component. The value can be a React element or a function that takes in the
@@ -255,8 +256,8 @@ merged.
 
 ##### `suffix`
 
- - Type: `ReactNode`
- - Required: No
+-   Type: `ReactNode`
+-   Required: No
 
 The contents of the menu item's suffix, such as a keyboard shortcut.
 
@@ -272,8 +273,8 @@ and one instance of the `Menu.ItemHelpText` component.
 
 ##### `children`
 
- - Type: `ReactNode`
- - Required: Yes
+-   Type: `ReactNode`
+-   Required: Yes
 
 The contents of the menu item, which could include one instance of the
 `Menu.ItemLabel` component and/or one instance of the `Menu.ItemHelpText`
@@ -281,8 +282,8 @@ component.
 
 ##### `checked`
 
- - Type: `boolean`
- - Required: No
+-   Type: `boolean`
+-   Required: No
 
 The controlled checked state of the radio menu item.
 
@@ -290,9 +291,9 @@ Note: this prop will override the `defaultChecked` prop.
 
 ##### `disabled`
 
- - Type: `boolean`
- - Required: No
- - Default: `false`
+-   Type: `boolean`
+-   Required: No
+-   Default: `false`
 
 Determines if the element is disabled. This sets the `aria-disabled`
 attribute accordingly, enabling support for all elements, including those
@@ -300,8 +301,8 @@ that don't support the native `disabled` attribute.
 
 ##### `defaultChecked`
 
- - Type: `boolean`
- - Required: No
+-   Type: `boolean`
+-   Required: No
 
 The checked state of the radio menu item when it is initially rendered.
 Use when not wanting to control its checked state.
@@ -310,9 +311,9 @@ Note: this prop will be overriden by the `checked` prop, if it is defined.
 
 ##### `hideOnClick`
 
- - Type: `BooleanOrCallback<MouseEvent<HTMLElement, MouseEvent>>`
- - Required: No
- - Default: `false`
+-   Type: `BooleanOrCallback<MouseEvent<HTMLElement, MouseEvent>>`
+-   Required: No
+-   Default: `false`
 
 Determines if the menu should hide when this item is clicked.
 
@@ -322,22 +323,22 @@ download it.
 
 ##### `name`
 
- - Type: `string`
- - Required: Yes
+-   Type: `string`
+-   Required: Yes
 
 The radio item's name.
 
 ##### `onChange`
 
- - Type: `BivariantCallback<(event: ChangeEvent<HTMLInputElement>) => void>`
- - Required: No
+-   Type: `BivariantCallback<(event: ChangeEvent<HTMLInputElement>) => void>`
+-   Required: No
 
 A function that is called when the checkbox's checked state changes.
 
 ##### `render`
 
- - Type: `ReactElement<any, string | JSXElementConstructor<any>> | RenderProp<HTMLAttributes<any> & { ref?: Ref<any>; }>`
- - Required: No
+-   Type: `ReactElement<any, string | JSXElementConstructor<any>> | RenderProp<HTMLAttributes<any> & { ref?: Ref<any>; }>`
+-   Required: No
 
 Allows the component to be rendered as a different HTML element or React
 component. The value can be a React element or a function that takes in the
@@ -346,15 +347,15 @@ merged.
 
 ##### `suffix`
 
- - Type: `ReactNode`
- - Required: No
+-   Type: `ReactNode`
+-   Required: No
 
 The contents of the menu item's suffix, such as a keyboard shortcut.
 
 ##### `value`
 
- - Type: `string | number`
- - Required: Yes
+-   Type: `string | number`
+-   Required: Yes
 
 The radio item's value.
 
@@ -370,8 +371,8 @@ and one instance of the `Menu.ItemHelpText` component.
 
 ##### `children`
 
- - Type: `ReactNode`
- - Required: Yes
+-   Type: `ReactNode`
+-   Required: Yes
 
 The contents of the menu item, which could include one instance of the
 `Menu.ItemLabel` component and/or one instance of the `Menu.ItemHelpText`
@@ -379,8 +380,8 @@ component.
 
 ##### `checked`
 
- - Type: `boolean`
- - Required: No
+-   Type: `boolean`
+-   Required: No
 
 The controlled checked state of the checkbox menu item.
 
@@ -388,9 +389,9 @@ Note: this prop will override the `defaultChecked` prop.
 
 ##### `disabled`
 
- - Type: `boolean`
- - Required: No
- - Default: `false`
+-   Type: `boolean`
+-   Required: No
+-   Default: `false`
 
 Determines if the element is disabled. This sets the `aria-disabled`
 attribute accordingly, enabling support for all elements, including those
@@ -398,8 +399,8 @@ that don't support the native `disabled` attribute.
 
 ##### `defaultChecked`
 
- - Type: `boolean`
- - Required: No
+-   Type: `boolean`
+-   Required: No
 
 The checked state of the checkbox menu item when it is initially rendered.
 Use when not wanting to control its checked state.
@@ -408,9 +409,9 @@ Note: this prop will be overriden by the `checked` prop, if it is defined.
 
 ##### `hideOnClick`
 
- - Type: `BooleanOrCallback<MouseEvent<HTMLElement, MouseEvent>>`
- - Required: No
- - Default: `false`
+-   Type: `BooleanOrCallback<MouseEvent<HTMLElement, MouseEvent>>`
+-   Required: No
+-   Default: `false`
 
 Determines if the menu should hide when this item is clicked.
 
@@ -420,22 +421,22 @@ download it.
 
 ##### `name`
 
- - Type: `string`
- - Required: Yes
+-   Type: `string`
+-   Required: Yes
 
 The checkbox menu item's name.
 
 ##### `onChange`
 
- - Type: `ChangeEventHandler<HTMLInputElement>`
- - Required: No
+-   Type: `ChangeEventHandler<HTMLInputElement>`
+-   Required: No
 
 A function that is called when the checkbox's checked state changes.
 
 ##### `render`
 
- - Type: `ReactElement<any, string | JSXElementConstructor<any>> | RenderProp<HTMLAttributes<any> & { ref?: Ref<any>; }>`
- - Required: No
+-   Type: `ReactElement<any, string | JSXElementConstructor<any>> | RenderProp<HTMLAttributes<any> & { ref?: Ref<any>; }>`
+-   Required: No
 
 Allows the component to be rendered as a different HTML element or React
 component. The value can be a React element or a function that takes in the
@@ -444,15 +445,15 @@ merged.
 
 ##### `suffix`
 
- - Type: `ReactNode`
- - Required: No
+-   Type: `ReactNode`
+-   Required: No
 
 The contents of the menu item's suffix, such as a keyboard shortcut.
 
 ##### `value`
 
- - Type: `string | number | readonly string[]`
- - Required: No
+-   Type: `string | number | readonly string[]`
+-   Required: No
 
 The checkbox item's value, useful when using multiple checkbox menu items
 associated to the same `name`.
@@ -466,8 +467,8 @@ Renders a menu item's label text. It should be wrapped with `Menu.Item`,
 
 ##### `as`
 
- - Type: `"symbol" | "object" | "a" | "abbr" | "address" | "area" | "article" | "aside" | "audio" | "b" | ...`
- - Required: No
+-   Type: `"symbol" | "object" | "a" | "abbr" | "address" | "area" | "article" | "aside" | "audio" | "b" | ...`
+-   Required: No
 
 The HTML element or React component to render the component as.
 
@@ -480,8 +481,8 @@ Renders a menu item's help text. It should be wrapped with `Menu.Item`,
 
 ##### `as`
 
- - Type: `"symbol" | "object" | "a" | "abbr" | "address" | "area" | "article" | "aside" | "audio" | "b" | ...`
- - Required: No
+-   Type: `"symbol" | "object" | "a" | "abbr" | "address" | "area" | "article" | "aside" | "audio" | "b" | ...`
+-   Required: No
 
 The HTML element or React component to render the component as.
 
@@ -496,8 +497,8 @@ instances of `Menu.Item`, `Menu.RadioItem`, or `Menu.CheckboxItem`.
 
 ##### `children`
 
- - Type: `ReactNode`
- - Required: Yes
+-   Type: `ReactNode`
+-   Required: Yes
 
 The contents of the menu group, which should include one instance of the
 `Menu.GroupLabel` component and one or more instances of `Menu.Item`,
@@ -514,8 +515,8 @@ This component should be wrapped with `Menu.Group` so the
 
 ##### `children`
 
- - Type: `ReactNode`
- - Required: Yes
+-   Type: `ReactNode`
+-   Required: Yes
 
 The contents of the menu group label, which should provide an accessible
 label for the menu group.
@@ -537,8 +538,8 @@ This component is used to create a nested dropdown menu.
 
 ##### `children`
 
- - Type: `ReactNode`
- - Required: Yes
+-   Type: `ReactNode`
+-   Required: Yes
 
 The contents of the menu item, which could include one instance of the
 `Menu.ItemLabel` component and/or one instance of the `Menu.ItemHelpText`
@@ -546,9 +547,9 @@ component.
 
 ##### `disabled`
 
- - Type: `boolean`
- - Required: No
- - Default: `false`
+-   Type: `boolean`
+-   Required: No
+-   Default: `false`
 
 Determines if the element is disabled. This sets the `aria-disabled`
 attribute accordingly, enabling support for all elements, including those
@@ -556,9 +557,9 @@ that don't support the native `disabled` attribute.
 
 ##### `hideOnClick`
 
- - Type: `BooleanOrCallback<MouseEvent<HTMLElement, MouseEvent>>`
- - Required: No
- - Default: `true`
+-   Type: `BooleanOrCallback<MouseEvent<HTMLElement, MouseEvent>>`
+-   Required: No
+-   Default: `true`
 
 Determines if the menu should hide when this item is clicked.
 
@@ -568,15 +569,15 @@ download it.
 
 ##### `prefix`
 
- - Type: `ReactNode`
- - Required: No
+-   Type: `ReactNode`
+-   Required: No
 
 The contents of the menu item's prefix, such as an icon.
 
 ##### `render`
 
- - Type: `ReactElement<any, string | JSXElementConstructor<any>> | RenderProp<HTMLAttributes<any> & { ref?: Ref<any>; }>`
- - Required: No
+-   Type: `ReactElement<any, string | JSXElementConstructor<any>> | RenderProp<HTMLAttributes<any> & { ref?: Ref<any>; }>`
+-   Required: No
 
 Allows the component to be rendered as a different HTML element or React
 component. The value can be a React element or a function that takes in the
@@ -585,7 +586,7 @@ merged.
 
 ##### `suffix`
 
- - Type: `ReactNode`
- - Required: No
+-   Type: `ReactNode`
+-   Required: No
 
 The contents of the menu item's suffix, such as a keyboard shortcut.
